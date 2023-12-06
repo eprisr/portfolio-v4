@@ -28,20 +28,37 @@ module.exports = {
                 },
               ],
               '@babel/preset-react',
+              '@babel/preset-typescript',
             ],
           },
         },
       },
       {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+            },
+          },
+        ],
+        include: /\.module\.css$/,
+      },
+      {
+        test: /\.css$/,
+        user: ['style-loader', 'css-loader'],
+        exclude: /\.module\.css$/,
       },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.css'],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',
