@@ -1,24 +1,141 @@
-* {
-	/* box-sizing: border-box; */
-	margin: 0;
-	padding: 0;
-	font-family: 'Red Hat', sans-serif;
-	/* scrollbar-width: none; */
+body{
+	font-family: 'Red Hat Text', sans-serif;
 }
 
-*,
-*::after,
-*::before {
-	box-sizing: inherit;
+/***************************** VARIABLES ******************************/
+
+:root {
+	/* Fonts */
+	--dm-serif-text: "DM Serif Text";
+	--dm-serif-display: "DM Serif Display";
+	--red-hat-text: "Red Hat Text";
+	--red-hat-display: "Red Hat Display";
+	
+	/* Font Sizes */
+	--rem-14px: "0.875rem";
+	--rem-16px: "1rem";
+	--rem-20px: "1.25rem";
+	--rem-24px: "1.5rem";
+	--rem-28px: "1.75rem";
+	--rem-30px: "1.875rem";
+	--rem-32px: "2rem";
+	--rem-36px: "2.25rem";
+	--rem-40px: "2.5rem";
+	--rem-42px: "2.625rem";
+	--rem-48px: "3rem";
+	--rem-56px: "3.5rem";
+	--rem-60px: "3.75rem";
+	--rem-64px: "4rem";
+	--rem-72px: "4.5rem";
+	--rem-80px: "5rem";
+	--rem-96px: "6rem";
+
+	/* Colors */
+	--color-white: #fff;
+	--color-black: #000;
+	--color-space-cadet: #202945;
+	--color-magnolia: #F7F0F5;
+	--color-dun: #DECBB7;
+	--color-dark-moss: #4F5D2F;
+	--color-chins-rose: #B56576;
+
+	/* Gaps */
+	--gap-0: 0rem;
+	--gap-8: 0.5rem;
+	--gap-24: 1.5rem;
+	--gap-40: 2.5rem;
+	--gap-56: 3.5rem;
+
+	/* Paddings */
+	--p-20: 1.25rem;
+	--p-24: 1.5rem;
+	--p-32: 2rem;
+	--p-40: 2.5rem;
+
+	/* Border Radiuses */
+	--br-3: 3px;
+	--br-50: 50px;
 }
 
+
+/***************************** TYPOGRAPHY ******************************/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Font Families */
 h1,
 h2,
 h3,
 h4,
+.subhead {
+	font-family: 'DM Serif Text', serif;
+}
+
 h5,
 h6,
+blockquote,
+caption,
+dt,
+dd,
+button {
+	font-family: 'Red Hat Text', sans-serif;
+}
+
+.display {
+	font-family: 'DM Serif Display', serif;
+}
+
+/* Font Sizes */
+h1 {
+	font-size: var(--rem-40px);
+	line-height: var(--rem-60px);
+}
+h2 {
+	font-size: var(--rem-32px);
+	line-height: var(--rem-36px);
+}
+h3,
+h1.mobile {
+	font-size: var(--rem-28px);
+	line-height: var(--rem-40px);
+}
+h4,
+h2.mobile {
+	font-size: var(--rem-24px);
+	line-height: var(--rem-36px);
+}
+h5,
+h3.mobile
+.sub1 {
+	font-size: var(--rem-20px);
+	line-height: var(--rem-30px);
+}
+h6,
+dl,
+dt,
+p.mobile,
+.sub2 {
+	font-size: var(--rem-16px);
+	line-height: var(--rem-24px);
+}
+.display1 {
+	font-size: var(--rem-80px);
+	line-height: var(--rem-96px);
+}
+.display2 {
+	font-size: var(--rem-72px);
+	line-height: var(--rem-96px);
+}
+.display3 {
+	font-size: var(--rem-64px);
+	line-height: var(--rem-72px);
+}
 p {
-	margin: 0;
-	padding: 0;
+	font-size: var(--rem-20px);
+	line-height: var(--rem-36px);
+}
+button,
+.lead-para {
+	font-size: var(--rem-24px);
+	line-height: var(--rem-30px);
 }
