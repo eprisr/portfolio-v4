@@ -2,8 +2,10 @@ const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const isDev = process.env.NODE_ENV !== 'production'
+
 module.exports = {
-  mode: 'development',
+  mode: isDev ? 'development' : 'production',
   entry: {
     main: path.resolve(__dirname, 'src', 'index.js'),
   },
@@ -49,16 +51,26 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        user: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader'],
         exclude: /\.module\.css$/,
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            },
+          },
+        ],
       },
     ],
   },
   resolve: {
-    extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.css'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
       filename: './index.html',

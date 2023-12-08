@@ -1,5 +1,17 @@
 body{
 	font-family: 'Red Hat Text', sans-serif;
+
+	.container {
+		flex: 1;
+		max-width: 78rem;
+		padding: 0rem 6rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		.container {
+			padding: 0rem 2rem;
+		}
+	}
 }
 
 /***************************** VARIABLES ******************************/
@@ -12,23 +24,43 @@ body{
 	--red-hat-display: "Red Hat Display";
 	
 	/* Font Sizes */
-	--rem-14px: "0.875rem";
-	--rem-16px: "1rem";
-	--rem-20px: "1.25rem";
-	--rem-24px: "1.5rem";
-	--rem-28px: "1.75rem";
-	--rem-30px: "1.875rem";
-	--rem-32px: "2rem";
-	--rem-36px: "2.25rem";
-	--rem-40px: "2.5rem";
-	--rem-42px: "2.625rem";
-	--rem-48px: "3rem";
-	--rem-56px: "3.5rem";
-	--rem-60px: "3.75rem";
-	--rem-64px: "4rem";
-	--rem-72px: "4.5rem";
-	--rem-80px: "5rem";
-	--rem-96px: "6rem";
+	--rem-14px: 0.875rem;
+	--rem-16px: 1rem;
+	--rem-20px: 1.25rem;
+	--rem-24px: 1.5rem;
+	--rem-28px: 1.75rem;
+	--rem-30px: 1.875rem;
+	--rem-32px: 2rem;
+	--rem-36px: 2.25rem;
+	--rem-40px: 2.5rem;
+	--rem-42px: 2.625rem;
+	--rem-48px: 3rem;
+	--rem-56px: 3.5rem;
+	--rem-60px: 3.75rem;
+	--rem-64px: 4rem;
+	--rem-72px: 4.5rem;
+	--rem-80px: 5rem;
+	--rem-96px: 6rem;
+
+	/* Font Styles */
+	--style-normal: normal;
+	--style-italic: italic;
+
+	/* Font Weights */
+	--fw-200: 200;
+	--fw-300: 300;
+	--fw-400: 400;
+	--fw-500: 500;
+	--fw-600: 600;
+	--fw-700: 700;
+	--fw-800: 800;
+	--fw-900: 900;
+
+	/* Text Transforms */
+	--tt-none: none;
+	--tt-capitalize: capitalize;
+	--tt-uppercase: uppercase;
+	--tt-lowercase: lowercase;
 
 	/* Colors */
 	--color-white: #fff;
@@ -47,6 +79,7 @@ body{
 	--gap-56: 3.5rem;
 
 	/* Paddings */
+	--p-base: 1rem;
 	--p-20: 1.25rem;
 	--p-24: 1.5rem;
 	--p-32: 2rem;
@@ -77,7 +110,8 @@ blockquote,
 caption,
 dt,
 dd,
-button {
+button,
+a {
 	font-family: 'Red Hat Text', sans-serif;
 }
 
