@@ -71,10 +71,6 @@ nav,
 }
 
 @media screen and (max-width: 1180px) {
-	.eprisRichardson {
-		display: none;
-	}
-
 	.logoName {
 		align-items: center;
 		justify-content: flex-start;
@@ -91,28 +87,14 @@ nav,
 @media screen and (max-width: 980px) {
 	nav {
 		display: flex;
-		/* padding-left: var(--p-32);
-		padding-right: var(--p-32); */
 		box-sizing: border-box;
 	}
 
 	.navItems {
 		display: none;
 	}
+
+	.eprisRichardson {
+		display: none;
+	}
 }
-
-/* @media screen and (max-width: 768px) {
-	nav {
-		padding-left: var(--p-32);
-		padding-right: var(--p-32);
-		box-sizing: border-box;
-	}
-} */
-
-/* @media screen and (max-width: 480px) {
-	nav {
-		padding-left: var(--p-32);
-		padding-right: var(--p-32);
-		box-sizing: border-box;
-	}
-} */

@@ -9,7 +9,7 @@ export default function NavBar() {
 
 	return (
 		<nav>
-      <div className={styles.container} id="container">
+			<div className={`${styles.container} container`} id="container">
         <a className={styles.logoName}>
           <img className={styles.logoIcon} alt="" src={Logo} />
           <span className={styles.eprisRichardson}>Epris Richardson</span>
