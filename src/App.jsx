@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import NavBar from './components/NavBar'
-import styles from './app.module.css'
+import './app.css'
 
 function App() {
   return (
