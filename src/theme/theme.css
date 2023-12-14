@@ -1,0 +1,55 @@
+:root {
+	--text-light: var(--color-space-cadet);
+	--accent1-light: var(--color-china-rose);
+	--accent2-light: var(--color-dun);
+	--accent3-light: var(--color-magnolia);
+	--bg1-light: var(--color-white);
+	--bg2-light: var(--color-dun);
+	
+	--text-dark: var(--color-white);
+	--accent1-dark: var(--color-dark-moss);
+	--accent2-dark: var(--color-dun);
+	--accent3-dark: var(--color-magnolia);
+	--bg1-dark: var(--color-space-cadet);
+	--bg2-dark: var(--color-dark-moss);
+}
+
+@media (prefers-color-scheme: dark){
+	:root {
+		--text: var(--text-dark);
+		--accent1: var(--accent1-dark);
+		--accent2: var(--accent2-dark);
+		--accent3: var(--accent3-dark);
+		--bg1: var(--bg1-dark);
+		--bg2: var(--bg2-dark);
+	}
+}
+
+@media (prefers-color-scheme: light){
+	:root {
+		--text: var(--text-light);
+		--accent1: var(--accent1-light);
+		--accent2: var(--accent2-light);
+		--accent3: var(--accent3-light);
+		--bg1: var(--bg1-light);
+		--bg2: var(--bg2-light);
+	}
+}
+
+[color-scheme="dark"]{
+		--text: var(--text-dark);
+		--accent1: var(--accent1-dark);
+		--accent2: var(--accent2-dark);
+		--accent3: var(--accent3-dark);
+		--bg1: var(--bg1-dark);
+		--bg2: var(--bg2-dark);
+}
+
+[color-scheme="light"]{
+		--text: var(--text-light);
+		--accent1: var(--accent1-light);
+		--accent2: var(--accent2-light);
+		--accent3: var(--accent3-light);
+		--bg1: var(--bg1-light);
+		--bg2: var(--bg2-light);
+}

@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, type FC } from 'react'
 import NavText from './base/Typography/NavText'
 import Switch from './base/Switch'
 import Logo from '../assets/logo-2x.png'
 import styles from './navbar.module.css'
 
-export default function NavBar() {
+
+export default function NavBar ({ currentTheme }: { currentTheme: string }) {
 	const navItems = ['About', 'Portfolio', 'Contact']
 
 	return (
@@ -25,7 +26,7 @@ export default function NavBar() {
 							))
 						}
           </ul>
-          <Switch />
+          <Switch currentTheme={currentTheme} />
         </div>
       </div>
     </nav>
