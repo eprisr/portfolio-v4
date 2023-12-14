@@ -1,0 +1,10 @@
+button {
+	width: fit-content;
+	height: 56px;
+	color: white;
+	background-color: var(--color-china-rose);
+	padding: 10px 40px;
+	font-weight: var(--fw-600);
+	cursor: pointer;
+}
+
