@@ -11,7 +11,9 @@ function App() {
   return (
     <div>
       <NavBar currentTheme={currentTheme} />
-      <Home />
+      <main>
+        <Home />
+      </main>
     </div>
   )
 }
