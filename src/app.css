@@ -1,95 +1,102 @@
-body{
-	font-family: 'Red Hat Text', sans-serif;
+body {
+  font-family: 'Red Hat Text', sans-serif;
 
-	/* Container */
-	.container {
-		flex: 1;
-		width: 100%;
-		max-width: 78rem;
-		padding: 0rem 6rem;
+  /* Container */
+  .container {
+    display: flex;
+    flex: 1;
+    width: calc(100dvw - (6rem * 2));
+    max-width: 78rem;
+    padding: 0rem 6rem;
 
-		@media screen and (max-width: 768px) {
-			padding: 0rem 2rem;
-		}
-	}
+    @media screen and (max-width: 768px) {
+      width: calc(100dvw - (2rem * 2));
+      padding: 0rem 2rem;
+    }
+  }
+
+  /* Columns */
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /***************************** VARIABLES ******************************/
 
 :root {
-	/* Fonts */
-	--dm-serif-text: "DM Serif Text";
-	--dm-serif-display: "DM Serif Display";
-	--red-hat-text: "Red Hat Text";
-	--red-hat-display: "Red Hat Display";
-	
-	/* Font Sizes */
-	--rem-14px: 0.875rem;
-	--rem-16px: 1rem;
-	--rem-20px: 1.25rem;
-	--rem-24px: 1.5rem;
-	--rem-28px: 1.75rem;
-	--rem-30px: 1.875rem;
-	--rem-32px: 2rem;
-	--rem-36px: 2.25rem;
-	--rem-40px: 2.5rem;
-	--rem-42px: 2.625rem;
-	--rem-48px: 3rem;
-	--rem-56px: 3.5rem;
-	--rem-60px: 3.75rem;
-	--rem-64px: 4rem;
-	--rem-72px: 4.5rem;
-	--rem-80px: 5rem;
-	--rem-96px: 6rem;
+  /* Fonts */
+  --dm-serif-text: 'DM Serif Text';
+  --dm-serif-display: 'DM Serif Display';
+  --red-hat-text: 'Red Hat Text';
+  --red-hat-display: 'Red Hat Display';
 
-	/* Font Styles */
-	--style-normal: normal;
-	--style-italic: italic;
+  /* Font Sizes */
+  --rem-14px: 0.875rem;
+  --rem-16px: 1rem;
+  --rem-20px: 1.25rem;
+  --rem-24px: 1.5rem;
+  --rem-28px: 1.75rem;
+  --rem-30px: 1.875rem;
+  --rem-32px: 2rem;
+  --rem-36px: 2.25rem;
+  --rem-40px: 2.5rem;
+  --rem-42px: 2.625rem;
+  --rem-48px: 3rem;
+  --rem-56px: 3.5rem;
+  --rem-60px: 3.75rem;
+  --rem-64px: 4rem;
+  --rem-72px: 4.5rem;
+  --rem-80px: 5rem;
+  --rem-96px: 6rem;
 
-	/* Font Weights */
-	--fw-200: 200;
-	--fw-300: 300;
-	--fw-400: 400;
-	--fw-500: 500;
-	--fw-600: 600;
-	--fw-700: 700;
-	--fw-800: 800;
-	--fw-900: 900;
+  /* Font Styles */
+  --style-normal: normal;
+  --style-italic: italic;
 
-	/* Text Transforms */
-	--tt-none: none;
-	--tt-capitalize: capitalize;
-	--tt-uppercase: uppercase;
-	--tt-lowercase: lowercase;
+  /* Font Weights */
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
 
-	/* Colors */
-	--color-white: #fff;
-	--color-black: #000;
-	--color-space-cadet: #202945;
-	--color-magnolia: #F7F0F5;
-	--color-dun: #DECBB7;
-	--color-dark-moss: #4F5D2F;
-	--color-china-rose: #B56576;
+  /* Text Transforms */
+  --tt-none: none;
+  --tt-capitalize: capitalize;
+  --tt-uppercase: uppercase;
+  --tt-lowercase: lowercase;
 
-	/* Gaps */
-	--gap-0: 0rem;
-	--gap-8: 0.5rem;
-	--gap-24: 1.5rem;
-	--gap-40: 2.5rem;
-	--gap-56: 3.5rem;
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-space-cadet: #202945;
+  --color-magnolia: #f7f0f5;
+  --color-dun: #decbb7;
+  --color-dark-moss: #4f5d2f;
+  --color-china-rose: #b56576;
 
-	/* Paddings */
-	--p-base: 1rem;
-	--p-20: 1.25rem;
-	--p-24: 1.5rem;
-	--p-32: 2rem;
-	--p-40: 2.5rem;
+  /* Gaps */
+  --gap-0: 0rem;
+  --gap-8: 0.5rem;
+  --gap-24: 1.5rem;
+  --gap-40: 2.5rem;
+  --gap-56: 3.5rem;
 
-	/* Border Radiuses */
-	--br-3: 3px;
-	--br-50: 50px;
+  /* Paddings */
+  --p-base: 1rem;
+  --p-20: 1.25rem;
+  --p-24: 1.5rem;
+  --p-32: 2rem;
+  --p-40: 2.5rem;
+
+  /* Border Radiuses */
+  --br-3: 3px;
+  --br-50: 50px;
 }
-
 
 /***************************** TYPOGRAPHY ******************************/
 
@@ -101,7 +108,7 @@ h2,
 h3,
 h4,
 .subhead {
-	font-family: 'DM Serif Text', serif;
+  font-family: 'DM Serif Text', serif;
 }
 
 h5,
@@ -112,37 +119,36 @@ dt,
 dd,
 button,
 a {
-	font-family: 'Red Hat Text', sans-serif;
+  font-family: 'Red Hat Text', sans-serif;
 }
 
 .display {
-	font-family: 'DM Serif Display', serif;
+  font-family: 'DM Serif Display', serif;
 }
 
 /* Font Sizes */
 h1 {
-	font-size: var(--rem-40px);
-	line-height: var(--rem-60px);
+  font-size: var(--rem-40px);
+  line-height: var(--rem-60px);
 }
 h2 {
-	font-size: var(--rem-32px);
-	line-height: var(--rem-36px);
+  font-size: var(--rem-32px);
+  line-height: var(--rem-36px);
 }
 h3,
 h1.mobile {
-	font-size: var(--rem-28px);
-	line-height: var(--rem-40px);
+  font-size: var(--rem-28px);
+  line-height: var(--rem-40px);
 }
 h4,
 h2.mobile {
-	font-size: var(--rem-24px);
-	line-height: var(--rem-36px);
+  font-size: var(--rem-24px);
+  line-height: var(--rem-36px);
 }
 h5,
-h3.mobile
-.sub1 {
-	font-size: var(--rem-20px);
-	line-height: var(--rem-30px);
+h3.mobile .sub1 {
+  font-size: var(--rem-20px);
+  line-height: var(--rem-30px);
 }
 h6,
 dl,
@@ -150,26 +156,26 @@ dt,
 button,
 p.mobile,
 .sub2 {
-	font-size: var(--rem-16px);
-	line-height: var(--rem-24px);
+  font-size: var(--rem-16px);
+  line-height: var(--rem-24px);
 }
 .display1 {
-	font-size: var(--rem-80px);
-	line-height: var(--rem-96px);
+  font-size: var(--rem-80px);
+  line-height: var(--rem-96px);
 }
 .display2 {
-	font-size: var(--rem-72px);
-	line-height: var(--rem-96px);
+  font-size: var(--rem-72px);
+  line-height: var(--rem-96px);
 }
 .display3 {
-	font-size: var(--rem-64px);
-	line-height: var(--rem-72px);
+  font-size: var(--rem-64px);
+  line-height: var(--rem-72px);
 }
 p {
-	font-size: var(--rem-20px);
-	line-height: var(--rem-36px);
+  font-size: var(--rem-20px);
+  line-height: var(--rem-36px);
 }
 .lead-para {
-	font-size: var(--rem-24px);
-	line-height: var(--rem-30px);
+  font-size: var(--rem-24px);
+  line-height: var(--rem-30px);
 }
