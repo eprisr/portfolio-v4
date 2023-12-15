@@ -147,6 +147,7 @@ h3.mobile
 h6,
 dl,
 dt,
+button,
 p.mobile,
 .sub2 {
 	font-size: var(--rem-16px);
@@ -168,7 +169,6 @@ p {
 	font-size: var(--rem-20px);
 	line-height: var(--rem-36px);
 }
-button,
 .lead-para {
 	font-size: var(--rem-24px);
 	line-height: var(--rem-30px);

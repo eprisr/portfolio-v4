@@ -1,10 +1,30 @@
-button {
+#button {
 	width: fit-content;
 	height: 56px;
-	color: white;
-	background-color: var(--color-china-rose);
 	padding: 10px 40px;
+	border-radius: 3px;
+
+	color: white;
+	
 	font-weight: var(--fw-600);
+	text-transform: uppercase;
+
 	cursor: pointer;
 }
 
+.china-rose {
+	background-color: var(--color-china-rose);
+}
+
+.solid {
+	border: none;
+}
+
+.outline {
+	background-color: none;
+	border: 2px solid;
+}
+
+.large {
+	font-size: var(--rem-24px);
+}

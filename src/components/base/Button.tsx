@@ -10,9 +10,16 @@ type ButtonProps = {
 	children: string | JSX.Element | React.ReactNode;
 }
 
-function Button({ name, colorScheme, variant, ...props }: ButtonProps) {
+function Button({ name, colorScheme, variant, children, ...props }: ButtonProps) {
+	console.log(name, colorScheme, variant)
 	return (
-		<button name={name} type='button' className={` ${styles.colorScheme} ${styles.variant}`}>Button</button>
+		<button
+			name={name}
+			type='button'
+			id={styles.button}
+			className={` ${styles[colorScheme]} ${styles[variant]} `}>
+			{children}
+		</button>
 	)
 }
 
