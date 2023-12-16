@@ -20,6 +20,13 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  /* Content Wrapper */
+  .main_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+  }
 }
 
 /***************************** VARIABLES ******************************/

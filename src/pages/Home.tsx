@@ -4,9 +4,9 @@ import Role from '../sections/Home/Role'
 
 export default function Home() {
   return (
-    <>
+    <div className="main_wrapper">
       <Hero />
       <Role />
-    </>
+    </div>
   )
 }
