@@ -182,9 +182,10 @@ p {
   font-size: var(--rem-20px);
   line-height: var(--rem-36px);
 }
-.lead-para {
+.lead_para {
   font-size: var(--rem-24px);
   line-height: var(--rem-30px);
+  font-weight: var(--fw-200);
 }
 .sub1,
 .sub2 {
