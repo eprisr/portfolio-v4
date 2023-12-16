@@ -3,6 +3,14 @@ body {
   background-color: var(--bg1);
   color: var(--text);
 
+  /* Main */
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+  }
+
   /* Section */
   section {
     display: flex;

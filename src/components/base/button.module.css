@@ -4,12 +4,14 @@
   padding: 10px 40px;
   border-radius: 3px;
 
-  color: white;
-
   font-weight: var(--fw-600);
   text-transform: uppercase;
 
   cursor: pointer;
+}
+
+#button.solid {
+  color: white;
 }
 
 .china-rose {
@@ -21,8 +23,12 @@
 }
 
 .outline {
-  background-color: none;
-  border: 2px solid;
+  background-color: unset;
+}
+
+.china-rose {
+  border: 2px solid var(--accent1);
+  color: var(--accent1);
 }
 
 .large {
