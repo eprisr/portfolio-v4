@@ -1,0 +1,33 @@
+.container {
+  flex-wrap: wrap;
+}
+
+.left_column {
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+    align-items: start;
+  }
+}
+
+.right_column {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.lucca {
+  width: 85%;
+  max-width: 375px;
+  height: auto;
+
+  @media screen and (min-width: 768) {
+    width: 100%;
+  }
+}
