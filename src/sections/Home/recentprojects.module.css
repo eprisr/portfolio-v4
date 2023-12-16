@@ -35,7 +35,7 @@
 .proj_desc {
   width: 80%;
   max-width: 290px;
-  background-color: var(--color-space-cadet);
+  background-color: var(--accent4);
   color: white;
   text-align: center;
   padding: 20px 40px;

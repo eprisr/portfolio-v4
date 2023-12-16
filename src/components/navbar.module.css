@@ -1,100 +1,105 @@
 nav {
-	width: 100%;
-	align-self: stretch;
-	
-	background-color: var(--color-white);
-	
-	padding-top: var(--p-40);
-	padding-bottom: 1rem;
-	
-	font-size: var(--rem-16px);
-	text-align: left;
-	text-transform: var(--tt-uppercase);
-	color: var(--color-black);
-	
-	position: -webkit-sticky;
-	position: sticky;
-	top: 0;
+  width: 100%;
+  align-self: stretch;
+
+  background-color: var(--bg1);
+
+  padding-top: var(--p-40);
+  padding-bottom: 1rem;
+
+  font-size: var(--rem-16px);
+  text-align: left;
+  text-transform: var(--tt-uppercase);
+  color: var(--text);
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 nav,
 .container {
-	justify-content: space-between;
+  justify-content: space-between;
 }
 
 nav,
 .container,
 .navItems {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
-.logoIcon {
-	width: 1.75rem;
-	height: auto;
-	object-fit: cover;
+#logo {
+  width: 1.75rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.logo_path {
+  fill: var(--text);
+  stroke-width: 0px;
 }
 
 .logoName {
-	text-decoration: none;
-	width: fit-content;
-	align-items: center;
-	justify-content: center;
-	gap: var(--gap-24);
-	cursor: auto;
-	color: inherit;
+  text-decoration: none;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-24);
+  cursor: auto;
+  color: inherit;
 }
 
 .logoName,
 .navList {
-	display: flex;
-	flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .navList {
-	margin: 0;
-	justify-content: space-between;
-	align-self: stretch;
-	align-items: center;
-	list-style-type: none;
+  margin: 0;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: center;
+  list-style-type: none;
 }
 
 .themeToggle {
-	position: relative;
+  position: relative;
 }
 
 .navItems {
-	align-items: center;
-	align-self: stretch;
-	justify-content: flex-end;
-	gap: var(--gap-56);
+  align-items: center;
+  align-self: stretch;
+  justify-content: flex-end;
+  gap: var(--gap-56);
 }
 
 @media screen and (max-width: 1180px) {
-	.logoName {
-		align-items: center;
-		justify-content: flex-start;
-	}
+  .logoName {
+    align-items: center;
+    justify-content: flex-start;
+  }
 
-	nav,
-	.container {
-		align-items: center;
-		justify-content: space-between;
-		gap: var(--gap-0);
-	}
+  nav,
+  .container {
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-0);
+  }
 }
 
 @media screen and (max-width: 980px) {
-	nav {
-		display: flex;
-		box-sizing: border-box;
-	}
+  nav {
+    display: flex;
+    box-sizing: border-box;
+  }
 
-	.navItems {
-		display: none;
-	}
+  .navItems {
+    display: none;
+  }
 
-	.eprisRichardson {
-		display: none;
-	}
+  .eprisRichardson {
+    display: none;
+  }
 }

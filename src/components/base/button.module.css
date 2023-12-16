@@ -1,30 +1,30 @@
 #button {
-	width: fit-content;
-	height: 56px;
-	padding: 10px 40px;
-	border-radius: 3px;
+  width: fit-content;
+  height: 56px;
+  padding: 10px 40px;
+  border-radius: 3px;
 
-	color: white;
-	
-	font-weight: var(--fw-600);
-	text-transform: uppercase;
+  color: white;
 
-	cursor: pointer;
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+
+  cursor: pointer;
 }
 
 .china-rose {
-	background-color: var(--color-china-rose);
+  background-color: var(--accent1);
 }
 
 .solid {
-	border: none;
+  border: none;
 }
 
 .outline {
-	background-color: none;
-	border: 2px solid;
+  background-color: none;
+  border: 2px solid;
 }
 
 .large {
-	font-size: var(--rem-24px);
+  font-size: var(--rem-24px);
 }

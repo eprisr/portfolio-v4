@@ -1,5 +1,7 @@
 body {
   font-family: 'Red Hat Text', sans-serif;
+  background-color: var(--bg1);
+  color: var(--text);
 
   /* Container */
   .container {
@@ -201,5 +203,5 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--color-space-cadet);
+  color: var(--text-secondary);
 }
