@@ -70,3 +70,10 @@
     color: var(--accent1);
   }
 }
+
+.pronunciation {
+  font-size: var(--rem-16px);
+  font-style: italic;
+  margin: 0px;
+  padding: 0px;
+}
