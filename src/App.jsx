@@ -6,6 +6,7 @@ import CollabCTA from './components/CollabCTA'
 import { getCurrentTheme } from './theme/utils'
 import './app.css'
 import './theme/theme.css'
+import Footer from './components/Footer'
 
 function App() {
   const currentTheme = getCurrentTheme()
@@ -14,8 +15,9 @@ function App() {
       <NavBar currentTheme={currentTheme} />
       <main>
         <Home />
-				<CollabCTA />
+        <CollabCTA />
       </main>
+      <Footer />
     </div>
   )
 }

@@ -1,0 +1,26 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: stretch;
+  align-items: center;
+  margin-top: 64px;
+}
+
+footer p {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+
+  svg {
+    height: 2em;
+    width: auto;
+    padding: var(--rem-16px);
+  }
+}
