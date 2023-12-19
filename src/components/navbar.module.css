@@ -5,8 +5,9 @@ nav {
 
   background-color: var(--bg1);
 
-  padding-top: var(--p-40);
+  padding-top: var(--p-32);
   padding-bottom: 1rem;
+  margin-bottom: var(--rem-40px);
 
   font-size: var(--rem-16px);
   text-align: left;
