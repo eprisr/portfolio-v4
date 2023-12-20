@@ -7,6 +7,7 @@ import { getCurrentTheme } from './theme/utils'
 import './app.css'
 import './theme/theme.css'
 import Footer from './components/Footer'
+import About from './pages/About'
 
 function App() {
   const currentTheme = getCurrentTheme()
@@ -14,7 +15,8 @@ function App() {
     <div>
       <NavBar currentTheme={currentTheme} />
       <main>
-        <Home />
+        {/* <Home /> */}
+        <About />
         <CollabCTA />
       </main>
       <Footer />
