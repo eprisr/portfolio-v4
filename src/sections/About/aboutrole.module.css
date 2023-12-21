@@ -1,0 +1,43 @@
+.container {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -1;
+}
+
+.contributions {
+  max-width: 740px;
+  background-color: var(--accent3);
+  padding: 40px;
+
+  @media (max-width: 576px) {
+    background-color: unset;
+    padding: 0px;
+  }
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px;
+}
+
+.stat_num {
+  font-family: var(--dm-serif-text);
+  font-size: var(--rem-64px);
+  line-height: var(--rem-32px);
+  padding: 0;
+  margin: 0;
+}
+
+.chevron_bg {
+  position: absolute;
+  z-index: -2;
+  height: 90%;
+  width: 100%;
+  background-image: url(../../assets/images/about_role_bg.svg);
+
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
