@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './origin.module.css'
-import Desk from '../../assets/images/sarah-dorweiler-QeVmJxZOv3k-unsplash 1.png'
+import Desk from '../../assets/images/sarah-dorweiler-QeVmJxZOv3k-unsplash.png'
 
 type Props = {}
 
