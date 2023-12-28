@@ -8,6 +8,7 @@ import './app.css'
 import './theme/theme.css'
 import Footer from './components/Footer'
 import About from './pages/About'
+import Work from './pages/Work'
 
 function App() {
   const currentTheme = getCurrentTheme()
@@ -16,7 +17,8 @@ function App() {
       <NavBar currentTheme={currentTheme} />
       <main>
         {/* <Home /> */}
-        <About />
+        {/* <About /> */}
+        <Work />
         <CollabCTA />
       </main>
       <Footer />
