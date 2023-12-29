@@ -1,0 +1,42 @@
+.companies {
+  justify-content: center;
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.palace {
+  height: var(--rem-48px);
+  width: auto;
+}
+
+.continental {
+  height: var(--rem-28px);
+  width: auto;
+}
+
+.bradley {
+  height: var(--rem-36px);
+  width: auto;
+}
+
+.brooks {
+  height: var(--rem-48px);
+  width: auto;
+}
+
+.weco {
+  height: var(--rem-28px);
+  width: auto;
+}
