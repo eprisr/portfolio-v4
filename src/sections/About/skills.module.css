@@ -13,14 +13,6 @@
   li {
     margin: 5px 0;
   }
-
-  @media (min-width: 576px) {
-    grid-template-columns: repeat(3, 33.33%);
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(4, 25%);
-  }
 }
 
 .tools {
@@ -54,5 +46,15 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 48px 10px;
+  }
+
+  .skills_list {
+    grid-template-columns: repeat(3, 33.33%);
+  }
+}
+
+@media (min-width: 768px) {
+  .skills_list {
+    grid-template-columns: repeat(4, 25%);
   }
 }
