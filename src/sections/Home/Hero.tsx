@@ -16,7 +16,7 @@ function Hero({}: Props) {
           </h1>
           <p className={styles.pronunciation}>(pronounced aye-pree)</p>
           <p>
-            I’m a technical and visual problem solver who fuses innovation and
+            I'm a technical and visual problem solver who fuses innovation and
             creativity to craft immersive digital experiences.
           </p>
           <Button name="about" colorScheme="china-rose" variant="solid">
