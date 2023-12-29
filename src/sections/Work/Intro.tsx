@@ -13,12 +13,12 @@ export default function Intro({}: Props) {
         </div>
         <div className={`${styles.right_column} column`}>
           <p>
-            Since 2012, I’ve worked in a professional setting with several
+            Since 2012, I've worked in a professional setting with several
             companies across various industries to design and execute:
             accessible, responsive & user-driven websites, decision-making
             marketing pieces, and even a couple of motion graphic videos. No
             matter the industry or product, my aim is to always analyze the
-            business goals, focus on the consumers’ needs, and deliver quality
+            business goals, focus on the consumers' needs, and deliver quality
             product and work performance.
           </p>
         </div>

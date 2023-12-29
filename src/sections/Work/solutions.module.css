@@ -1,0 +1,29 @@
+.container {
+  flex-direction: column;
+  gap: 40px;
+}
+
+.heading {
+  max-width: 520px;
+}
+
+ul.process {
+  display: grid;
+  grid-gap: 24px;
+  list-style: none;
+  padding-inline-start: 0px;
+}
+
+li > p:first-child {
+  margin-top: 0px;
+}
+
+li > p:last-child {
+  margin-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  ul.process {
+    grid-template-columns: repeat(2, auto);
+  }
+}
