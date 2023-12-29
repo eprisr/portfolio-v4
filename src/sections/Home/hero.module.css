@@ -6,11 +6,6 @@
   width: 100%;
 
   order: 1;
-
-  @media screen and (min-width: 768px) {
-    order: 0;
-    width: 50%;
-  }
 }
 
 .right_column {
@@ -18,11 +13,6 @@
 
   order: 0;
   align-items: center;
-
-  @media screen and (min-width: 768px) {
-    width: 50%;
-    order: 1;
-  }
 }
 
 .sosweet_bg {
@@ -49,10 +39,6 @@
   width: 60%;
   max-width: 375px;
   height: auto;
-
-  @media screen and (min-width: 768) {
-    width: 100%;
-  }
 }
 
 .intro {
@@ -76,4 +62,20 @@
   font-style: italic;
   margin: 0px;
   padding: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .left_column {
+    order: 0;
+    width: 50%;
+  }
+
+  .right_column {
+    width: 50%;
+    order: 1;
+  }
+
+	.sosweet {
+		width: 100%;
+	}
 }

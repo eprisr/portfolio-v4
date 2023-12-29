@@ -10,8 +10,10 @@
 
 .right_column {
   display: none;
+}
 
-  @media (min-width: 992px) {
+@media (min-width: 992px) {
+  .right_column {
     margin-left: -35px;
     z-index: -1;
     display: block;

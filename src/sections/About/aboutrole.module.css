@@ -9,11 +9,6 @@
   max-width: 740px;
   background-color: var(--accent3);
   padding: 40px;
-
-  @media (max-width: 576px) {
-    background-color: unset;
-    padding: 0px;
-  }
 }
 
 .stats {
@@ -36,8 +31,15 @@
   height: 90%;
   width: 100%;
   background-image: url(../../assets/images/about_role_bg.svg);
+}
 
-  @media (max-width: 576px) {
+@media (max-width: 576px) {
+  .contributions {
+    background-color: unset;
+    padding: 0px;
+  }
+
+  .chevron_bg {
     display: none;
   }
 }

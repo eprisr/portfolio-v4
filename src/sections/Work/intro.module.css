@@ -13,8 +13,10 @@
   p {
     margin-top: 42px;
   }
+}
 
-  @media (min-width: 540px) {
+@media (min-width: 540px) {
+  .right_column {
     min-width: 500px;
   }
 }

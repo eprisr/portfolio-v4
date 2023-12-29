@@ -20,10 +20,6 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
-
-  @media screen and (min-width: 768px) {
-    width: 25%;
-  }
 }
 
 .project img {
@@ -47,5 +43,11 @@
   .language {
     font-size: var(--rem-16px);
     font-style: italic;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .project {
+    width: 25%;
   }
 }

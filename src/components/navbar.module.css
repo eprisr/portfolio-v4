@@ -22,10 +22,6 @@ nav {
 .container {
   justify-content: space-between;
   padding: 0rem 6rem;
-
-  @media screen and (max-width: 1280px) {
-    padding: 0rem 2rem;
-  }
 }
 
 nav,
@@ -78,6 +74,12 @@ nav,
   align-self: stretch;
   justify-content: flex-end;
   gap: var(--gap-56);
+}
+
+@media screen and (max-width: 1280px) {
+  .container {
+    padding: 0rem 2rem;
+  }
 }
 
 @media screen and (max-width: 1180px) {

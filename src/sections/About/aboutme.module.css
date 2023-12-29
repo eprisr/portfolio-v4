@@ -1,36 +1,35 @@
 .container {
   flex-wrap: wrap;
   gap: 40px;
-
-  @media screen and (min-width: 768px) {
-    gap: unset;
-  }
 }
 
 .left_column {
   width: 100%;
   justify-content: center;
   align-items: center;
-
-  @media screen and (min-width: 768px) {
-    width: 50%;
-  }
 }
 
 .right_column {
   width: 100%;
-
-  @media screen and (min-width: 768px) {
-    width: 50%;
-  }
 }
 
 .portrait {
   width: 85%;
   max-width: 375px;
   height: auto;
+}
 
-  @media screen and (min-width: 768) {
-    width: 100%;
-  }
+@media screen and (min-width: 768px) {
+	.container {
+		gap: unset;
+	}
+
+	.left_column,
+	.right_column {
+		width: 50%;
+	}
+
+	.portrait {
+		width: 100%;
+	}
 }
