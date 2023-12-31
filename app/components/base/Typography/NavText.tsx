@@ -1,25 +1,24 @@
 import React from 'react'
 import styles from './navtext.module.css'
+import Link from 'next/link'
 
 type NavTextProps = {
-  navListItems?: string;
+  item?: string
 
-	/** Action props */
-  onNavTextContainerClick?: () => void;
-};
+  /** Action props */
+  onNavTextContainerClick?: () => void
+}
 
 export default function NavText({
-	navListItems,
-	onNavTextContainerClick,
+  item,
+  onNavTextContainerClick,
 }: NavTextProps) {
+  const path = `/${item?.toLocaleLowerCase()}`
   return (
-    <li
-      className={styles.navItem}
-      onClick={onNavTextContainerClick}
-    >
-      <a className={styles.navText}>
-        {navListItems}
-      </a>
+    <li className={styles.navItem} onClick={onNavTextContainerClick}>
+      <Link className={styles.navText} href={path}>
+        {item}
+      </Link>
     </li>
-  );
+  )
 }

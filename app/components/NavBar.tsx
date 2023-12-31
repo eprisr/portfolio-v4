@@ -29,7 +29,7 @@ export default function NavBar() {
         <div className={styles.navItems}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
-              <NavText key={item} navListItems={item} />
+              <NavText key={item} item={item} />
             ))}
           </ul>
           <Switch currentTheme={currentTheme} />
