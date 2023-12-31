@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import NavText from './base/Typography/NavText'
 import Switch from './base/Switch'
