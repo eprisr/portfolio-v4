@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from 'react'
-import Home from './pages/Home'
+import React from 'react'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
-
+import Footer from './components/Footer'
 import { getCurrentTheme } from './theme/utils'
 import './app.css'
 import './theme/theme.css'
-import Footer from './components/Footer'
-import About from './pages/About'
-import Work from './pages/Work'
 
-function App() {
+export default function MainLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   const currentTheme = getCurrentTheme()
   return (
     <div>
       <NavBar currentTheme={currentTheme} />
       <main>
-        {/* <Home /> */}
-        {/* <About /> */}
-        <Work />
+        {children}
         <CollabCTA />
       </main>
       <Footer />
     </div>
   )
 }
-
-export default App
