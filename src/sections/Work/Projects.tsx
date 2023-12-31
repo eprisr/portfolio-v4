@@ -7,7 +7,7 @@ type Props = {}
 
 export default function Projects({}: Props) {
   const filters = ['All', 'Web Dev', 'Print', 'Branding', 'Motion']
-  const [activefilter, setActivefilter] = useState<string>('All')
+  const [activeFilter, setActiveFilter] = useState<string>('All')
 
   return (
     <section className={styles.projects}>
@@ -16,37 +16,40 @@ export default function Projects({}: Props) {
           {filters.map((filter, i) => (
             <span
               key={i}
-              className={`${activefilter === filter ? styles.active : ''}`}>
+              className={`${activeFilter === filter ? styles.active : ''}`}
+              onClick={() => setActiveFilter(filter)}>
               {filter}
             </span>
           ))}
         </div>
         <div className={styles.proj_container}>
-          {projectDescs.map((project, i) => (
-            <div
-              key={project.id}
-              className={`${i % 2 === 1 ? styles.reverse : ''} ${
-                styles.project
-              } ${styles.type}`}>
-              <div className={styles.info}>
-                <p className={`${styles.title} lead_para`}>{project.title}</p>
-                <p className={styles.desc}>{project.brief}</p>
-                <div className={styles.tech_stack}>
-                  {project.skills.map((skill) => (
-                    <div key={skill} className={styles.skill}>
-                      <span>{skill}</span>
-                    </div>
-                  ))}
+          {projectDescs
+            .filter((project) => project.type.includes(activeFilter))
+            .map((project, i) => (
+              <div
+                key={project.id}
+                className={`${i % 2 === 1 ? styles.reverse : ''} ${
+                  styles.project
+                }`}>
+                <div className={styles.info}>
+                  <p className={`${styles.title} lead_para`}>{project.title}</p>
+                  <p className={styles.desc}>{project.brief}</p>
+                  <div className={styles.tech_stack}>
+                    {project.skills.map((skill) => (
+                      <div key={skill} className={styles.skill}>
+                        <span>{skill}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className={styles.proj_image}>
+                  <img
+                    src={require(`../../assets/images/projects/${project.src}`)}
+                    alt={project.title}
+                  />
                 </div>
               </div>
-              <div className={styles.proj_image}>
-                <img
-                  src={require(`../../assets/images/projects/${project.src}`)}
-                  alt={project.title}
-                />
-              </div>
-            </div>
-          ))}
+            ))}
         </div>
         <Button name="projects" colorScheme="china-rose" variant="solid">
           Load more

@@ -1,7 +1,7 @@
 [
   {
     "id": "maps",
-    "type": "webdev",
+    "type": ["All", "Web Dev"],
     "src": "neighborhood-maps.png",
     "title": "Neighborhood Maps",
     "clickable": true,
@@ -13,7 +13,7 @@
   },
   {
     "id": "reads",
-    "type": "webdev",
+    "type": ["All", "Web Dev"],
     "src": "my-reads.png",
     "title": "My Reads",
     "clickable": true,
@@ -25,7 +25,7 @@
   },
   {
     "id": "mem",
-    "type": "webdev",
+    "type": ["All", "Web Dev"],
     "src": "memory-game.png",
     "title": "Memory Game",
     "clickable": true,
@@ -37,7 +37,7 @@
   },
   {
     "id": "gm305",
-    "type": "motion",
+    "type": ["All", "Motion"],
     "title": "GM Powertrain",
     "clickable": true,
     "date": "Sep 2013",
@@ -49,7 +49,7 @@
   },
   {
     "id": "bala305",
-    "type": "print",
+    "type": ["All", "Print"],
     "src": "Balaboosta-305x320.png",
     "title": "Balaboosta",
     "clickable": true,
@@ -61,7 +61,7 @@
   },
   {
     "id": "ed305",
-    "type": ["print", "branding"],
+    "type": ["All", "Print", "Branding"],
     "title": "Educational Dining",
     "clickable": true,
     "date": "Sep 2013",
@@ -73,7 +73,7 @@
   },
   {
     "id": "cont305",
-    "type": "motion",
+    "type": ["All", "Motion"],
     "title": "Client Movie",
     "clickable": true,
     "date": "Feb 2014",
@@ -85,7 +85,7 @@
   },
   {
     "id": "luc305",
-    "type": "motion",
+    "type": ["All", "Motion"],
     "title": "Lucca | Italian Street Food",
     "clickable": true,
     "date": "Jan 2014",
@@ -97,7 +97,7 @@
   },
   {
     "id": "rof305",
-    "type": "print",
+    "type": ["All", "Print"],
     "src": "Rise-of-Fall-305x320.png",
     "title": "The Rise of Fall Pasta",
     "clickable": true,
@@ -109,7 +109,7 @@
   },
   {
     "id": "ap305",
-    "type": ["print", "branding"],
+    "type": ["All", "Print", "Branding"],
     "title": "Portfolio Magazine",
     "clickable": true,
     "date": "May 2013",
@@ -121,7 +121,7 @@
   },
   {
     "id": "sweet",
-    "type": ["webdev", "print", "branding"],
+    "type": ["All", "Web Dev", "Print", "Branding"],
     "src": "SoSweet_Thumb.jpg",
     "title": "So Sweet: Case Study",
     "clickable": false,

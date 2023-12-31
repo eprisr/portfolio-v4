@@ -8,6 +8,10 @@
   display: grid;
   grid-template-columns: repeat(5, max-content);
   column-gap: 80px;
+
+  span {
+    cursor: pointer;
+  }
 }
 
 .proj_container {
