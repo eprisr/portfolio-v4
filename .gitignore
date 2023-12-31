@@ -2,4 +2,6 @@
 coverage/
 dist/*
 node_modules/
+.next/
+.swc/
 *.log
