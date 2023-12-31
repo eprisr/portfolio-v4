@@ -295,65 +295,6 @@ h6 {
   --bg2: var(--bg2-light);
 }
 
-/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/base/button.module.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************/
-#button_button__eghb9 {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: 56px;
-  padding: 10px 40px;
-  border-radius: 3px;
-
-  font-weight: var(--fw-600);
-  text-transform: uppercase;
-
-  cursor: pointer;
-}
-
-#button_button__eghb9.button_solid__VYHJD {
-  color: white;
-}
-
-.button_china-rose__PEz20 {
-  background-color: var(--accent1);
-}
-
-.button_solid__VYHJD {
-  border: none;
-}
-
-.button_outline__yHkI6 {
-  background-color: unset;
-}
-
-.button_china-rose__PEz20 {
-  border: 2px solid var(--accent1);
-  color: var(--accent1);
-}
-
-.button_large__8iT_G {
-  font-size: var(--rem-24px);
-}
-
-/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/collabcta.module.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************/
-.collabcta_container__nX10q {
-  flex-direction: column;
-  align-items: center;
-}
-
-h3.collabcta_display3___0zCu {
-  text-align: center;
-}
-
-.collabcta_ctas__faCLS {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/base/Typography/navtext.module.css ***!
   \*********************************************************************************************************************************************************************************************************************************************************************************************/
@@ -492,6 +433,65 @@ h3.collabcta_display3___0zCu {
   .navbar_eprisRichardson__I_yRa {
     display: none;
   }
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/base/button.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+#button_button__eghb9 {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 56px;
+  padding: 10px 40px;
+  border-radius: 3px;
+
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+#button_button__eghb9.button_solid__VYHJD {
+  color: white;
+}
+
+.button_china-rose__PEz20 {
+  background-color: var(--accent1);
+}
+
+.button_solid__VYHJD {
+  border: none;
+}
+
+.button_outline__yHkI6 {
+  background-color: unset;
+}
+
+.button_china-rose__PEz20 {
+  border: 2px solid var(--accent1);
+  color: var(--accent1);
+}
+
+.button_large__8iT_G {
+  font-size: var(--rem-24px);
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/collabcta.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.collabcta_container__nX10q {
+  flex-direction: column;
+  align-items: center;
+}
+
+h3.collabcta_display3___0zCu {
+  text-align: center;
+}
+
+.collabcta_ctas__faCLS {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 /*!****************************************************************************************************************************************************************************************************************************************************************************!*\
