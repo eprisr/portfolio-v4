@@ -11,7 +11,7 @@ function Hero({}: Props) {
       <div className={` ${styles.container} container `}>
         <div className={` ${styles.left_column} column `}>
           <h1 className={styles.intro}>
-            <span>Hello,</span> <br />
+            <span className={styles.greeting}>Hello,</span> <br />
             my name is &Eacute;pris
           </h1>
           <p className={styles.pronunciation}>(pronounced aye-pree)</p>

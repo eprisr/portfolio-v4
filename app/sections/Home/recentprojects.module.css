@@ -36,7 +36,8 @@
   text-align: center;
   padding: 20px 40px;
 
-  p {
+  .lead_para,
+  .language {
     margin: 0;
   }
 

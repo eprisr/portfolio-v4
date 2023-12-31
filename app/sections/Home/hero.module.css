@@ -48,7 +48,7 @@
   line-height: var(--rem-64px);
   text-transform: uppercase;
 
-  span {
+  span.greeting {
     font-family: var(--dm-serif-display);
     font-size: var(--rem-80px);
     font-style: italic;
@@ -75,7 +75,7 @@
     order: 1;
   }
 
-	.sosweet {
-		width: 100%;
-	}
+  .sosweet {
+    width: 100%;
+  }
 }
