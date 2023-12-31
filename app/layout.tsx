@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from 'next'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
 import Footer from './components/Footer'
-import { getCurrentTheme } from './theme/utils'
 import './app.css'
 import './theme/theme.css'
 
@@ -41,11 +40,10 @@ export default function MainLayout({
 }: {
   children: React.ReactNode
 }) {
-  const currentTheme = getCurrentTheme()
   return (
     <html lang="en">
       <body>
-        <NavBar currentTheme={currentTheme} />
+        <NavBar />
         <main>
           {children}
           <CollabCTA />

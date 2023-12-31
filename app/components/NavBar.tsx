@@ -4,8 +4,10 @@ import React from 'react'
 import NavText from './base/Typography/NavText'
 import Switch from './base/Switch'
 import styles from './navbar.module.css'
+import { getCurrentTheme } from '../theme/utils'
 
-export default function NavBar({ currentTheme }: { currentTheme: string }) {
+export default function NavBar() {
+  const currentTheme = getCurrentTheme()
   const navItems = ['About', 'Portfolio', 'Contact']
 
   return (
