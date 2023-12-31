@@ -1,4 +1,4 @@
-nav {
+.nav {
   width: 100%;
   align-self: stretch;
   justify-content: center;
@@ -24,7 +24,7 @@ nav {
   padding: 0rem 6rem;
 }
 
-nav,
+.nav,
 .navItems {
   display: flex;
   flex-direction: row;
@@ -88,7 +88,7 @@ nav,
     justify-content: flex-start;
   }
 
-  nav,
+  .nav,
   .container {
     align-items: center;
     justify-content: space-between;
@@ -97,7 +97,7 @@ nav,
 }
 
 @media screen and (max-width: 980px) {
-  nav {
+  .nav {
     display: flex;
     box-sizing: border-box;
   }

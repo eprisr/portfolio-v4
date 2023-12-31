@@ -6,11 +6,11 @@ type Props = {}
 
 export default function Footer({}: Props) {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.icons}>
-          <FaGithub />
-          <FaLinkedin />
+          <FaGithub className={styles.icon} />
+          <FaLinkedin className={styles.icon} />
         </div>
         <p>All rights reserved.</p>
         <p>

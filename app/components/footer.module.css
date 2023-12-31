@@ -1,4 +1,4 @@
-footer {
+.footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -7,7 +7,7 @@ footer {
   margin-top: 64px;
 }
 
-footer p {
+.footer p {
   text-align: center;
   padding: 0px;
   margin: 0px;
@@ -18,7 +18,7 @@ footer p {
   display: flex;
   justify-content: center;
 
-  svg {
+  svg.icon {
     height: 2em;
     width: auto;
     padding: var(--rem-16px);

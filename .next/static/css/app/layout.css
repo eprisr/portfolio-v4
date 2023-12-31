@@ -1,0 +1,526 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./app/app.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  background-color: var(--bg1);
+  color: var(--text);
+
+  /* Main */
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+  }
+
+  /* Section */
+  section {
+    display: flex;
+    justify-content: center;
+    padding: 0rem 2rem;
+  }
+
+  /* Container */
+  .container {
+    display: flex;
+    flex: 1 1;
+    width: 100dvw;
+    max-width: 78rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    .section {
+      padding: 0rem 6rem;
+    }
+  }
+
+  /* Columns */
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Content Wrapper */
+  .main_wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+  }
+}
+
+/***************************** VARIABLES ******************************/
+
+:root {
+  /* Fonts */
+  --dm-serif-text: 'DM Serif Text';
+  --dm-serif-display: 'DM Serif Display';
+  --red-hat-text: 'Red Hat Text';
+  --red-hat-display: 'Red Hat Display';
+
+  /* Font Sizes */
+  --rem-14px: 0.875rem;
+  --rem-16px: 1rem;
+  --rem-20px: 1.25rem;
+  --rem-24px: 1.5rem;
+  --rem-28px: 1.75rem;
+  --rem-30px: 1.875rem;
+  --rem-32px: 2rem;
+  --rem-36px: 2.25rem;
+  --rem-40px: 2.5rem;
+  --rem-42px: 2.625rem;
+  --rem-48px: 3rem;
+  --rem-56px: 3.5rem;
+  --rem-60px: 3.75rem;
+  --rem-64px: 4rem;
+  --rem-72px: 4.5rem;
+  --rem-80px: 5rem;
+  --rem-96px: 6rem;
+
+  /* Font Styles */
+  --style-normal: normal;
+  --style-italic: italic;
+
+  /* Font Weights */
+  --fw-200: 200;
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  --fw-900: 900;
+
+  /* Text Transforms */
+  --tt-none: none;
+  --tt-capitalize: capitalize;
+  --tt-uppercase: uppercase;
+  --tt-lowercase: lowercase;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+  --color-space-cadet: #202945;
+  --color-magnolia: #f7f0f5;
+  --color-dun: #decbb7;
+  --color-dark-moss: #4f5d2f;
+  --color-china-rose: #b56576;
+
+  /* Gaps */
+  --gap-0: 0rem;
+  --gap-8: 0.5rem;
+  --gap-24: 1.5rem;
+  --gap-40: 2.5rem;
+  --gap-56: 3.5rem;
+
+  /* Paddings */
+  --p-base: 1rem;
+  --p-20: 1.25rem;
+  --p-24: 1.5rem;
+  --p-32: 2rem;
+  --p-40: 2.5rem;
+
+  /* Border Radiuses */
+  --br-3: 3px;
+  --br-50: 50px;
+}
+
+/***************************** TYPOGRAPHY ******************************/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Serif+Text:ital@0;1&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Text:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* Font Families */
+h1,
+h2,
+h3,
+h4,
+.subhead {
+  font-family: 'DM Serif Text', serif;
+}
+
+h5,
+h6,
+blockquote,
+caption,
+dt,
+dd,
+button,
+a {
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.display {
+  font-family: 'DM Serif Display', serif;
+}
+
+/* Font Sizes */
+h1 {
+  font-size: var(--rem-40px);
+  line-height: var(--rem-60px);
+}
+h2 {
+  font-size: var(--rem-32px);
+  line-height: var(--rem-36px);
+}
+h3,
+h1.mobile {
+  font-size: var(--rem-28px);
+  line-height: var(--rem-40px);
+}
+h4,
+h2.mobile {
+  font-size: var(--rem-24px);
+  line-height: var(--rem-36px);
+}
+h5,
+h3.mobile .sub1 {
+  font-size: var(--rem-20px);
+  line-height: var(--rem-30px);
+}
+h6,
+dl,
+dt,
+button,
+p.mobile,
+.sub2 {
+  font-size: var(--rem-16px);
+  line-height: var(--rem-24px);
+}
+.display1 {
+  font-size: var(--rem-80px);
+  line-height: var(--rem-96px);
+}
+.display2 {
+  font-size: var(--rem-72px);
+  line-height: var(--rem-96px);
+}
+.display3 {
+  font-size: var(--rem-64px);
+  line-height: var(--rem-72px);
+}
+p {
+  font-size: var(--rem-20px);
+  line-height: var(--rem-36px);
+}
+.lead_para {
+  font-size: var(--rem-24px);
+  line-height: var(--rem-30px);
+  font-weight: var(--fw-200);
+}
+.sub1,
+.sub2 {
+  text-transform: uppercase;
+  font-weight: var(--fw-600);
+}
+
+/* Font Colors */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-secondary);
+}
+
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./app/theme/theme.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --text-light: var(--color-black);
+  --text-secondary-light: var(--color-space-cadet);
+  --accent1-light: var(--color-china-rose);
+  --accent2-light: var(--color-dun);
+  --accent3-light: var(--color-magnolia);
+  --accent4-light: var(--color-space-cadet);
+  --bg1-light: var(--color-white);
+  --bg2-light: var(--color-dun);
+
+  --text-dark: var(--color-white);
+  --text-secondary-dark: var(--color-magnolia);
+  --accent1-dark: var(--color-china-rose);
+  --accent2-dark: var(--color-dun);
+  --accent3-dark: var(--color-dark-moss);
+  --accent4-dark: var(--color-magnolia);
+  --bg1-dark: var(--color-space-cadet);
+  --bg2-dark: var(--color-dark-moss);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: var(--text-dark);
+    --text-secondary: var(--text-secondary-dark);
+    --accent1: var(--accent1-dark);
+    --accent2: var(--accent2-dark);
+    --accent3: var(--accent3-dark);
+    --accent4: var(--accent4-dark);
+    --bg1: var(--bg1-dark);
+    --bg2: var(--bg2-dark);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text: var(--text-light);
+    --text-secondary: var(--text-secondary-light);
+    --accent1: var(--accent1-light);
+    --accent2: var(--accent2-light);
+    --accent3: var(--accent3-light);
+    --accent4: var(--accent4-light);
+    --bg1: var(--bg1-light);
+    --bg2: var(--bg2-light);
+  }
+}
+
+[color-scheme='dark'] {
+  --text: var(--text-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --accent1: var(--accent1-dark);
+  --accent2: var(--accent2-dark);
+  --accent3: var(--accent3-dark);
+  --accent4: var(--accent4-dark);
+  --bg1: var(--bg1-dark);
+  --bg2: var(--bg2-dark);
+}
+
+[color-scheme='light'] {
+  --text: var(--text-light);
+  --text-secondary: var(--text-secondary-light);
+  --accent1: var(--accent1-light);
+  --accent2: var(--accent2-light);
+  --accent3: var(--accent3-light);
+  --accent4: var(--accent4-light);
+  --bg1: var(--bg1-light);
+  --bg2: var(--bg2-light);
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/base/button.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+#button_button__eghb9 {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 56px;
+  padding: 10px 40px;
+  border-radius: 3px;
+
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+#button_button__eghb9.button_solid__VYHJD {
+  color: white;
+}
+
+.button_china-rose__PEz20 {
+  background-color: var(--accent1);
+}
+
+.button_solid__VYHJD {
+  border: none;
+}
+
+.button_outline__yHkI6 {
+  background-color: unset;
+}
+
+.button_china-rose__PEz20 {
+  border: 2px solid var(--accent1);
+  color: var(--accent1);
+}
+
+.button_large__8iT_G {
+  font-size: var(--rem-24px);
+}
+
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/collabcta.module.css ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+.collabcta_container__nX10q {
+  flex-direction: column;
+  align-items: center;
+}
+
+h3.collabcta_display3___0zCu {
+  text-align: center;
+}
+
+.collabcta_ctas__faCLS {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/base/Typography/navtext.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+.navtext_navItem__f3mv2 {
+	position: relative;
+	height: -moz-fit-content;
+	height: fit-content;
+	margin: 10px;
+	letter-spacing: 0.04em;
+	line-height: var(--rem-32px);
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.navtext_navText__kGhPu {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: var(--p-base);
+	text-align: left;
+	font-size: var(--rem-16px);
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/navbar.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.navbar_nav__CMMQV {
+  width: 100%;
+  align-self: stretch;
+  justify-content: center;
+
+  background-color: var(--bg1);
+
+  padding-top: var(--p-32);
+  padding-bottom: 1rem;
+  margin-bottom: var(--rem-40px);
+
+  font-size: var(--rem-16px);
+  text-align: left;
+  text-transform: var(--tt-uppercase);
+  color: var(--text);
+
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.navbar_container__mvkMD {
+  justify-content: space-between;
+  padding: 0rem 6rem;
+}
+
+.navbar_nav__CMMQV,
+.navbar_navItems__BVi8p {
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar_logo__1_5ug {
+  width: 1.75rem;
+  height: auto;
+  object-fit: cover;
+}
+
+.navbar_logo_path__sZ7As {
+  fill: var(--text);
+  stroke-width: 0px;
+}
+
+.navbar_logoName__C7HfJ {
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-24);
+  cursor: auto;
+  color: inherit;
+}
+
+.navbar_logoName__C7HfJ,
+.navbar_navList__JcY05 {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar_navList__JcY05 {
+  margin: 0;
+  justify-content: space-between;
+  align-self: stretch;
+  align-items: center;
+  list-style-type: none;
+}
+
+.navbar_themeToggle__zewLI {
+  position: relative;
+}
+
+.navbar_navItems__BVi8p {
+  align-items: center;
+  align-self: stretch;
+  justify-content: flex-end;
+  gap: var(--gap-56);
+}
+
+@media screen and (max-width: 1280px) {
+  .navbar_container__mvkMD {
+    padding: 0rem 2rem;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .navbar_logoName__C7HfJ {
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .navbar_nav__CMMQV,
+  .navbar_container__mvkMD {
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--gap-0);
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .navbar_nav__CMMQV {
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  .navbar_navItems__BVi8p {
+    display: none;
+  }
+
+  .navbar_eprisRichardson__I_yRa {
+    display: none;
+  }
+}
+
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/footer.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+.footer_footer__wCyt8 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: stretch;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.footer_footer__wCyt8 p {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+.footer_icons__gOE4X {
+  display: flex;
+  justify-content: center;
+
+  svg.footer_icon__mcbq2 {
+    height: 2em;
+    width: auto;
+    padding: var(--rem-16px);
+  }
+}
+

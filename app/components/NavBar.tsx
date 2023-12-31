@@ -7,7 +7,7 @@ export default function NavBar({ currentTheme }: { currentTheme: string }) {
   const navItems = ['About', 'Portfolio', 'Contact']
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <div className={`${styles.container} container`} id="container">
         <a className={styles.logoName}>
           <svg
