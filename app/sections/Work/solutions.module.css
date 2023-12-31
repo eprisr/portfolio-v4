@@ -14,11 +14,11 @@ ul.process {
   padding-inline-start: 0px;
 }
 
-li > p:first-child {
+li.step > p:first-child {
   margin-top: 0px;
 }
 
-li > p:last-child {
+li.step > p:last-child {
   margin-bottom: 0px;
 }
 

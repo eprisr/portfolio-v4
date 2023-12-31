@@ -19,7 +19,7 @@ export default function Solutions({}: Props) {
         </div>
         <div>
           <ul className={styles.process}>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">01. DRIVING VISION INTO ACTION</p>
               <p>
                 Essential information is gathered to get the ball rolling. This
@@ -27,7 +27,7 @@ export default function Solutions({}: Props) {
                 potential new features,&nbsp;&c.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">02. SOLVING COMPLEXITY</p>
               <p>
                 The market is assessed and a competitor analysis is performed if
@@ -35,7 +35,7 @@ export default function Solutions({}: Props) {
                 is completed.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">03. DESIGNING YOUR DIGITAL STORY</p>
               <p>
                 This is the fun part, the UI/UX design. The website is designed
@@ -43,7 +43,7 @@ export default function Solutions({}: Props) {
                 wireframes or prototypes from step two.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">04. BUILDING YOUR DIGITAL VISION</p>
               <p>
                 Software tools are selected. A tech stack is built. An
@@ -52,7 +52,7 @@ export default function Solutions({}: Props) {
                 step as well.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">05. CREATING YOUR DIGITAL EXPERIENCE</p>
               <p>
                 By now, content should have been created. Sometimes, we realize
@@ -60,7 +60,7 @@ export default function Solutions({}: Props) {
                 actionable or a block of text that is too lengthy.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">06. ELEVATING DETAILED EXCELLENCE</p>
               <p>
                 Before deploying, it's a good idea to do site optimization and
@@ -68,7 +68,7 @@ export default function Solutions({}: Props) {
                 when keeping things like speed and SEO in mind.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">07. LAUNCHING SOLUTIONS</p>
               <p>
                 The website is deployed to the server. How exciting! Now is the
@@ -76,7 +76,7 @@ export default function Solutions({}: Props) {
                 sure everything works as intended.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">08. SUSTAINING PROFICIENCY</p>
               <p>
                 Ready for take-off in 3, 2... Oops. Something went wrong. Or
@@ -84,7 +84,7 @@ export default function Solutions({}: Props) {
                 and update the website, making improvements in all areas.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">09. AMPLIFYING YOUR ONLINE PRESENCE</p>
               <p>
                 Announce the launch of the new site if necessary. Reassess SEO
@@ -92,7 +92,7 @@ export default function Solutions({}: Props) {
                 website&nbsp;is.
               </p>
             </li>
-            <li>
+            <li className={styles.step}>
               <p className="sub1">10. EVOLVING QUALITY AND EXPERIENCE</p>
               <p>
                 Evaluation of feedback, engagement, and web performance metrics

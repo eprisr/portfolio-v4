@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Button from '../../components/base/Button'
 import projectDescs from './projectDescs.json'
 import styles from './projects.module.css'

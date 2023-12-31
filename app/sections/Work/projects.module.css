@@ -8,10 +8,10 @@
   display: grid;
   grid-template-columns: repeat(5, max-content);
   column-gap: 80px;
+}
 
-  span {
-    cursor: pointer;
-  }
+.filter span {
+  cursor: pointer;
 }
 
 .proj_container {
@@ -62,12 +62,12 @@
   height: 405px;
   border: 1px solid var(--color-china-rose);
   z-index: -1;
+}
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+.proj_image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .project.reverse {

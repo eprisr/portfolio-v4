@@ -8,7 +8,7 @@ import { getCurrentTheme } from '../theme/utils'
 
 export default function NavBar() {
   const currentTheme = getCurrentTheme()
-  const navItems = ['About', 'Portfolio', 'Contact']
+  const navItems = ['About', 'Work', 'Contact']
 
   return (
     <nav className={styles.nav}>

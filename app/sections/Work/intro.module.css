@@ -9,10 +9,10 @@
 
 .right_column {
   flex: 1 1 0;
+}
 
-  p {
-    margin-top: 42px;
-  }
+.right_column p {
+  margin-top: 42px;
 }
 
 @media (min-width: 540px) {
