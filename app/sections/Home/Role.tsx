@@ -27,7 +27,11 @@ function Role({}: Props) {
             delivering unique online experiences, I help businesses stand out,
             foster customer loyalty, and accelerate digital growth.
           </p>
-          <Button name="role" colorScheme="china-rose" variant="solid">
+          <Button
+            name="role"
+            colorScheme="china-rose"
+            variant="solid"
+            href="/about">
             Discover my impact
           </Button>
         </div>

@@ -19,7 +19,11 @@ function Hero({}: Props) {
             I'm a technical and visual problem solver who fuses innovation and
             creativity to craft immersive digital experiences.
           </p>
-          <Button name="about" colorScheme="china-rose" variant="solid">
+          <Button
+            name="about"
+            colorScheme="china-rose"
+            variant="solid"
+            href="/about">
             About Me
           </Button>
         </div>
