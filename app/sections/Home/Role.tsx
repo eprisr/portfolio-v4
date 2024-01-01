@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../../components/base/Button'
 import styles from './role.module.css'
-import Lucca from '../../assets/images/lucca_mockup.png'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -10,7 +10,13 @@ function Role({}: Props) {
     <section className={styles.role}>
       <div className={` ${styles.container} container `}>
         <div className={` ${styles.left_column} column `}>
-          <img src={Lucca} alt="" className={styles.lucca} />
+          <Image
+            src="/assets/images/lucca_mockup.png"
+            alt=""
+            className={styles.lucca}
+            width="541"
+            height="489"
+          />
         </div>
         <div className={` ${styles.right_column} column `}>
           <h5 className="sub1">Defining my role</h5>

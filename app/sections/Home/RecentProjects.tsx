@@ -1,9 +1,7 @@
 import React from 'react'
 import Button from '../../components/base/Button'
 import styles from './recentprojects.module.css'
-import Maps from '../../assets/images/smoothie_map_3x.png'
-import Memory from '../../assets/images/memory_game_3x.png'
-import MyReads from '../../assets/images/my_reads_3x.png'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -17,21 +15,36 @@ function RecentProjects({}: Props) {
         </div>
         <div className={styles.project_list}>
           <div className={styles.project}>
-            <img src={Maps} alt="" />
+            <Image
+              src="/assets/images/smoothie_map_3x.png"
+              alt=""
+              width="1140"
+              height="1140"
+            />
             <div className={styles.proj_desc}>
               <p className="lead_para">Smoothie Locator</p>
               <p className={styles.language}>React.js</p>
             </div>
           </div>
           <div className={styles.project}>
-            <img src={Memory} alt="" />
+            <Image
+              src="/assets/images/memory_game_3x.png"
+              alt=""
+              width="1140"
+              height="1140"
+            />
             <div className={styles.proj_desc}>
               <p className="lead_para">Memory Game</p>
               <p className={styles.language}>Vanilla JS</p>
             </div>
           </div>
           <div className={styles.project}>
-            <img src={MyReads} alt="" />
+            <Image
+              src="/assets/images/my_reads_3x.png"
+              alt=""
+              width="1140"
+              height="1140"
+            />
             <div className={styles.proj_desc}>
               <p className="lead_para">My Reads</p>
               <p className={styles.language}>React.js</p>

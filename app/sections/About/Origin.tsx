@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './origin.module.css'
-import Desk from '../../assets/images/sarah-dorweiler-QeVmJxZOv3k-unsplash.png'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -33,7 +33,13 @@ export default function Origin({}: Props) {
           </p>
         </div>
         <div className={styles.right_column}>
-          <img src={Desk} alt="" className={styles.desk} />
+          <Image
+            src="/assets/images/sarah-dorweiler-QeVmJxZOv3k-unsplash.png"
+            alt=""
+            className={styles.desk}
+            width="400"
+            height="810"
+          />
         </div>
       </div>
     </section>

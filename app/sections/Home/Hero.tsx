@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../../components/base/Button'
 import styles from './hero.module.css'
-import SoSweet from '../../assets/images/so_sweet_mockup.png'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -25,7 +25,13 @@ function Hero({}: Props) {
         </div>
         <div className={` ${styles.right_column} column `}>
           <div className={styles.sosweet_bg}>
-            <img src={SoSweet} alt="" className={styles.sosweet} />
+            <Image
+              src="/assets/images/so_sweet_mockup.png"
+              alt=""
+              className={styles.sosweet}
+              width="740"
+              height="1474"
+            />
           </div>
         </div>
       </div>

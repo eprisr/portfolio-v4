@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Button from '../../components/base/Button'
 import projectDescs from './projectDescs.json'
 import styles from './projects.module.css'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -45,9 +46,11 @@ export default function Projects({}: Props) {
                   </div>
                 </div>
                 <div className={styles.proj_image}>
-                  <img
-                    src={require(`../../assets/images/projects/${project.src}`)}
+                  <Image
+                    src={`/assets/images/projects/${project.src}`}
                     alt={project.title}
+                    width="660"
+                    height="660"
                   />
                 </div>
               </div>

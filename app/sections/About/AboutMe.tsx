@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './aboutme.module.css'
-import Portrait from '../../assets/images/portrait.png'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -9,7 +9,13 @@ function AboutMe({}: Props) {
     <section className={styles.about}>
       <div className={` ${styles.container} container `}>
         <div className={`${styles.left_column} column `}>
-          <img src={Portrait} alt="" className={styles.portrait} />
+          <Image
+            src="/assets/images/portrait.png"
+            alt=""
+            className={styles.portrait}
+            width="392"
+            height="525"
+          />
         </div>
         <div className={` ${styles.right_column} column`}>
           <h5 className="sub1">About me</h5>

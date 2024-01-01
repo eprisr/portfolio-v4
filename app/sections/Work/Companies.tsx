@@ -1,10 +1,6 @@
 import React from 'react'
 import styles from './companies.module.css'
-import Palace from '../../assets/images/logos/palace-logo-black.png'
-import Continental from '../../assets/images/logos/continental-logo-black.png'
-import Bradley from '../../assets/images/logos/bradley-logo-black.png'
-import Brooks from '../../assets/images/logos/brooks-logo-black.png'
-import WECO from '../../assets/images/logos/weco-logo-horizontal-black.png'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -14,11 +10,41 @@ export default function Companies({}: Props) {
       <div className={`${styles.container} container`}>
         <h2>Companies I've Worked With</h2>
         <div className={styles.logos}>
-          <img src={Palace} alt="" className={styles.palace} />
-          <img src={Continental} alt="" className={styles.continental} />
-          <img src={Bradley} alt="" className={styles.bradley} />
-          <img src={Brooks} alt="" className={styles.brooks} />
-          <img src={WECO} alt="" className={styles.weco} />
+          <Image
+            src="/assets/images/logos/palace-logo-black.png"
+            alt=""
+            className={styles.palace}
+            width="530"
+            height="175"
+          />
+          <Image
+            src="/assets/images/logos/continental-logo-black.png"
+            alt=""
+            className={styles.continental}
+            width="925"
+            height="99"
+          />
+          <Image
+            src="/assets/images/logos/bradley-logo-black.png"
+            alt=""
+            className={styles.bradley}
+            width="1477"
+            height="301"
+          />
+          <Image
+            src="/assets/images/logos/brooks-logo-black.png"
+            alt=""
+            className={styles.brooks}
+            width="628"
+            height="152"
+          />
+          <Image
+            src="/assets/images/logos/weco-logo-horizontal-black.png"
+            alt=""
+            className={styles.weco}
+            width="797"
+            height="85"
+          />
         </div>
       </div>
     </section>

@@ -25,13 +25,12 @@
 }
 
 [color-scheme='light'] .sosweet_bg {
-  background: url(../../assets/images/hero-phone_bg.png) no-repeat center center;
+  background: url(/assets/images/hero-phone_bg.png) no-repeat center center;
   background-size: contain;
 }
 
 [color-scheme='dark'] .sosweet_bg {
-  background: url(../../assets/images/hero-phone_bg_dark.png) no-repeat center
-    center;
+  background: url(/assets/images/hero-phone_bg_dark.png) no-repeat center center;
   background-size: contain;
 }
 
