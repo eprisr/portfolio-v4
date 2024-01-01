@@ -5,6 +5,7 @@ import NavText from './base/Typography/NavText'
 import Switch from './base/Switch'
 import styles from './navbar.module.css'
 import { getCurrentTheme } from '../theme/utils'
+import Link from 'next/link'
 
 export default function NavBar() {
   const currentTheme = getCurrentTheme()
@@ -13,7 +14,7 @@ export default function NavBar() {
   return (
     <nav className={styles.nav}>
       <div className={`${styles.container} container`} id="container">
-        <a className={styles.logoName}>
+        <Link className={styles.logoName} href="/">
           <svg
             id={styles.logo}
             data-name="Layer 1"
@@ -25,7 +26,7 @@ export default function NavBar() {
             />
           </svg>
           <span className={styles.eprisRichardson}>Epris Richardson</span>
-        </a>
+        </Link>
         <div className={styles.navItems}>
           <ul className={styles.navList}>
             {navItems.map((item) => (

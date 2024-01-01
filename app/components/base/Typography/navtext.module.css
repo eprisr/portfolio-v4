@@ -5,7 +5,6 @@
   letter-spacing: 0.04em;
   line-height: var(--rem-32px);
   text-transform: uppercase;
-  cursor: pointer;
 }
 
 .navText {

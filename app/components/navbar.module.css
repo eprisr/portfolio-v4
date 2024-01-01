@@ -47,7 +47,6 @@
   align-items: center;
   justify-content: center;
   gap: var(--gap-24);
-  cursor: auto;
   color: inherit;
 }
 
