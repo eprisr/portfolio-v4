@@ -10,6 +10,7 @@ import {
   red_hat_display,
   red_hat_text,
 } from './fonts'
+import './normalize.css'
 import './app.css'
 import './theme/theme.css'
 
