@@ -22,7 +22,9 @@ function RecentProjects({}: Props) {
               height="1140"
             />
             <div className={styles.proj_desc}>
-              <p className="lead_para">Smoothie Locator</p>
+              <p className={`${styles.lead_para} lead_para`}>
+                Smoothie Locator
+              </p>
               <p className={styles.language}>React.js</p>
             </div>
           </div>
@@ -34,7 +36,7 @@ function RecentProjects({}: Props) {
               height="1140"
             />
             <div className={styles.proj_desc}>
-              <p className="lead_para">Memory Game</p>
+              <p className={`${styles.lead_para} lead_para`}>Memory Game</p>
               <p className={styles.language}>Vanilla JS</p>
             </div>
           </div>
@@ -46,7 +48,7 @@ function RecentProjects({}: Props) {
               height="1140"
             />
             <div className={styles.proj_desc}>
-              <p className="lead_para">My Reads</p>
+              <p className={`${styles.lead_para} lead_para`}>My Reads</p>
               <p className={styles.language}>React.js</p>
             </div>
           </div>
