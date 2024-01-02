@@ -1,5 +1,6 @@
 .container {
   flex-wrap: wrap;
+  align-items: center;
   gap: 40px;
 }
 
@@ -20,16 +21,18 @@
 }
 
 @media screen and (min-width: 768px) {
-	.container {
-		gap: unset;
-	}
+  .container {
+    gap: unset;
+  }
 
-	.left_column,
-	.right_column {
-		width: 50%;
-	}
+  .left_column,
+  .right_column {
+    width: 50%;
+  }
+}
 
-	.portrait {
-		width: 100%;
-	}
+@media (min-width: 992px) {
+  .portrait {
+    width: 100%;
+  }
 }
