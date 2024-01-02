@@ -1,14 +1,16 @@
-'use client'
-
-import React from 'react'
-import NavText from './base/Typography/NavText'
-import Switch from './base/Switch'
-import styles from './navbar.module.css'
-import { getCurrentTheme } from '../theme/utils'
+import React, { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import NavText from './base/Typography/NavText'
+import styles from './navbar.module.css'
+
+// eslint-disable-next-line
+// @ts-ignore
+const Switch = dynamic(() => import('./base/Switch.tsx'), {
+  ssr: false,
+})
 
 export default function NavBar() {
-  const currentTheme = getCurrentTheme()
   const navItems = ['About', 'Work', 'Contact']
 
   return (
@@ -33,7 +35,7 @@ export default function NavBar() {
               <NavText key={item} item={item} />
             ))}
           </ul>
-          <Switch currentTheme={currentTheme} />
+          {/* <Switch /> */}
         </div>
       </div>
     </nav>

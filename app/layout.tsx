@@ -1,5 +1,6 @@
 import React from 'react'
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
 import Footer from './components/Footer'
@@ -41,8 +42,22 @@ export default function MainLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" color-scheme="light">
       <body>
+        <Script id="theme">
+          {`
+						function getCurrentTheme() {
+							if(window.localStorage.getItem('theme')) {
+								return window.localStorage.getItem('theme');
+							}
+							return window.matchMedia('(prefers-color-scheme: dark)').matches
+								? 'dark'
+								: 'light'
+						}
+						
+						document.querySelector(':root').setAttribute('color-scheme', 'light');
+					`}
+        </Script>
         <NavBar />
         <main>
           {children}
