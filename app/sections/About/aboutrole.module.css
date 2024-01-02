@@ -15,6 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 56px;
+  margin-top: 32px;
 }
 
 .stat_num {
@@ -23,6 +24,10 @@
   line-height: var(--rem-32px);
   padding: 0;
   margin: 0;
+}
+
+.stat_desc {
+  max-width: 12ch;
 }
 
 .chevron_bg {

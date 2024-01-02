@@ -150,29 +150,34 @@ h1 {
   font-size: var(--rem-40px);
   font-weight: var(--fw-400);
   line-height: var(--rem-60px);
+  margin: 0px;
 }
 h2 {
   font-size: var(--rem-32px);
   font-weight: var(--fw-400);
   line-height: var(--rem-36px);
+  margin: 0px;
 }
 h3,
 h1.mobile {
   font-size: var(--rem-28px);
   font-weight: var(--fw-400);
   line-height: var(--rem-40px);
+  margin: 0px;
 }
 h4,
 h2.mobile {
   font-size: var(--rem-24px);
   font-weight: var(--fw-400);
   line-height: var(--rem-36px);
+  margin: 0px;
 }
 h5,
 h3.mobile .sub1 {
   font-size: var(--rem-20px);
   font-weight: var(--fw-400);
   line-height: var(--rem-30px);
+  margin: 0px;
 }
 h6,
 dl,
