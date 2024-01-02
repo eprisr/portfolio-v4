@@ -5,15 +5,16 @@
 
 .display3 {
   text-align: center;
-  width: 20ch;
+  max-width: 20ch;
 }
 
 .cta_text {
-  width: 40ch;
+  max-width: 40ch;
 }
 
 .ctas {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  justify-content: center;
+  column-gap: 24px;
 }
