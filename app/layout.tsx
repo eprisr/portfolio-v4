@@ -4,6 +4,12 @@ import Script from 'next/script'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
 import Footer from './components/Footer'
+import {
+  dm_serif_display,
+  dm_serif_text,
+  red_hat_display,
+  red_hat_text,
+} from './fonts'
 import './app.css'
 import './theme/theme.css'
 
@@ -42,7 +48,10 @@ export default function MainLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" color-scheme="light">
+    <html
+      lang="en"
+      color-scheme="light"
+      className={`${dm_serif_display.variable} ${dm_serif_text} ${red_hat_display} ${red_hat_text}`}>
       <body>
         <Script id="theme">
           {`

@@ -46,14 +46,14 @@
   font-weight: var(--fw-400);
   line-height: var(--rem-64px);
   text-transform: uppercase;
+}
 
-  span.greeting {
-    font-family: var(--dm-serif-display);
-    font-size: var(--rem-80px);
-    font-style: italic;
-    text-transform: none;
-    color: var(--accent1);
-  }
+.greeting {
+  font-family: var(--dm-serif-display);
+  font-size: var(--rem-80px);
+  font-style: italic;
+  text-transform: none;
+  color: var(--accent1);
 }
 
 .pronunciation {
