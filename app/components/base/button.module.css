@@ -3,6 +3,7 @@
   height: 56px;
   padding: 10px 40px;
   border-radius: 3px;
+  margin-top: 32px;
 
   font-weight: var(--fw-600);
   text-transform: uppercase;

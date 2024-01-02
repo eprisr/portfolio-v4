@@ -15,7 +15,7 @@ function Hero({}: Props) {
             my name is &Eacute;pris
           </h1>
           <p className={styles.pronunciation}>(pronounced aye-pree)</p>
-          <p>
+          <p className={styles.intro_text}>
             I'm a technical and visual problem solver who fuses innovation and
             creativity to craft immersive digital experiences.
           </p>
