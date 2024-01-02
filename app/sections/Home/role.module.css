@@ -4,7 +4,7 @@
 
 .left_column {
   width: 100%;
-
+  margin-bottom: 72px;
   justify-content: center;
   align-items: center;
 }
@@ -21,8 +21,9 @@
 
 @media screen and (min-width: 768px) {
   .left_column {
-    width: 50%;
+    width: calc(50% - 72px);
     align-items: start;
+    padding-right: 72px;
   }
 
   .right_column {
@@ -31,5 +32,11 @@
 
   .lucca {
     width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .lucca {
+    max-width: unset;
   }
 }

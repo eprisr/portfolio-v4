@@ -181,14 +181,18 @@ p.mobile,
 .display1 {
   font-size: var(--rem-80px);
   line-height: var(--rem-96px);
+  margin: 0px;
 }
 .display2 {
   font-size: var(--rem-72px);
   line-height: var(--rem-96px);
+  margin: 0px;
 }
 .display3 {
   font-size: var(--rem-64px);
+  font-weight: var(--fw-400);
   line-height: var(--rem-72px);
+  margin: 0px;
 }
 p {
   font-size: var(--rem-20px);
@@ -203,6 +207,7 @@ p {
 .sub2 {
   text-transform: uppercase;
   font-weight: var(--fw-600);
+  margin: 0px;
 }
 
 /* Font Colors */
