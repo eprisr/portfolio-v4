@@ -3,8 +3,13 @@
   align-items: center;
 }
 
-h3.display3 {
+.display3 {
   text-align: center;
+  width: 20ch;
+}
+
+.cta_text {
+  width: 40ch;
 }
 
 .ctas {

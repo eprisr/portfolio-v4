@@ -8,12 +8,10 @@ export default function CollabCTA({}: Props) {
   return (
     <section className={styles.collab_cta}>
       <div className={` ${styles.container} container `}>
-        <h3 className="display3">
-          Lets Collaborate,
-          <br />
-          Create &amp; Cultivate
+        <h3 className={`${styles.display3} display3`}>
+          Lets Collaborate, Create &amp; Cultivate
         </h3>
-        <p>
+        <p className={styles.cta_text}>
           Creating an exceptional online presence requires a synergy of ideas
           and expertise – work hand in hand with me to make your digital dreams
           a reality.
