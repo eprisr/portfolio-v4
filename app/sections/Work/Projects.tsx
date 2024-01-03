@@ -1,14 +1,16 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import Button from '../../components/base/Button'
 import projectDescs from './projectDescs.json'
 import styles from './projects.module.css'
-import Image from 'next/image'
 
 type Props = {}
 
 export default function Projects({}: Props) {
+  const router = useRouter()
   const filters = ['All', 'Web Dev', 'Print', 'Branding', 'Motion']
   const [activeFilter, setActiveFilter] = useState<string>('All')
 
@@ -44,7 +46,8 @@ export default function Projects({}: Props) {
                 key={project.id}
                 className={`${i % 2 === 0 ? styles.reverse : ''} ${
                   styles.project
-                }`}>
+                }`}
+                onClick={() => router.push('')}>
                 <div className={styles.proj_image}>
                   <Image
                     src={`/assets/images/projects/${project.src}`}
