@@ -4,12 +4,25 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Button from '../../components/base/Button'
-import projectDescs from './projectDescs.json'
+// import projectDescs from './projectDescs.json'
 import styles from './projects.module.css'
 
-type Props = {}
+type ProjProps = {
+  projects: Array<{
+    id: string
+    type: Array<string>
+    src: string
+    title: string
+    clickable: boolean
+    date: string
+    client: string
+    brief: string
+    desc: string
+    skills: Array<string>
+  }>
+}
 
-export default function Projects({}: Props) {
+export default function Projects({ projects }: ProjProps) {
   const router = useRouter()
   const filters = ['All', 'Web Dev', 'Print', 'Branding', 'Motion']
   const [activeFilter, setActiveFilter] = useState<string>('All')
@@ -39,7 +52,7 @@ export default function Projects({}: Props) {
           </select>
         </div>
         <div className={styles.proj_container}>
-          {projectDescs
+          {projects
             .filter((project) => project.type.includes(activeFilter))
             .map((project, i) => (
               <div
@@ -47,7 +60,7 @@ export default function Projects({}: Props) {
                 className={`${i % 2 === 0 ? styles.reverse : ''} ${
                   styles.project
                 }`}
-                onClick={() => router.push('')}>
+                onClick={() => router.push(`/work/${project.id}`)}>
                 <div className={styles.proj_image}>
                   <Image
                     src={`/assets/images/projects/${project.src}`}
