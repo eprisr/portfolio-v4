@@ -31,9 +31,17 @@ export default function Projects({}: Props) {
             .map((project, i) => (
               <div
                 key={project.id}
-                className={`${i % 2 === 1 ? styles.reverse : ''} ${
+                className={`${i % 2 === 0 ? styles.reverse : ''} ${
                   styles.project
                 }`}>
+                <div className={styles.proj_image}>
+                  <Image
+                    src={`/assets/images/projects/${project.src}`}
+                    alt={project.title}
+                    width="660"
+                    height="660"
+                  />
+                </div>
                 <div className={styles.info}>
                   <p className={`${styles.title} lead_para`}>{project.title}</p>
                   <p className={styles.desc}>{project.brief}</p>
@@ -44,14 +52,6 @@ export default function Projects({}: Props) {
                       </div>
                     ))}
                   </div>
-                </div>
-                <div className={styles.proj_image}>
-                  <Image
-                    src={`/assets/images/projects/${project.src}`}
-                    alt={project.title}
-                    width="660"
-                    height="660"
-                  />
                 </div>
               </div>
             ))}

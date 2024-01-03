@@ -23,7 +23,7 @@ section {
 .container {
   display: flex;
   flex: 1;
-  width: 100dvw;
+  width: 100%;
   max-width: 78rem;
 }
 
