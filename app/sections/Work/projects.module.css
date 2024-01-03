@@ -4,14 +4,15 @@
   gap: 72px;
 }
 
-.filter {
-  display: grid;
-  grid-template-columns: repeat(5, max-content);
-  column-gap: 80px;
+select.filter {
+  font-size: 1.15rem;
+  border-radius: 5px;
+  padding: 10px;
+  width: 250px;
 }
 
-.filter span {
-  cursor: pointer;
+.filter_desktop {
+  display: none;
 }
 
 .proj_container {
@@ -69,6 +70,20 @@
 }
 
 @media (min-width: 768px) {
+  .filter_mobile {
+    display: none;
+  }
+
+  .filter_desktop {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    column-gap: 80px;
+  }
+
+  .filter_desktop span {
+    cursor: pointer;
+  }
+
   .project {
     flex-direction: row;
     align-items: center;

@@ -15,7 +15,7 @@ export default function Projects({}: Props) {
   return (
     <section className={styles.projects}>
       <div className={`${styles.container} container`}>
-        <div className={styles.filter}>
+        <div className={styles.filter_desktop}>
           {filters.map((filter, i) => (
             <span
               key={i}
@@ -24,6 +24,17 @@ export default function Projects({}: Props) {
               {filter}
             </span>
           ))}
+        </div>
+        <div className={styles.filter_mobile}>
+          <select
+            name="filter"
+            id="filter"
+            className={styles.filter}
+            onChange={(e) => setActiveFilter(e.target.value)}>
+            {filters.map((filter, i) => (
+              <option key={i}>{filter}</option>
+            ))}
+          </select>
         </div>
         <div className={styles.proj_container}>
           {projectDescs
