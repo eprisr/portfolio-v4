@@ -2,16 +2,18 @@ import React from 'react'
 import styles from './project.module.css'
 
 type ProjProps = {
-  id: string
-  type: Array<string>
-  src: 'string'
-  title: 'string'
-  clickable: boolean
-  date: 'string'
-  client: 'string'
-  brief: 'string'
-  desc: 'string'
-  skills: Array<string>
+  project: {
+    id: string
+    type: Array<string>
+    src: 'string'
+    title: 'string'
+    clickable: boolean
+    date: 'string'
+    client: 'string'
+    brief: 'string'
+    desc: 'string'
+    skills: Array<string>
+  }
 }
 
 export default function Project({ project }: ProjProps) {
