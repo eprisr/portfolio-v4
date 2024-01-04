@@ -10,7 +10,9 @@ async function getProjects(projectId: string) {
       ? process.env.LOCAL_URL
       : process.env.PROD_URL
 
-  const res = await fetch(url + `/api/work/${projectId}`)
+  const res = await fetch(
+    `portfolio-v4-sigma-two.vercel.app/api/work/${projectId}`
+  )
 
   if (!res.ok) throw new Error('Failed')
 
