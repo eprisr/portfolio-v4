@@ -43,7 +43,12 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode
+  types: ReactNode
+}) {
   return (
     <html
       lang="en"
