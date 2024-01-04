@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import NavBar from './components/NavBar'
@@ -43,11 +43,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
