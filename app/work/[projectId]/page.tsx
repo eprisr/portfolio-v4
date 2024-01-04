@@ -1,26 +1,26 @@
 import React from 'react'
 import Project from '../../sections/Project/Project'
-import styles from '../../sections/Project/project.module.css'
+import { projectDescs } from '../../sections/Work/projectDescs'
 
 type ProjIdProps = { params: { projectId: string } }
-
-async function getProjects(projectId: string) {
-  const url =
-    process.env.NODE_ENV === 'development'
-      ? process.env.LOCAL_URL
-      : process.env.PROD_URL
-
-  const res = await fetch(url + `/api/work/${projectId}`)
-
-  if (!res.ok) throw new Error('Failed')
-
-  return res.json()
+type ProjProps = {
+  id: string
+  type: Array<string>
+  src: string
+  title: string
+  clickable: boolean
+  date: string
+  client: string
+  brief: string
+  desc: string
+  skills: Array<string>
 }
 
-export default async function page({ params }: ProjIdProps) {
+export default function page({ params }: ProjIdProps) {
   const { projectId } = params
-  console.log(projectId)
-  const project = await getProjects(projectId)
+  const project: ProjProps | undefined = projectDescs.find(
+    (project) => project.id === projectId
+  )
 
   return (
     <div className="main_wrapper">

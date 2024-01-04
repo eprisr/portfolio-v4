@@ -3,23 +3,10 @@ import Intro from '../sections/Work/Intro'
 import Solutions from '../sections/Work/Solutions'
 import Companies from '../sections/Work/Companies'
 import Projects from '../sections/Work/Projects'
-
-async function getProjects() {
-  const url =
-    process.env.NODE_ENV === 'development'
-      ? process.env.LOCAL_URL
-      : process.env.PROD_URL
-
-  const res = await fetch(url + '/api/work')
-  console.log('res: ', res)
-
-  if (!res.ok) throw new Error('Failed')
-
-  return res.json()
-}
+import { projectDescs } from '../sections/Work/projectDescs'
 
 export default async function Work() {
-  const projects = await getProjects()
+  const projects = projectDescs
 
   return (
     <div className="main_wrapper">

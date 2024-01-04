@@ -2,18 +2,20 @@ import React from 'react'
 import styles from './project.module.css'
 
 type ProjProps = {
-  project: {
-    id: string
-    type: Array<string>
-    src: 'string'
-    title: 'string'
-    clickable: boolean
-    date: 'string'
-    client: 'string'
-    brief: 'string'
-    desc: 'string'
-    skills: Array<string>
-  }
+  project:
+    | {
+        id: string
+        type: Array<string>
+        src: string
+        title: string
+        clickable: boolean
+        date: string
+        client: string
+        brief: string
+        desc: string
+        skills: Array<string>
+      }
+    | undefined
 }
 
 export default function Project({ project }: ProjProps) {
@@ -26,7 +28,7 @@ export default function Project({ project }: ProjProps) {
         <div className={`${styles.right_column} column`}>
           <div>
             <h5 className="sub1">Subtitle</h5>
-            <h2 className="display3">{project.title}</h2>
+            <h2 className="display3">{project?.title}</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
