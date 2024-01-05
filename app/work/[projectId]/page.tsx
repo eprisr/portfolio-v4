@@ -1,26 +1,12 @@
 import React from 'react'
 import Project from '../../sections/Project/Project'
-import { projectDescs } from '../../sections/Work/projectDescs'
+import { fetchSingleProject } from '../../lib/data'
 
 type ProjIdProps = { params: { projectId: string } }
-type ProjProps = {
-  id: string
-  type: Array<string>
-  src: string
-  title: string
-  clickable: boolean
-  date: string
-  client: string
-  brief: string
-  desc: string
-  skills: Array<string>
-}
 
-export default function page({ params }: ProjIdProps) {
+export default async function page({ params }: ProjIdProps) {
   const { projectId } = params
-  const project: ProjProps | undefined = projectDescs.find(
-    (project) => project.id === projectId
-  )
+  const project = await fetchSingleProject(projectId)
 
   return (
     <div className="main_wrapper">
