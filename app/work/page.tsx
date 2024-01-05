@@ -5,6 +5,8 @@ import Companies from '../sections/Work/Companies'
 import Projects from '../sections/Work/Projects'
 import { fetchProjects } from '../lib/data'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Work() {
   const projects = await fetchProjects()
 
