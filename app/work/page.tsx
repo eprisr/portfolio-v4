@@ -1,17 +1,14 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Intro from '../sections/Work/Intro'
 import Solutions from '../sections/Work/Solutions'
 import Companies from '../sections/Work/Companies'
 import Projects from '../sections/Work/Projects'
-import { ProjectsSkeleton } from '../components/skeletons'
 
 export default async function Work() {
   return (
     <div className="main_wrapper">
       <Intro />
-      <Suspense fallback={<ProjectsSkeleton />}>
-        <Projects />
-      </Suspense>
+      <Projects />
       <Companies />
       <Solutions />
     </div>
