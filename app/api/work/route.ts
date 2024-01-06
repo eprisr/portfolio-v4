@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
-import { projectDescs } from '../../sections/Work/projectDescs'
+import { fetchProjects } from '../../lib/data'
 
 export async function GET() {
-  return NextResponse.json(projectDescs)
+  const projects = await fetchProjects()
+  return NextResponse.json(projects)
 }

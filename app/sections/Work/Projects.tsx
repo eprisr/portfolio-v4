@@ -1,14 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import useSWR, { Fetcher } from 'swr'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import Button from '../../components/base/Button'
 import { Project } from '../../lib/definitions'
 import styles from './projects.module.css'
 
-export default function Projects({ projects }: { projects: Project[] }) {
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
+export default function Projects() {
   const router = useRouter()
+  const { data: projects } = useSWR('/api/work', fetcher, { suspense: true })
   const filters = ['All', 'Web Dev', 'Print', 'Branding', 'Motion']
   const [activeFilter, setActiveFilter] = useState<string>('All')
 
@@ -58,7 +62,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
                   <p className={`${styles.title} lead_para`}>{project.title}</p>
                   <p className={styles.desc}>{project.brief}</p>
                   <div className={styles.tech_stack}>
-                    {project.skills.map((skill) => (
+                    {project.skills.map((skill: string) => (
                       <div key={skill} className={styles.skill}>
                         <span>{skill}</span>
                       </div>
