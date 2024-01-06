@@ -9,17 +9,16 @@ export default function Intro({}: Props) {
       <div className={`${styles.container} container`}>
         <div className={`${styles.left_column} column`}>
           <h5 className="sub1">Explore my work</h5>
-          <h2 className="display3">Unlocking Digitial Potential.</h2>
+          <h2 className="display3">Unlocking Digital Potential.</h2>
         </div>
         <div className={`${styles.right_column} column`}>
           <p>
-            Since 2012, I've worked in a professional setting with several
-            companies across various industries to design and execute:
-            accessible, responsive & user-driven websites, decision-making
-            marketing pieces, and even a couple of motion graphic videos. No
-            matter the industry or product, my aim is to always analyze the
-            business goals, focus on the consumers' needs, and deliver quality
-            product and work performance.
+            Since 2012, I've worked professionally with several companies across
+            various industries to design and execute accessible, responsive &
+            user-driven websites, decision-making marketing pieces, and a couple
+            of motion graphic videos. No matter the industry or product, I aim
+            to analyze the business' goals, focus on consumers' needs, and
+            deliver quality products and work performance.
           </p>
         </div>
       </div>

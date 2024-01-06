@@ -22,10 +22,10 @@ function Role({}: Props) {
           <h5 className="sub1">Defining my role</h5>
           <h2 className="display3">Adding Value to Your Business</h2>
           <p>
-            I believe innovative design and seamless functionality captivate
-            audiences, drive conversions, and boost brand visibility. By
-            delivering unique online experiences, I help businesses stand out,
-            foster customer loyalty, and accelerate digital growth.
+            Innovative design and seamless functionality captivate audiences,
+            drive conversions, and boost brand visibility. By delivering unique
+            online experiences, I help businesses stand out, foster customer
+            loyalty, and accelerate digital growth.
           </p>
           <Button
             name="role"

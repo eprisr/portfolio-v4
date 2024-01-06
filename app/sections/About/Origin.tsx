@@ -12,11 +12,11 @@ export default function Origin({}: Props) {
           <h5 className="sub1">How I got started</h5>
           <h2>My Origin Story</h2>
           <p>
-            As a child, my mom often worked overtime and my dad worked late. To
-            supplement my school learning, my mom bought a few games that sat on
-            a CD rom, popped one in a big, bulky, cream colored computer running
-            Windows ‘95, taught me the bare minimum on how to run the computer,
-            and left me to figure the rest out myself.
+            When I was a child, my mom often worked overtime, and my dad worked
+            late. To supplement my school learning, my mom bought a few games
+            that sat on a CD rom, popped one in a big, bulky, cream colored
+            computer running Windows '95, taught me the bare minimum on how to
+            run the computer, and left me to figure the rest out myself.
           </p>
           <p>
             From there, I began exploring technology and discovered a natural

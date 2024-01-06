@@ -13,8 +13,8 @@ export default function CollabCTA({}: Props) {
         </h3>
         <p className={styles.cta_text}>
           Creating an exceptional online presence requires a synergy of ideas
-          and expertise – work hand in hand with me to make your digital dreams
-          a reality.
+          and expertise. Let's collaborate to bring your digital aspirations to
+          life.
         </p>
         <div className={styles.ctas}>
           <Button name="contact" colorScheme="china-rose" variant="solid">
