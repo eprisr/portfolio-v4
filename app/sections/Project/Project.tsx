@@ -1,4 +1,7 @@
 import React from 'react'
+import { MdOutlineOpenInNew } from 'react-icons/md'
+import Link from 'next/link'
+import Image from 'next/image'
 import { Project } from '../../lib/definitions'
 import styles from './project.module.css'
 
@@ -7,20 +10,55 @@ export default function Project({ project }: { project: Project }) {
     <section className={styles.project}>
       <div className={`${styles.container} container`}>
         <div className={`${styles.left_column} column`}>
-          <div className={styles.image}></div>
+          {project?.src && (
+            <Image
+              src={`/assets/images/projects/${project.src}`}
+              alt={project.title}
+              className={styles.image}
+              width="500"
+              height="500"
+            />
+          )}
+          {project?.slides && (
+            <div className={styles.slides_container}>
+              <div className={styles.multiple}>
+                <div className={styles.slides}>
+                  {project.slides.map((slide, i) => (
+                    <Image
+                      src={slide}
+                      alt=""
+                      className={styles.slide_img}
+                      id={`${project.id}-${i}`}
+                      width="500"
+                      height="500"
+                      key={project.id}
+                    />
+                  ))}
+                </div>
+                {project.slides.map((slide, i) => (
+                  <Link href={`${project.id}-${i}`} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
         <div className={`${styles.right_column} column`}>
           <div>
-            <h5 className="sub1">Subtitle</h5>
-            <h2 className="display3">{project.title}</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor
-              orci dapibus ultrices in. Velit dignissim sodales ut eu sem
-              integer vitae. Pretium fusce id velit ut. Aenean euismod elementum
-              nisi quis eleifend. Tincidunt lobortis feugiat vivamus at augue
-              eget arcu.
-            </p>
+            <h5 className="sub1">
+              {project.type.filter((t) => t !== 'All')} - {project.client}
+            </h5>
+            <h2 className="display3">
+              {project.title}
+              {project?.titlelink && (
+                <Link
+                  href={project?.titlelink}
+                  target="_blank"
+                  className={styles.open_in_new}>
+                  <MdOutlineOpenInNew />
+                </Link>
+              )}
+            </h2>
+            <p>{project.projdesc}</p>
             <dl className={styles.desc_list}>
               <div>
                 <dt className={styles.desc_term}>Frontend</dt>

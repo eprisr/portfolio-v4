@@ -6,6 +6,12 @@
   width: 50%;
 }
 
+.open_in_new {
+  font-size: var(--rem-32px);
+  color: var(--color-space-cadet);
+  margin-left: var(--rem-16px);
+}
+
 .image {
   width: 95%;
   height: 500px;

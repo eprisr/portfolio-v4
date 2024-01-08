@@ -1,5 +1,5 @@
 const { db } = require('@vercel/postgres')
-const { projects } = require('../app/lib/placeholder-data.js')
+const { projects } = require('../app/lib/site-data.js')
 
 async function seedProjects(client) {
   try {
@@ -8,8 +8,11 @@ async function seedProjects(client) {
 			CREATE TABLE IF NOT EXISTS projects (
 				id TEXT NOT NULL UNIQUE,
 				type TEXT[] NOT NULL,
-				src TEXT NOT NULL,
+				src TEXT,
+				slides TEXT [],
+				video JSON,
 				title TEXT NOT NULL,
+				titleLink TEXT,
 				clickable BOOLEAN NOT NULL,
 				date TEXT NOT NULL,
 				client TEXT NOT NULL,
@@ -25,8 +28,8 @@ async function seedProjects(client) {
     const insertedProjects = await Promise.all(
       projects.map(
         (project) => client.sql`
-					INSERT INTO projects (id, type, src, title, clickable, date, client, brief, projDesc, skills)
-					VALUES (${project.id}, ${project.type}, ${project.src}, ${project.title}, ${project.clickable}, ${project.date}, ${project.client}, ${project.brief}, ${project.projDesc}, ${project.skills})
+					INSERT INTO projects (id, type, src, slides, video, title, titleLink, clickable, date, client, brief, projDesc, skills)
+					VALUES (${project.id}, ${project.type}, ${project.src}, ${project.slides}, ${project.video}, ${project.title}, ${project.titleLink}, ${project.clickable}, ${project.date}, ${project.client}, ${project.brief}, ${project.projDesc}, ${project.skills})
 					ON CONFLICT (id) DO NOTHING;
 				`
       )
