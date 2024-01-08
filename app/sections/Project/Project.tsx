@@ -2,6 +2,7 @@ import React from 'react'
 import { MdOutlineOpenInNew } from 'react-icons/md'
 import Link from 'next/link'
 import Image from 'next/image'
+import Slider from '../../components/Projects/Slider'
 import { Project } from '../../lib/definitions'
 import styles from './project.module.css'
 
@@ -19,34 +20,11 @@ export default function Project({ project }: { project: Project }) {
               height="500"
             />
           )}
-          {project?.slides && (
-            <div className={styles.slides_container}>
-              <div className={styles.multiple}>
-                <div className={styles.slides}>
-                  {project.slides.map((slide, i) => (
-                    <Image
-                      src={slide}
-                      alt=""
-                      className={styles.slide_img}
-                      id={`${project.id}-${i}`}
-                      width="500"
-                      height="500"
-                      key={project.id}
-                    />
-                  ))}
-                </div>
-                {project.slides.map((slide, i) => (
-                  <Link href={`${project.id}-${i}`} />
-                ))}
-              </div>
-            </div>
-          )}
+          {project?.slides && <Slider project={project} />}
         </div>
         <div className={`${styles.right_column} column`}>
           <div>
-            <h5 className="sub1">
-              {project.type.filter((t) => t !== 'All')} - {project.client}
-            </h5>
+            <h5 className="sub1">{project.client}</h5>
             <h2 className="display3">
               {project.title}
               {project?.titlelink && (

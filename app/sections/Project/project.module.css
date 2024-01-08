@@ -1,5 +1,6 @@
 .left_column {
-  width: 50%;
+  width: calc(50% - 72px);
+  padding-right: 72px;
 }
 
 .right_column {
