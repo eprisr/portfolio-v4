@@ -3,14 +3,14 @@ import styles from './desclist.module.css'
 import { Project } from '../../lib/definitions'
 
 export default function DescList({ project }: { project: Project }) {
+  const { skills } = project
+
   return (
     <dl className={styles.desc_list}>
-      {Object.keys(project.skills).map((term) => (
+      {Object.keys(skills).map((term) => (
         <div>
           <dt className={styles.desc_term}>{term}</dt>
-          <dd className={styles.desc_desc}>
-            {project.skills[term].join(', ')}
-          </dd>
+          <dd className={styles.desc_desc}>{skills[term].join(', ')}</dd>
         </div>
       ))}
     </dl>

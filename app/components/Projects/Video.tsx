@@ -5,9 +5,11 @@ import ReactPlayer from 'react-player'
 import { Project } from '../../lib/definitions'
 
 export default function Video({ project }: { project: Project }) {
+  const { video } = project
+
   return (
     <ReactPlayer
-      url={project.video.url}
+      url={video.url}
       width="100%"
       height="auto"
       style={{ aspectRatio: '16/9' }}

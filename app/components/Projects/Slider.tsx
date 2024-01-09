@@ -8,8 +8,8 @@ import styles from './slider.module.css'
 import { Project } from '../../lib/definitions'
 
 export default function Slider({ project }: { project: Project }) {
+  const { slides, title } = project
   const [active, setActive] = useState<number>(0)
-  const slides = project.slides
   const length = slides.length
 
   const next = () => active < length - 1 && setActive(active + 1)
@@ -25,7 +25,7 @@ export default function Slider({ project }: { project: Project }) {
         <Image
           src={src}
           key={i}
-          alt={project.title}
+          alt={title}
           width="500"
           height="500"
           className={

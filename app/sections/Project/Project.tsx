@@ -9,15 +9,16 @@ import { Project } from '../../lib/definitions'
 import styles from './project.module.css'
 
 export default function Project({ project }: { project: Project }) {
+  const { src, slides, video, title, titlelink, client, projdesc } = project
   return (
     <section className={styles.project}>
       <div className={`${styles.container} container`}>
-        <h5 className="sub1">{project.client}</h5>
+        <h5 className="sub1">{client}</h5>
         <h2 className="display3">
-          {project.title}
-          {project?.titlelink && (
+          {title}
+          {titlelink && (
             <Link
-              href={project?.titlelink}
+              href={titlelink}
               target="_blank"
               className={styles.open_in_new}>
               <MdOutlineOpenInNew />
@@ -25,21 +26,19 @@ export default function Project({ project }: { project: Project }) {
           )}
         </h2>
         <div className={styles.media}>
-          {project?.src && (
+          {src && (
             <Image
-              src={`/assets/images/projects/${project.src}`}
-              alt={project.title}
+              src={`/assets/images/projects/${src}`}
+              alt={title}
               className={styles.image}
               width="500"
               height="500"
             />
           )}
-          {project?.slides.length !== 0 && <Slider project={project} />}
-          {Object.keys(project?.video).length !== 0 && (
-            <Video project={project} />
-          )}
+          {slides.length !== 0 && <Slider project={project} />}
+          {Object.keys(video).length !== 0 && <Video project={project} />}
         </div>
-        <p>{project.projdesc}</p>
+        <p>{projdesc}</p>
         <DescList project={project} />
       </div>
     </section>

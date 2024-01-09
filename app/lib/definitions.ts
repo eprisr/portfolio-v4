@@ -11,5 +11,5 @@ export type Project = {
   client: string
   brief: string
   projdesc: string
-  skills: Array<string>
+  skills: { [key: string]: any[] }
 }
