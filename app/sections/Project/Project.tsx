@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Slider from '../../components/Projects/Slider'
 import Video from '../../components/Projects/Video'
+import DescList from '../../components/Projects/DescList'
 import { Project } from '../../lib/definitions'
 import styles from './project.module.css'
 
@@ -39,28 +40,7 @@ export default function Project({ project }: { project: Project }) {
           )}
         </div>
         <p>{project.projdesc}</p>
-        <dl className={styles.desc_list}>
-          <div>
-            <dt className={styles.desc_term}>Frontend</dt>
-            <dd className={styles.desc_desc}>React</dd>
-          </div>
-          <div>
-            <dt className={styles.desc_term}>Backend</dt>
-            <dd className={styles.desc_desc}>Node.js</dd>
-          </div>
-          <div>
-            <dt className={styles.desc_term}>Program</dt>
-            <dd className={styles.desc_desc}>Illustrator</dd>
-          </div>
-          <div>
-            <dt className={styles.desc_term}>Font</dt>
-            <dd className={styles.desc_desc}>Montserrat</dd>
-          </div>
-          <div>
-            <dt className={styles.desc_term}>Relevant Packages</dt>
-            <dd className={styles.desc_desc}>Google Maps API</dd>
-          </div>
-        </dl>
+        <DescList project={project} />
       </div>
     </section>
   )

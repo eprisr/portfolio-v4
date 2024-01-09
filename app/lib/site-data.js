@@ -14,7 +14,11 @@ const projects = [
       'Discover refreshment around every corner: Find a smoothie joint near you!',
     projDesc:
       'Maps is a smoothie locator with a predetermined list of smoothie shop locations in certain cities. This intermediate project teaches the ins and outs of React and how to use APIs. The planning of the project required a layout of the components and knowing which components rely on one another. The next problem was connecting the API to the map and getting the location pointers to match the geographical location.',
-    skills: ['React', 'Google Maps API', 'Foursquare', 'MaterialUI'],
+    skills: {
+      Frontend: ['React', 'Sweet Alert', 'Material UI'],
+      Backend: ['Node.js', 'Heroku'],
+      'Relevant Packages': ['Google Maps', 'Foursquare API'],
+    },
   },
   {
     id: 'reads',
@@ -31,7 +35,10 @@ const projects = [
       'Your personalized digital bookshelf for empowering your reading journey.',
     projDesc:
       'My Reads allows a user to browse a digital library and add different books to their lists. The primary challenge was dynamically rendering content and working with query inputs.',
-    skills: ['React'],
+    skills: {
+      Frontend: ['React'],
+      Backend: ['Node.js'],
+    },
   },
   {
     id: 'mem',
@@ -47,7 +54,9 @@ const projects = [
     brief: 'Flip. Remember. Match.',
     projDesc:
       'We all scream for better memory. No one likes to experience brain fog. Have fun with this mentally stimulating and sweet memory game.',
-    skills: ['HTML5', 'CSS3', 'Javascript'],
+    skills: {
+      Frontend: ['HTML5', 'CSS3', 'Javascript'],
+    },
   },
   {
     id: 'gmpower',
@@ -69,7 +78,9 @@ const projects = [
       'Having a cafe on the jobsite provides great benefits. Why not snag the best deals?',
     projDesc:
       'Nothing beats having a cafe inside the workplace. Digital menus are a great way to display regular prices and great deals at the same time. This digital menu was created as a way to increase sales by offering the best deals up front.',
-    skills: ['After Effects', 'Digital Menu Board'],
+    skills: {
+      Software: ['After Effects', 'Photoshop'],
+    },
   },
   {
     id: 'bala',
@@ -84,7 +95,9 @@ const projects = [
     client: 'Continental Services',
     brief: 'A mediterranian grill promo',
     projDesc: '',
-    skills: ['Adobe CC', 'Branding', 'POS Marketing'],
+    skills: {
+      Software: ['Adobe CC'],
+    },
   },
   {
     id: 'eddine',
@@ -104,7 +117,9 @@ const projects = [
     brief:
       'Collateral pieces are a great way to leave behind important information for potiential clients.',
     projDesc: 'Branded collateral pieces',
-    skills: ['Adobe CC', 'Marketing'],
+    skills: {
+      Software: ['Adobe CC'],
+    },
   },
   {
     id: 'cont',
@@ -124,7 +139,9 @@ const projects = [
     client: 'Continental Serivces',
     brief: 'A digital display of services offered under various subsidaries.',
     projDesc: '',
-    skills: ['After Effects'],
+    skills: {
+      Software: ['After Effects'],
+    },
   },
   {
     id: 'lucca',
@@ -144,7 +161,9 @@ const projects = [
     client: 'Continental Services',
     brief: 'An Italian street food promo.',
     projDesc: '',
-    skills: ['After Effects', 'Digital Menu Board'],
+    skills: {
+      Sofware: ['After Effects'],
+    },
   },
   {
     id: 'rofpasta',
@@ -159,7 +178,9 @@ const projects = [
     client: 'Continental Services',
     brief: 'A comfort food promo.',
     projDesc: '',
-    skills: ['Adobe CC', 'Marketing'],
+    skills: {
+      Software: ['Adobe CC'],
+    },
   },
   {
     id: 'apmag',
@@ -182,7 +203,10 @@ const projects = [
     brief: 'Collaborative graduation portfolio project',
     projDesc:
       'As a part of portfolio show, students have to showcase their work. With aspirations of being a creative director, I had the opportunity to be under his direction. I was given an idea of what the content and topics would be and we went out and took photos based off of those concepts. After that, we began strategizing the order and layout of the piece.',
-    skills: ['Adobe CC', 'Photography', 'Print Design'],
+    skills: {
+      Software: ['Indesign', 'Photoshop', 'Lightroom'],
+      Equipment: ['Canon Rebel T3'],
+    },
   },
   {
     id: 'sweet',
@@ -197,7 +221,7 @@ const projects = [
     client: 'Personal Project',
     brief: 'Case study for a fictional bakery.',
     projDesc: 'Coming Soon',
-    skills: [],
+    skills: {},
   },
 ]
 

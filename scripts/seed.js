@@ -18,7 +18,7 @@ async function seedProjects(client) {
 				client TEXT NOT NULL,
 				brief TEXT NOT NULL,
 				projDesc TEXT NOT NULL,
-				skills TEXT[] NOT NULL
+				skills JSON NOT NULL
 			);
 		`
 
