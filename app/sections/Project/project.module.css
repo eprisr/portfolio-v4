@@ -1,10 +1,5 @@
-.left_column {
-  width: calc(50% - 72px);
-  padding-right: 72px;
-}
-
-.right_column {
-  width: 50%;
+.container {
+  flex-direction: column;
 }
 
 .open_in_new {
@@ -13,10 +8,14 @@
   margin-left: var(--rem-16px);
 }
 
+.media {
+  margin: 40px 0;
+  max-width: 725px;
+}
+
 .image {
-  width: 95%;
-  height: 500px;
-  background-color: beige;
+  width: 100%;
+  height: auto;
 }
 
 .desc_list {
@@ -37,23 +36,4 @@
 
 .desc_term {
   font-weight: var(--fw-500);
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .left_column,
-  .right_column {
-    width: 100%;
-  }
-
-  .right_column {
-    order: 0;
-  }
-
-  .left_column {
-    order: 1;
-  }
 }

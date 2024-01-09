@@ -11,7 +11,19 @@ export default function Project({ project }: { project: Project }) {
   return (
     <section className={styles.project}>
       <div className={`${styles.container} container`}>
-        <div className={`${styles.left_column} column`}>
+        <h5 className="sub1">{project.client}</h5>
+        <h2 className="display3">
+          {project.title}
+          {project?.titlelink && (
+            <Link
+              href={project?.titlelink}
+              target="_blank"
+              className={styles.open_in_new}>
+              <MdOutlineOpenInNew />
+            </Link>
+          )}
+        </h2>
+        <div className={styles.media}>
           {project?.src && (
             <Image
               src={`/assets/images/projects/${project.src}`}
@@ -26,45 +38,29 @@ export default function Project({ project }: { project: Project }) {
             <Video project={project} />
           )}
         </div>
-        <div className={`${styles.right_column} column`}>
+        <p>{project.projdesc}</p>
+        <dl className={styles.desc_list}>
           <div>
-            <h5 className="sub1">{project.client}</h5>
-            <h2 className="display3">
-              {project.title}
-              {project?.titlelink && (
-                <Link
-                  href={project?.titlelink}
-                  target="_blank"
-                  className={styles.open_in_new}>
-                  <MdOutlineOpenInNew />
-                </Link>
-              )}
-            </h2>
-            <p>{project.projdesc}</p>
-            <dl className={styles.desc_list}>
-              <div>
-                <dt className={styles.desc_term}>Frontend</dt>
-                <dd className={styles.desc_desc}>React</dd>
-              </div>
-              <div>
-                <dt className={styles.desc_term}>Backend</dt>
-                <dd className={styles.desc_desc}>Node.js</dd>
-              </div>
-              <div>
-                <dt className={styles.desc_term}>Program</dt>
-                <dd className={styles.desc_desc}>Illustrator</dd>
-              </div>
-              <div>
-                <dt className={styles.desc_term}>Font</dt>
-                <dd className={styles.desc_desc}>Montserrat</dd>
-              </div>
-              <div>
-                <dt className={styles.desc_term}>Relevant Packages</dt>
-                <dd className={styles.desc_desc}>Google Maps API</dd>
-              </div>
-            </dl>
+            <dt className={styles.desc_term}>Frontend</dt>
+            <dd className={styles.desc_desc}>React</dd>
           </div>
-        </div>
+          <div>
+            <dt className={styles.desc_term}>Backend</dt>
+            <dd className={styles.desc_desc}>Node.js</dd>
+          </div>
+          <div>
+            <dt className={styles.desc_term}>Program</dt>
+            <dd className={styles.desc_desc}>Illustrator</dd>
+          </div>
+          <div>
+            <dt className={styles.desc_term}>Font</dt>
+            <dd className={styles.desc_desc}>Montserrat</dd>
+          </div>
+          <div>
+            <dt className={styles.desc_term}>Relevant Packages</dt>
+            <dd className={styles.desc_desc}>Google Maps API</dd>
+          </div>
+        </dl>
       </div>
     </section>
   )
