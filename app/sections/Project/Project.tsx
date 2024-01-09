@@ -3,6 +3,7 @@ import { MdOutlineOpenInNew } from 'react-icons/md'
 import Link from 'next/link'
 import Image from 'next/image'
 import Slider from '../../components/Projects/Slider'
+import Video from '../../components/Projects/Video'
 import { Project } from '../../lib/definitions'
 import styles from './project.module.css'
 
@@ -20,7 +21,10 @@ export default function Project({ project }: { project: Project }) {
               height="500"
             />
           )}
-          {project?.slides && <Slider project={project} />}
+          {project?.slides.length !== 0 && <Slider project={project} />}
+          {Object.keys(project?.video).length !== 0 && (
+            <Video project={project} />
+          )}
         </div>
         <div className={`${styles.right_column} column`}>
           <div>
