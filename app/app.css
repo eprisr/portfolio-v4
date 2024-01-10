@@ -147,36 +147,31 @@ a {
 
 /* Font Sizes */
 h1 {
-  font-size: var(--rem-40px);
-  font-weight: var(--fw-400);
-  line-height: var(--rem-60px);
-  margin: 0px;
-}
-h2 {
   font-size: var(--rem-32px);
   font-weight: var(--fw-400);
   line-height: var(--rem-36px);
   margin: 0px;
 }
+h2 {
+  font-size: var(--rem-24px);
+  font-weight: var(--fw-400);
+  line-height: var(--rem-36px);
+  margin: 0px;
+}
 h3,
+h4,
+h2.mobile,
 h1.mobile {
   font-size: var(--rem-28px);
   font-weight: var(--fw-400);
   line-height: var(--rem-40px);
   margin: 0px;
 }
-h4,
-h2.mobile {
-  font-size: var(--rem-24px);
-  font-weight: var(--fw-400);
-  line-height: var(--rem-36px);
-  margin: 0px;
-}
 h5,
 h3.mobile .sub1 {
-  font-size: var(--rem-20px);
+  font-size: var(--rem-16px);
   font-weight: var(--fw-400);
-  line-height: var(--rem-30px);
+  line-height: var(--rem-24px);
   margin: 0px;
 }
 h6,
@@ -189,28 +184,29 @@ p.mobile,
   line-height: var(--rem-24px);
 }
 .display1 {
-  font-size: var(--rem-80px);
-  line-height: var(--rem-96px);
-  margin: 0px;
-}
-.display2 {
-  font-size: var(--rem-72px);
-  line-height: var(--rem-96px);
-  margin: 0px;
-}
-.display3 {
   font-size: var(--rem-64px);
-  font-weight: var(--fw-400);
   line-height: var(--rem-72px);
   margin: 0px;
 }
+.display2 {
+  font-size: var(--rem-56px);
+  line-height: var(--rem-72px);
+  margin: 0px;
+}
+.display3 {
+  font-size: var(--rem-48px);
+  font-weight: var(--fw-400);
+  line-height: var(--rem-56px);
+  margin: 0px;
+}
 p {
-  font-size: var(--rem-20px);
-  line-height: var(--rem-36px);
+  font-size: var(--rem-16px);
+  line-height: var(--rem-24px);
+  max-width: 60ch;
 }
 .lead_para {
-  font-size: var(--rem-24px);
-  line-height: var(--rem-30px);
+  font-size: var(--rem-20px);
+  line-height: var(--rem-24px);
   font-weight: var(--fw-200);
 }
 .sub1,
