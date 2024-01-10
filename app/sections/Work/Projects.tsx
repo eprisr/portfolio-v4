@@ -14,7 +14,7 @@ export default async function Projects() {
     <section className={styles.projects}>
       <div className={`${styles.container} container`}>
         <ProjectsWrapper filters={filters} projects={projects} />
-        <Button name="projects" colorScheme="china-rose" variant="solid">
+        <Button href="" colorScheme="china-rose" variant="solid">
           Load more
         </Button>
       </div>
