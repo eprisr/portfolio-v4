@@ -13,7 +13,11 @@ export default function NavText({
   item,
   onNavTextContainerClick,
 }: NavTextProps) {
-  const path = `/${item?.toLocaleLowerCase()}`
+  const path =
+    item?.toLocaleLowerCase() === 'contact'
+      ? "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
+      : `/${item?.toLocaleLowerCase()}`
+
   return (
     <li className={styles.navItem} onClick={onNavTextContainerClick}>
       <Link className={styles.navText} href={path}>

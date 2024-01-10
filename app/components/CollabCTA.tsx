@@ -17,14 +17,13 @@ export default function CollabCTA({}: Props) {
           life.
         </p>
         <div className={styles.ctas}>
-          <Button name="contact" colorScheme="china-rose" variant="solid">
+          <Button
+            href="mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
+            variant="solid"
+            colorScheme="china-rose">
             Contact me
           </Button>
-          <Button
-            name="process"
-            colorScheme="china-rose"
-            variant="outline"
-            href="/about">
+          <Button href="/about" variant="outline" colorScheme="china-rose">
             Learn the process
           </Button>
         </div>
