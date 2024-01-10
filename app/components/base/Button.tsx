@@ -1,8 +1,6 @@
-'use client'
-
 import React from 'react'
 import styles from './button.module.css'
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 type ButtonProps = {
   name: string
@@ -14,23 +12,19 @@ type ButtonProps = {
 }
 
 function Button({
-  name,
+  href,
   colorScheme,
   variant,
   children,
   ...props
 }: ButtonProps) {
-  const router = useRouter()
-
   return (
-    <button
-      name={name}
-      type="button"
-      id={styles.button}
-      className={` ${styles[colorScheme]} ${styles[variant]} `}
-      onClick={() => router.push(props.href || '')}>
-      {children}
-    </button>
+    <div
+      className={` ${styles.button} ${styles[variant]} ${styles[colorScheme]} `}>
+      <Link href={href || ''} type="button" className={styles.link}>
+        {children}
+      </Link>
+    </div>
   )
 }
 

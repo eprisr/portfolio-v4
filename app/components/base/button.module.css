@@ -1,34 +1,45 @@
-#button {
+.button {
   width: fit-content;
-  height: 56px;
-  padding: 10px 40px;
+  padding: 16px 40px;
   border-radius: 3px;
   margin-top: 32px;
+}
 
+.button .link {
   font-weight: var(--fw-600);
   text-transform: uppercase;
+  text-decoration: none;
 }
 
-#button.solid {
-  color: white;
-}
-
-.china-rose {
-  background-color: var(--accent1);
-}
+/* SOLID */
 
 .solid {
   border: none;
 }
 
+.solid .link {
+  color: white;
+}
+
+.solid.china-rose {
+  background-color: var(--accent1);
+}
+
+/* OUTLINE */
+
 .outline {
   background-color: unset;
 }
 
-.china-rose {
-  border: 2px solid var(--accent1);
+.outline.china-rose .link {
   color: var(--accent1);
 }
+
+.outline.china-rose {
+  border: 2px solid var(--accent1);
+}
+
+/* SIZE */
 
 .large {
   font-size: var(--rem-24px);
