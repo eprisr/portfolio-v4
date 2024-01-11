@@ -28,10 +28,10 @@ function Role({}: Props) {
             loyalty, and accelerate digital growth.
           </p>
           <Button
-            name="role"
-            colorScheme="china-rose"
+						href="/about"
             variant="solid"
-            href="/about">
+            colorScheme="china-rose"
+					>
             Discover my impact
           </Button>
         </div>

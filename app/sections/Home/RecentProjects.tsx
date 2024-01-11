@@ -53,11 +53,7 @@ function RecentProjects({}: Props) {
             </div>
           </div>
         </div>
-        <Button
-          name="projects"
-          colorScheme="china-rose"
-          variant="solid"
-          href="/work">
+        <Button href="/work" variant="solid" colorScheme="china-rose">
           View my work
         </Button>
       </div>
