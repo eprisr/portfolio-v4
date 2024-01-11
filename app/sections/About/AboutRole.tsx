@@ -5,7 +5,7 @@ type Props = {}
 
 export default function AboutRole({}: Props) {
   return (
-    <section className={styles.role}>
+    <section id="role_and_contributions" className={styles.role}>
       <div className={`${styles.container} container `}>
         <div className={styles.contributions}>
           <h5 className="sub1">What I do</h5>

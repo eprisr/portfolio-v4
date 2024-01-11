@@ -44,6 +44,10 @@ button {
   cursor: pointer;
 }
 
+#role_and_contributions {
+  scroll-margin-top: 172px;
+}
+
 @media screen and (min-width: 1280px) {
   .section {
     padding: 0rem 6rem;
