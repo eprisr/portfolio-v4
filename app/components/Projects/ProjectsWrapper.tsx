@@ -46,12 +46,15 @@ export default function ProjectsWrapper({
                 <p className={`${styles.title} lead_para`}>{project.title}</p>
                 <p className={styles.desc}>{project.brief}</p>
                 <div className={styles.tech_stack}>
-                  {Object.keys(project.skills).map((skill: string, i: number) =>
-                    project.skills[skill].map((s: string) => (
-                      <div key={`${skill}-${i}`} className={styles.skill}>
-                        <span>{s}</span>
-                      </div>
-                    ))
+                  {Object.keys(project.skills).map(
+                    (skill: string, index: number) =>
+                      project.skills[skill].map((s: string, i: number) => (
+                        <div
+                          key={`${skill}-${index}${i}`}
+                          className={styles.skill}>
+                          <span>{s}</span>
+                        </div>
+                      ))
                   )}
                 </div>
               </div>
