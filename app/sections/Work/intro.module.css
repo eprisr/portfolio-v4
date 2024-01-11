@@ -1,22 +1,7 @@
 .container {
-  align-items: start;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
-.left_column {
-  max-width: 360px;
-}
-
-.right_column {
-  flex: 1 1 0;
-}
-
-.right_column p {
-  margin-top: 42px;
-}
-
-@media (min-width: 540px) {
-  .right_column {
-    min-width: 500px;
-  }
+.heading {
+  max-width: 520px;
 }
