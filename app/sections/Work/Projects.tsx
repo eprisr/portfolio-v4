@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import ProjectsWrapper from '../../components/Projects/ProjectsWrapper'
 import Button from '../../components/base/Button'
+import { ProjectsSkeleton } from '../../components/skeletons'
 import { fetchProjects } from '../../lib/data'
 import styles from './projects.module.css'
 
@@ -13,7 +14,9 @@ export default async function Projects() {
   return (
     <section className={styles.projects}>
       <div className={`${styles.container} container`}>
-        <ProjectsWrapper filters={filters} projects={projects} />
+        <Suspense fallback={<ProjectsSkeleton />}>
+          <ProjectsWrapper filters={filters} projects={projects} />
+        </Suspense>
         <Button href="" colorScheme="china-rose" variant="solid">
           Load more
         </Button>
