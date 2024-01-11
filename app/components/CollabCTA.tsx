@@ -23,7 +23,10 @@ export default function CollabCTA({}: Props) {
             colorScheme="china-rose">
             Contact me
           </Button>
-          <Button href="/about" variant="outline" colorScheme="china-rose">
+          <Button
+            href="/work#process"
+            variant="outline"
+            colorScheme="china-rose">
             Learn the process
           </Button>
         </div>

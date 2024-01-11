@@ -44,7 +44,8 @@ button {
   cursor: pointer;
 }
 
-#role_and_contributions {
+#role_and_contributions,
+#process {
   scroll-margin-top: 172px;
 }
 

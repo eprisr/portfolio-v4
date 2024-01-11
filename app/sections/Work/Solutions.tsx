@@ -5,7 +5,7 @@ type Props = {}
 
 export default function Solutions({}: Props) {
   return (
-    <section className={styles.solutions}>
+    <section id="process" className={styles.solutions}>
       <div className={`${styles.container} container`}>
         <div className={styles.heading}>
           <h5 className="sub1">Experience the process</h5>
