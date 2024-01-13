@@ -10,6 +10,27 @@ import styles from './project.module.css'
 
 export default function Project({ project }: { project: Project }) {
   const { src, slides, video, title, titlelink, client, projdesc } = project
+
+  function renderMedia() {
+    let media
+    if (src && slides.length === 0 && Object.keys(video).length === 0) {
+      media = (
+        <Image
+          src={`/assets/images/projects/${src}`}
+          alt={title}
+          className={styles.image}
+          width="500"
+          height="500"
+        />
+      )
+    } else if (slides.length !== 0) {
+      media = <Slider project={project} />
+    } else if (Object.keys(video).length !== 0) {
+      media = <Video project={project} />
+    }
+    return media
+  }
+
   return (
     <section className={styles.project}>
       <div className={`${styles.container} container`}>
@@ -25,19 +46,7 @@ export default function Project({ project }: { project: Project }) {
             </Link>
           )}
         </h2>
-        <div className={styles.media}>
-          {src && (
-            <Image
-              src={`/assets/images/projects/${src}`}
-              alt={title}
-              className={styles.image}
-              width="500"
-              height="500"
-            />
-          )}
-          {slides.length !== 0 && <Slider project={project} />}
-          {Object.keys(video).length !== 0 && <Video project={project} />}
-        </div>
+        <div className={styles.media}>{renderMedia()}</div>
         <p>{projdesc}</p>
         <DescList project={project} />
       </div>

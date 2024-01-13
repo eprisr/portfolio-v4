@@ -61,7 +61,7 @@ const projects = [
   {
     id: 'gmpower',
     type: ['All', 'Motion'],
-    src: '',
+    src: 'GM-Power-305x320.png',
     slides: [],
     video: {
       url: 'https://youtu.be/o4aBO8hHzq8',
@@ -102,7 +102,7 @@ const projects = [
   {
     id: 'eddine',
     type: ['All', 'Print', 'Branding'],
-    src: '',
+    src: 'Ed-Dining-305x320.png',
     slides: [
       '/assets/images/projects/ed-dining-brochure.png',
       '/assets/images/projects/ed-dining-folder.png',
@@ -124,7 +124,7 @@ const projects = [
   {
     id: 'cont',
     type: ['All', 'Motion'],
-    src: '',
+    src: 'Cont-Client-305x320.png',
     slides: [],
     video: {
       url: 'https://youtu.be/aVkRW2K-fRo',
@@ -146,7 +146,7 @@ const projects = [
   {
     id: 'lucca',
     type: ['All', 'Motion'],
-    src: '',
+    src: 'Lucca-305x320.png',
     slides: [],
     video: {
       url: 'https://youtu.be/vxCD96BGkdw',
@@ -185,7 +185,7 @@ const projects = [
   {
     id: 'apmag',
     type: ['All', 'Print', 'Branding'],
-    src: '',
+    src: 'Andre-Port-305x320.png',
     slides: [
       '/assets/images/projects/AP_04.jpg',
       '/assets/images/projects/AP_05.jpg',
