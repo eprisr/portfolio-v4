@@ -1,6 +1,5 @@
 import React from 'react'
 import ProjectsWrapper from '../../components/Projects/ProjectsWrapper'
-import Button from '../../components/base/Button'
 import { fetchProjects } from '../../lib/data'
 import styles from './projects.module.css'
 
@@ -13,10 +12,7 @@ export default async function Projects() {
   return (
     <section className={styles.projects}>
       <div className={`${styles.container} container`}>
-				<ProjectsWrapper filters={filters} projects={projects} />
-        <Button href="" colorScheme="china-rose" variant="solid">
-          Load more
-        </Button>
+        <ProjectsWrapper filters={filters} projects={projects} />
       </div>
     </section>
   )

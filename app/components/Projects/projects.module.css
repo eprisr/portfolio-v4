@@ -1,3 +1,9 @@
+.projects_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .proj_container {
   width: 100%;
 }
@@ -47,6 +53,19 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.button {
+  width: fit-content;
+  padding: 16px 40px;
+  border-radius: 3px;
+  margin-top: 32px;
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color: var(--accent1);
 }
 
 @media (min-width: 768px) {

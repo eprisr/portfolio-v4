@@ -18,7 +18,7 @@ export default function ProjectsWrapper({
   const [activeFilter, setActiveFilter] = useState<string>('All')
 
   return (
-    <div>
+    <div className={styles.projects_wrapper}>
       <Filter
         filters={filters}
         activeFilter={activeFilter}
@@ -61,6 +61,7 @@ export default function ProjectsWrapper({
             </div>
           ))}
       </div>
+      <button className={styles.button}>Load more</button>
     </div>
   )
 }
