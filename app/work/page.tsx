@@ -7,25 +7,15 @@ import { ProjectsSkeleton } from '../components/skeletons'
 import Projects from '../components/Projects/Projects'
 import { fetchProjectsTotal } from '../lib/data'
 
-export default async function Work({
-  searchParams,
-}: {
-  searchParams?: {
-    query?: string
-    offset?: string
-  }
-}) {
-  const query = searchParams?.query || ''
-	const currentOffset = Number(searchParams?.offset) || 0
-	
-	const total = await fetchProjectsTotal()
+export default async function Work() {
+  const total = await fetchProjectsTotal()
 
   return (
     <div className="main_wrapper">
       <Intro />
       <ProjectsWrapper>
         <Suspense fallback={<ProjectsSkeleton />}>
-          <Projects offset={currentOffset} />
+          <Projects total={total} />
         </Suspense>
       </ProjectsWrapper>
       <Companies />
