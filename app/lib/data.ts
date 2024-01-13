@@ -2,8 +2,8 @@ import { sql } from '@vercel/postgres'
 import { unstable_noStore as noStore } from 'next/cache'
 import { Project } from './definitions'
 
-const ITEMS_PER_LOAD = 3
-export async function fetchProjects(query: string, offset: number) {
+export async function fetchProjects(limit: number, offset: number) {
+	const ITEMS_PER_LOAD = limit || 3
   noStore()
   try {
     const projects =

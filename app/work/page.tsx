@@ -2,26 +2,22 @@ import React, { Suspense } from 'react'
 import Intro from '../sections/Work/Intro'
 import Solutions from '../sections/Work/Solutions'
 import Companies from '../sections/Work/Companies'
-import Projects from '../sections/Work/Projects'
+import ProjectsWrapper from '../sections/Work/ProjectsWrapper'
 import { ProjectsSkeleton } from '../components/skeletons'
+import Projects from '../components/Projects/Projects'
+import { fetchProjectsTotal } from '../lib/data'
 
-export default function Work({
-  searchParams,
-}: {
-  searchParams?: {
-    query?: string
-    offset?: string
-  }
-}) {
-  const query = searchParams?.query || ''
-  const currentOffset = Number(searchParams?.offset) || 0
+export default async function Work() {
+  const total = await fetchProjectsTotal()
 
   return (
     <div className="main_wrapper">
       <Intro />
-      <Suspense fallback={<ProjectsSkeleton />}>
-        <Projects query={query} offset={currentOffset} />
-      </Suspense>
+      <ProjectsWrapper>
+        <Suspense fallback={<ProjectsSkeleton />}>
+          <Projects total={total} />
+        </Suspense>
+      </ProjectsWrapper>
       <Companies />
       <Solutions />
     </div>

@@ -4,6 +4,10 @@
   gap: 72px;
 }
 
+.projects {
+  width: calc(100% - 6rem);
+}
+
 .proj_container {
   width: 100%;
   display: flex;

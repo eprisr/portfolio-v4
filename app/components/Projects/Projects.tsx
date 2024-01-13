@@ -1,28 +1,18 @@
 'use client'
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
-import Filter from './Filter'
-import Button from '../base/Button'
 import { Project } from '../../lib/definitions'
 import styles from './projects.module.css'
 
-export default function ProjectsWrapper({
-  filters,
-  projects,
-  total,
-}: {
-  filters: Array<string>
-  projects: Project[]
-  total: number
-}) {
+const Projects = ({ total }: { total: number }) => {
+  const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const currentOffset = Number(searchParams.get('offset')) || 0
-  const router = useRouter()
-  const [loadedProjects, setLoadedProjects] = useState<Project[]>([])
-  const [activeFilter, setActiveFilter] = useState<string>('All')
+
+  const [projects, setProjects] = useState<Project[]>([])
 
   const createPageUrl = (offsetNumber: number | string) => {
     const params = new URLSearchParams(searchParams)
@@ -30,22 +20,42 @@ export default function ProjectsWrapper({
     return `${pathname}?${params.toString()}`
   }
 
+  function loadMore() {
+    router.push(createPageUrl(currentOffset + 3), { scroll: false })
+  }
+
   useEffect(() => {
-    loadedProjects.some((proj) => proj['id'] === projects[0].id)
-      ? setLoadedProjects([...loadedProjects])
-      : setLoadedProjects([...loadedProjects, ...projects])
-  }, [projects])
+    const incompleteLoad = projects.length !== currentOffset
+    const offset = incompleteLoad ? 0 : currentOffset
+    const limit = incompleteLoad ? currentOffset + 3 : offset + 3
+    if (incompleteLoad) {
+      fetch(`/api/work?limit=${limit}&offset=${offset}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setProjects([...data])
+        })
+        .catch((error) => {
+          throw new Error(error.message)
+        })
+    } else {
+      fetch(`/api/work?offset=${offset}`)
+        .then((res) => res.json())
+        .then((data) => {
+          projects.some((proj) => proj['id'] === data[0].id)
+            ? setProjects([...projects])
+            : setProjects([...projects, ...data])
+        })
+        .catch((error) => {
+          throw new Error(error.message)
+        })
+    }
+  }, [currentOffset])
 
   return (
     <div className={styles.projects_wrapper}>
-      <Filter
-        filters={filters}
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-      />
       <div className={styles.proj_container}>
-        {loadedProjects
-          .filter((project) => project.type.includes(activeFilter))
+        {projects
+          // .filter((project) => project.type.includes(activeFilter))
           .map((project, i) => (
             <div
               key={project.id}
@@ -81,14 +91,12 @@ export default function ProjectsWrapper({
           ))}
       </div>
       {currentOffset + 3 < total && (
-        <Button
-          href={createPageUrl(currentOffset + 3)}
-          colorScheme="china-rose"
-          variant="solid"
-          scroll={false}>
+        <button className={styles.button} onClick={loadMore}>
           Load more
-        </Button>
+        </button>
       )}
     </div>
   )
 }
+
+export default Projects
