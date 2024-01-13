@@ -4,7 +4,7 @@ import Solutions from '../sections/Work/Solutions'
 import Companies from '../sections/Work/Companies'
 import ProjectsWrapper from '../sections/Work/ProjectsWrapper'
 import { ProjectsSkeleton } from '../components/skeletons'
-import Projects from '../components/Projects/Projects'
+import Projects from '../sections/Project/Projects'
 import { fetchProjectsTotal } from '../lib/data'
 
 export default async function Work() {

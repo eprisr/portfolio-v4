@@ -1,5 +1,5 @@
 import React from 'react'
-import Project from '../../sections/Project/Project'
+import Project from '../../components/Projects/Project'
 import { fetchSingleProject } from '../../lib/data'
 
 type ProjIdProps = { params: { projectId: string } }
