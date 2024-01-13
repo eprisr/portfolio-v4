@@ -3,7 +3,7 @@ import { unstable_noStore as noStore } from 'next/cache'
 import { Project } from './definitions'
 
 const ITEMS_PER_LOAD = 3
-export async function fetchProjects(query: string, offset: number) {
+export async function fetchProjects(offset: number) {
   noStore()
   try {
     const projects =
