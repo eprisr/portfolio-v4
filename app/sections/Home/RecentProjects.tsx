@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Button from '../../components/base/Button'
 import styles from './recentprojects.module.css'
 import Image from 'next/image'
@@ -14,44 +15,50 @@ function RecentProjects({}: Props) {
           <h2 className="display3">Latest Projects</h2>
         </div>
         <div className={styles.project_list}>
-          <div className={styles.project}>
-            <Image
-              src="/assets/images/smoothie_map_3x.png"
-              alt=""
-              width="1140"
-              height="1140"
-            />
-            <div className={styles.proj_desc}>
-              <p className={`${styles.lead_para} lead_para`}>
-                Smoothie Locator
-              </p>
-              <p className={styles.language}>React.js</p>
+          <Link href="/work/maps">
+            <div className={styles.project}>
+              <Image
+                src="/assets/images/smoothie_map_3x.png"
+                alt=""
+                width="1140"
+                height="1140"
+              />
+              <div className={styles.proj_desc}>
+                <p className={`${styles.lead_para} lead_para`}>
+                  Smoothie Locator
+                </p>
+                <p className={styles.language}>React.js</p>
+              </div>
             </div>
-          </div>
-          <div className={styles.project}>
-            <Image
-              src="/assets/images/memory_game_3x.png"
-              alt=""
-              width="1140"
-              height="1140"
-            />
-            <div className={styles.proj_desc}>
-              <p className={`${styles.lead_para} lead_para`}>Memory Game</p>
-              <p className={styles.language}>Vanilla JS</p>
+          </Link>
+          <Link href="/work/mem">
+            <div className={styles.project}>
+              <Image
+                src="/assets/images/memory_game_3x.png"
+                alt=""
+                width="1140"
+                height="1140"
+              />
+              <div className={styles.proj_desc}>
+                <p className={`${styles.lead_para} lead_para`}>Memory Game</p>
+                <p className={styles.language}>Vanilla JS</p>
+              </div>
             </div>
-          </div>
-          <div className={styles.project}>
-            <Image
-              src="/assets/images/my_reads_3x.png"
-              alt=""
-              width="1140"
-              height="1140"
-            />
-            <div className={styles.proj_desc}>
-              <p className={`${styles.lead_para} lead_para`}>My Reads</p>
-              <p className={styles.language}>React.js</p>
+          </Link>
+          <Link href="/work/reads">
+            <div className={styles.project}>
+              <Image
+                src="/assets/images/my_reads_3x.png"
+                alt=""
+                width="1140"
+                height="1140"
+              />
+              <div className={styles.proj_desc}>
+                <p className={`${styles.lead_para} lead_para`}>My Reads</p>
+                <p className={styles.language}>React.js</p>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
         <Button href="/work" variant="solid" colorScheme="china-rose">
           View my work

@@ -15,6 +15,10 @@
   gap: 54px;
 }
 
+.project_list a {
+  text-decoration: none;
+}
+
 .project {
   display: flex;
   align-items: center;
