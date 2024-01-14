@@ -3,25 +3,21 @@ import styles from './navtext.module.css'
 import Link from 'next/link'
 
 type NavTextProps = {
-  item?: string
-
-  /** Action props */
-  onNavTextContainerClick?: () => void
+  href: string
+  target?: string
+  children?: any
 }
 
-export default function NavText({
-  item,
-  onNavTextContainerClick,
-}: NavTextProps) {
+export default function NavText({ href, target, children }: NavTextProps) {
   const path =
-    item?.toLocaleLowerCase() === 'contact'
+    href?.toLocaleLowerCase() === 'contact'
       ? "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
-      : `/${item?.toLocaleLowerCase()}`
+      : `/${href?.toLocaleLowerCase()}`
 
   return (
-    <li className={styles.navItem} onClick={onNavTextContainerClick}>
-      <Link className={styles.navText} href={path}>
-        {item}
+    <li className={styles.navItem}>
+      <Link className={styles.navText} href={path} target={target}>
+        {children}
       </Link>
     </li>
   )

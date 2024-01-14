@@ -51,18 +51,20 @@ export default function NavBar() {
           } `}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
-              <NavText key={item} item={item} />
+              <NavText key={item} href={item}>
+                {item}
+              </NavText>
             ))}
-          </ul>
-          <Link href="../../public/EprisR-Resume.pdf">Resum&eacute;</Link>
-          <div className={styles.social}>
-            <Link href="https://github.com/eprisr" target="_blank">
+            <NavText href="../../public/EprisR-Resume.pdf">
+              Resum&eacute;
+            </NavText>
+            <NavText href="https://github.com/eprisr" target="_blank">
               <FaGithub className={styles.icon} />
-            </Link>
-            <Link href="https://linkedin.com/in/eprishb" target="_blank">
+            </NavText>
+            <NavText href="https://linkedin.com/in/eprishb" target="_blank">
               <FaLinkedin className={styles.icon} />
-            </Link>
-          </div>
+            </NavText>
+          </ul>
           {/* <Switch /> */}
         </div>
       </div>
