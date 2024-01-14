@@ -5,12 +5,16 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import Image from 'next/image'
 import { Project } from '../../lib/definitions'
 import styles from './projects.module.css'
+import { fetchProjectsTotal } from '../../lib/data'
 
 const Projects = ({ total }: { total: number }) => {
+  console.log(total)
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const currentLimit = searchParams.get('limit') || 3
   const currentOffset = Number(searchParams.get('offset')) || 0
+  const currentFilter = searchParams.get('filter') || 'All'
 
   const [projects, setProjects] = useState<Project[]>([])
 
@@ -25,6 +29,7 @@ const Projects = ({ total }: { total: number }) => {
   }
 
   useEffect(() => {
+    console.log('offset changed')
     const incompleteLoad = projects.length !== currentOffset
     const offset = incompleteLoad ? 0 : currentOffset
     const limit = incompleteLoad ? currentOffset + 3 : offset + 3
@@ -51,11 +56,24 @@ const Projects = ({ total }: { total: number }) => {
     }
   }, [currentOffset])
 
+  useEffect(() => {
+    console.log('filter changed')
+    const limit = currentOffset + 3
+    fetch(`/api/work?limit=${limit}&offset=0&filter=${currentFilter}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProjects([...data])
+      })
+      .catch((error) => {
+        throw new Error(error.message)
+      })
+  }, [currentFilter])
+
   return (
     <div className={styles.projects_wrapper}>
       <div className={styles.proj_container}>
         {projects
-          // .filter((project) => project.type.includes(activeFilter))
+          .filter((project) => project.type.includes(currentFilter))
           .map((project, i) => (
             <div
               key={project.id}
