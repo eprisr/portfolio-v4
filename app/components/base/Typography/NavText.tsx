@@ -20,7 +20,7 @@ export default function NavText({
   children,
 }: NavTextProps) {
   const path =
-    href?.toLocaleLowerCase() === 'contact'
+    href?.toLocaleLowerCase() === '/contact'
       ? "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
       : `${href?.toLocaleLowerCase()}`
 
