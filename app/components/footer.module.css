@@ -5,6 +5,7 @@
   align-self: stretch;
   align-items: center;
   margin-top: 64px;
+  margin-bottom: 48px;
 }
 
 .footer p {
@@ -22,5 +23,6 @@
     height: 2em;
     width: auto;
     padding: var(--rem-16px);
+    color: var(--color-space-cadet);
   }
 }

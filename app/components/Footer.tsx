@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import styles from './footer.module.css'
+import Link from 'next/link'
 
 type Props = {}
 
@@ -9,8 +10,12 @@ export default function Footer({}: Props) {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.icons}>
-          <FaGithub className={styles.icon} />
-          <FaLinkedin className={styles.icon} />
+          <Link href="https://github.com/eprisr" target="_blank">
+            <FaGithub className={styles.icon} />
+          </Link>
+          <Link href="https://linkedin.com/in/eprishb" target="_blank">
+            <FaLinkedin className={styles.icon} />
+          </Link>
         </div>
         <p>All rights reserved.</p>
         <p>
