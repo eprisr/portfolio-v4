@@ -2,9 +2,7 @@ import React from 'react'
 import styles from './origin.module.css'
 import Image from 'next/image'
 
-type Props = {}
-
-export default function Origin({}: Props) {
+export default function Origin() {
   return (
     <section className={styles.role}>
       <div className={`${styles.container} container`}>

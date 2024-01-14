@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './solutions.module.css'
 
-type Props = {}
-
-export default function Solutions({}: Props) {
+export default function Solutions() {
   return (
     <section id="process" className={styles.solutions}>
       <div className={`${styles.container} container`}>

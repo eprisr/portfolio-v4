@@ -3,9 +3,7 @@ import Button from '../../components/base/Button'
 import styles from './hero.module.css'
 import Image from 'next/image'
 
-type Props = {}
-
-function Hero({}: Props) {
+function Hero() {
   return (
     <section className={styles.hero}>
       <div className={` ${styles.container} container `}>

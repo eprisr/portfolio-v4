@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './intro.module.css'
 
-type Props = {}
-
-export default function Intro({}: Props) {
+export default function Intro() {
   return (
     <section className={styles.intro}>
       <div className={`${styles.container} container`}>

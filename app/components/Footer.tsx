@@ -3,9 +3,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import styles from './footer.module.css'
 import Link from 'next/link'
 
-type Props = {}
-
-export default function Footer({}: Props) {
+export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>

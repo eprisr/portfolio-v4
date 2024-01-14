@@ -2,9 +2,7 @@ import React from 'react'
 import styles from './skills.module.css'
 import { skillsIcons } from '../../assets/icons/index'
 
-type Props = {}
-
-export default function Skills({}: Props) {
+export default function Skills() {
   console.log(skillsIcons[0])
   return (
     <section className={styles.skills}>

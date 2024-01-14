@@ -3,9 +3,7 @@ import Button from '../../components/base/Button'
 import styles from './role.module.css'
 import Image from 'next/image'
 
-type Props = {}
-
-function Role({}: Props) {
+function Role() {
   return (
     <section className={styles.role}>
       <div className={` ${styles.container} container `}>

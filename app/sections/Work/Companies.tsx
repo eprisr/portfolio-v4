@@ -2,9 +2,7 @@ import React from 'react'
 import styles from './companies.module.css'
 import Image from 'next/image'
 
-type Props = {}
-
-export default function Companies({}: Props) {
+export default function Companies() {
   return (
     <section className={styles.companies}>
       <div className={`${styles.container} container`}>

@@ -2,9 +2,7 @@ import React from 'react'
 import styles from './aboutme.module.css'
 import Image from 'next/image'
 
-type Props = {}
-
-function AboutMe({}: Props) {
+function AboutMe() {
   return (
     <section className={styles.about}>
       <div className={` ${styles.container} container `}>

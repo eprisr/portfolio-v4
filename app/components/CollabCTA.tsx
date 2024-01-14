@@ -2,9 +2,7 @@ import React from 'react'
 import Button from './base/Button'
 import styles from './collabcta.module.css'
 
-type Props = {}
-
-export default function CollabCTA({}: Props) {
+export default function CollabCTA() {
   return (
     <section className={styles.collab_cta}>
       <div className={` ${styles.container} container `}>

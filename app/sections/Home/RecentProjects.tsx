@@ -4,9 +4,7 @@ import Button from '../../components/base/Button'
 import styles from './recentprojects.module.css'
 import Image from 'next/image'
 
-type Props = {}
-
-function RecentProjects({}: Props) {
+function RecentProjects() {
   return (
     <section className={styles.projects}>
       <div className={`${styles.container} container`}>

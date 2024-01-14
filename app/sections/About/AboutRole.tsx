@@ -1,9 +1,7 @@
 import React from 'react'
 import styles from './aboutrole.module.css'
 
-type Props = {}
-
-export default function AboutRole({}: Props) {
+export default function AboutRole() {
   return (
     <section id="role_and_contributions" className={styles.role}>
       <div className={`${styles.container} container `}>
