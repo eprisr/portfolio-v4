@@ -14,7 +14,7 @@ export default function Footer({}: Props) {
         </div>
         <p>All rights reserved.</p>
         <p>
-          Designed in Figma. Built with love in Next.js. Deployed in Varcel.
+          Designed in Figma. Built with love in Next.js. Deployed in Vercel.
         </p>
       </div>
     </footer>
