@@ -1,8 +1,12 @@
+'use client'
+
 import React, { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import Link from 'next/link'
+import { CgClose, CgMenu } from 'react-icons/cg'
 import NavText from './base/Typography/NavText'
 import styles from './navbar.module.css'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 // eslint-disable-next-line
 // @ts-ignore
@@ -12,6 +16,11 @@ const Switch = dynamic(() => import('./base/Switch.tsx'), {
 
 export default function NavBar() {
   const navItems = ['About', 'Work', 'Contact']
+  const [menuOpen, setMenuOpen] = useState<boolean>(false)
+
+  function toggleMenu() {
+    setMenuOpen(!menuOpen)
+  }
 
   return (
     <nav className={styles.nav}>
@@ -29,12 +38,31 @@ export default function NavBar() {
           </svg>
           <span className={styles.eprisRichardson}>Epris Richardson</span>
         </Link>
-        <div className={styles.navItems}>
+        <div
+          className={` ${styles.mobile_icon} ${
+            menuOpen ? styles.menu_open : ''
+          } `}
+          onClick={toggleMenu}>
+          {menuOpen ? <CgClose /> : <CgMenu />}
+        </div>
+        <div
+          className={` ${styles.navItems} ${
+            menuOpen ? styles.menu_open : ''
+          } `}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
               <NavText key={item} item={item} />
             ))}
           </ul>
+          <Link href="../../public/EprisR-Resume.pdf">Resum&eacute;</Link>
+          <div className={styles.social}>
+            <Link href="https://github.com/eprisr" target="_blank">
+              <FaGithub className={styles.icon} />
+            </Link>
+            <Link href="https://linkedin.com/in/eprishb" target="_blank">
+              <FaLinkedin className={styles.icon} />
+            </Link>
+          </div>
           {/* <Switch /> */}
         </div>
       </div>
