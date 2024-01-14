@@ -51,11 +51,16 @@ export default function NavBar() {
           } `}>
           <ul className={styles.navList}>
             {navItems.map((item) => (
-              <NavText key={item} href={item}>
+              <NavText key={item} href={`/${item}`}>
                 {item}
               </NavText>
             ))}
-            <NavText href="../../public/EprisR-Resume.pdf">
+            <NavText
+              href="/epris_r_resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              locale={false}
+              download>
               Resum&eacute;
             </NavText>
             <NavText href="https://github.com/eprisr" target="_blank">
