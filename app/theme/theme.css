@@ -1,67 +1,38 @@
-:root {
+body {
   --text-light: var(--color-black);
   --text-secondary-light: var(--color-space-cadet);
+  --text-reverse-light: var(--color-white);
   --accent1-light: var(--color-china-rose);
-  --accent2-light: var(--color-dun);
-  --accent3-light: var(--color-magnolia);
-  --accent4-light: var(--color-space-cadet);
+  --accent2-light: var(--color-china-rose);
   --bg1-light: var(--color-white);
-  --bg2-light: var(--color-dun);
+  --bg2-light: var(--color-magnolia);
 
   --text-dark: var(--color-white);
   --text-secondary-dark: var(--color-magnolia);
+  --text-reverse-dark: var(--color-space-cadet);
   --accent1-dark: var(--color-china-rose);
-  --accent2-dark: var(--color-dun);
-  --accent3-dark: var(--color-dark-moss);
-  --accent4-dark: var(--color-magnolia);
+  --accent2-dark: var(--color-magnolia);
   --bg1-dark: var(--color-space-cadet);
-  --bg2-dark: var(--color-dark-moss);
+  --bg2-dark: var(--color-space-cadet);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: var(--text-dark);
-    --text-secondary: var(--text-secondary-dark);
-    --accent1: var(--accent1-dark);
-    --accent2: var(--accent2-dark);
-    --accent3: var(--accent3-dark);
-    --accent4: var(--accent4-dark);
-    --bg1: var(--bg1-dark);
-    --bg2: var(--bg2-dark);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --text: var(--text-light);
-    --text-secondary: var(--text-secondary-light);
-    --accent1: var(--accent1-light);
-    --accent2: var(--accent2-light);
-    --accent3: var(--accent3-light);
-    --accent4: var(--accent4-light);
-    --bg1: var(--bg1-light);
-    --bg2: var(--bg2-light);
-  }
-}
-
-[color-scheme='dark'] {
-  --text: var(--text-dark);
-  --text-secondary: var(--text-secondary-dark);
-  --accent1: var(--accent1-dark);
-  --accent2: var(--accent2-dark);
-  --accent3: var(--accent3-dark);
-  --accent4: var(--accent4-dark);
-  --bg1: var(--bg1-dark);
-  --bg2: var(--bg2-dark);
-}
-
-[color-scheme='light'] {
+body,
+body[data-theme='light'] {
   --text: var(--text-light);
   --text-secondary: var(--text-secondary-light);
+  --text-reverse: var(--text-reverse-light);
   --accent1: var(--accent1-light);
   --accent2: var(--accent2-light);
-  --accent3: var(--accent3-light);
-  --accent4: var(--accent4-light);
   --bg1: var(--bg1-light);
   --bg2: var(--bg2-light);
+}
+
+body[data-theme='dark'] {
+  --text: var(--text-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --text-reverse: var(--text-reverse-dark);
+  --accent1: var(--accent1-dark);
+  --accent2: var(--accent2-dark);
+  --bg1: var(--bg1-dark);
+  --bg2: var(--bg2-dark);
 }

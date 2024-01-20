@@ -22,7 +22,7 @@
 }
 
 .solid.china-rose {
-  background-color: var(--accent1);
+  background-color: var(--color-china-rose);
 }
 
 /* OUTLINE */
@@ -32,11 +32,11 @@
 }
 
 .outline.china-rose .link {
-  color: var(--accent1);
+  color: var(--color-china-rose);
 }
 
 .outline.china-rose {
-  border: 2px solid var(--accent1);
+  border: 2px solid var(--color-china-rose);
 }
 
 /* SIZE */
