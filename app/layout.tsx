@@ -52,21 +52,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      color-scheme="light"
       className={`${dm_serif_display.variable} ${dm_serif_text.variable} ${red_hat_display.variable} ${red_hat_text.variable}`}>
       <body>
-        <Script id="theme">
+        <Script id="theme" strategy="beforeInteractive">
           {`
-						function getCurrentTheme() {
+						function getTheme() {
 							if(window.localStorage.getItem('theme')) {
 								return window.localStorage.getItem('theme');
 							}
-							return window.matchMedia('(prefers-color-scheme: dark)').matches
-								? 'dark'
-								: 'light'
+							return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 						}
-						
-						document.querySelector(':root').setAttribute('color-scheme', 'light');
+
+						document.body.dataset.theme = getTheme();
 					`}
         </Script>
         <NavBar />

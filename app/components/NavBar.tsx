@@ -1,26 +1,23 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import dynamic from 'next/dynamic'
+import React, { useState } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { CgClose, CgMenu } from 'react-icons/cg'
 import NavText from './base/Typography/NavText'
+// import Switch from './base/Switch'
 import styles from './navbar.module.css'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
-// eslint-disable-next-line
-// @ts-ignore
-const Switch = dynamic(() => import('./base/Switch.tsx'), {
-  ssr: false,
-})
+const Switch = dynamic(
+  //@ts-ignore
+  () => import('./base/Switch.tsx').then((mod) => mod.default),
+  { ssr: false }
+)
 
 export default function NavBar() {
   const navItems = ['About', 'Work', 'Contact']
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
-
-  function toggleMenu() {
-    setMenuOpen(!menuOpen)
-  }
 
   return (
     <nav className={styles.nav}>
@@ -42,7 +39,7 @@ export default function NavBar() {
           className={` ${styles.mobile_icon} ${
             menuOpen ? styles.menu_open : ''
           } `}
-          onClick={toggleMenu}>
+          onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <CgClose /> : <CgMenu />}
         </div>
         <div
@@ -70,7 +67,7 @@ export default function NavBar() {
               <FaLinkedin className={styles.icon} />
             </NavText>
           </ul>
-          {/* <Switch /> */}
+          <Switch />
         </div>
       </div>
     </nav>

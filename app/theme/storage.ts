@@ -1,5 +1,6 @@
 // Store Data in Local Browser
-export const setToLS = (key: string, value: string) => {
+export const setToLS = (key: string, value: string | null) => {
+  if (value === null) value = ''
   window.localStorage.setItem(key, value)
 }
 
@@ -7,7 +8,7 @@ export const setToLS = (key: string, value: string) => {
 export const getFromLS = (key: string) => {
   const value: string | null = window.localStorage.getItem(key)
 
-	if (value) return value;
+  if (value) return value
 
-	return '';
+  return ''
 }
