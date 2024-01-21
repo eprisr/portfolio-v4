@@ -54,7 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${dm_serif_display.variable} ${dm_serif_text.variable} ${red_hat_display.variable} ${red_hat_text.variable}`}>
       <body>
-        <Script id="theme" strategy="beforeInteractive">
+        <Script id="theme">
           {`
 						function getTheme() {
 							if(window.localStorage.getItem('theme')) {
