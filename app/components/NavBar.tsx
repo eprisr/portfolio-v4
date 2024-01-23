@@ -56,11 +56,8 @@ export default function NavBar() {
               </NavText>
             ))}
             <NavText
-              href="/Epris_Richardson_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              locale={false}
-              download>
+              href="https://www.linkedin.com/in/eprishb/details/featured/?profileId=ACoAAAqb5MsBLG3tCIUFyAWzmBDwS92HdVIj1y0"
+              target="_blank">
               Resum&eacute;
             </NavText>
             <NavText href="https://github.com/eprisr" target="_blank">
