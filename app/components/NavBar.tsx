@@ -56,7 +56,7 @@ export default function NavBar() {
               </NavText>
             ))}
             <NavText
-              href="/assets/epris_r_resume.pdf"
+              href="/Epris_Richardson_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               locale={false}
