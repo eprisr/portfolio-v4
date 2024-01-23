@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import Script from 'next/script'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
@@ -75,6 +76,7 @@ export default function RootLayout({
           <CollabCTA />
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   )
