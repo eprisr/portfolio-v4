@@ -42,16 +42,17 @@ function ButtonIcon({ theme }: { theme: string }) {
 }
 
 const Switch = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    document.body.dataset.theme === 'dark'
-  )
-  const activeTheme = isDarkMode ? 'dark' : 'light'
-  const inactiveTheme = isDarkMode ? 'light' : 'dark'
+  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches
+    ? 'dark'
+    : 'light'
+  const [theme, setTheme] = useState(getFromLS('theme') || preferredTheme)
+  const inactiveTheme = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {
-    document.body.dataset.theme = activeTheme
-    setToLS('theme', activeTheme)
-  }, [isDarkMode])
+    document.body.dataset.theme = theme
+    setToLS('theme', theme)
+  }, [theme])
 
   return (
     <button
@@ -59,8 +60,8 @@ const Switch = () => {
       aria-label={`Switch to ${inactiveTheme} mode`}
       title={`Switch to ${inactiveTheme} mode`}
       className={`${styles.theme_button} themeBtn`}
-      onClick={() => setIsDarkMode(!isDarkMode)}>
-      <ButtonIcon theme={activeTheme} />
+      onClick={() => setTheme(inactiveTheme)}>
+      <ButtonIcon theme={theme} />
     </button>
   )
 }
