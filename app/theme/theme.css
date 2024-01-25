@@ -1,4 +1,4 @@
-body {
+:root {
   --text-light: var(--color-black);
   --text-secondary-light: var(--color-space-cadet);
   --text-reverse-light: var(--color-white);
@@ -16,8 +16,8 @@ body {
   --bg2-dark: var(--color-space-cadet);
 }
 
-body,
-body[data-theme='light'] {
+:root,
+:root[data-theme='light'] {
   --text: var(--text-light);
   --text-secondary: var(--text-secondary-light);
   --text-reverse: var(--text-reverse-light);
@@ -27,7 +27,7 @@ body[data-theme='light'] {
   --bg2: var(--bg2-light);
 }
 
-body[data-theme='dark'] {
+:root[data-theme='dark'] {
   --text: var(--text-dark);
   --text-secondary: var(--text-secondary-dark);
   --text-reverse: var(--text-reverse-dark);

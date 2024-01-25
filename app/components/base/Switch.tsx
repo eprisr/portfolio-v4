@@ -47,12 +47,12 @@ const Switch = () => {
     ? 'dark'
     : 'light'
   const [theme, setTheme] = useState(
-    document.body.dataset.theme || preferredTheme
+    document.querySelector(':root')?.getAttribute('theme') || preferredTheme
   )
   const inactiveTheme = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {
-    document.body.dataset.theme = theme
+    document.querySelector(':root')?.setAttribute('data-theme', theme)
     setToLS('theme', theme)
   }, [theme])
 

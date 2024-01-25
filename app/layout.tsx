@@ -57,7 +57,7 @@ export default function RootLayout({
 			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 		}
 
-		document.body.dataset.theme = getTheme();
+		document.querySelector(':root')?.setAttribute('data-theme', theme)
 	`
 
   return (
