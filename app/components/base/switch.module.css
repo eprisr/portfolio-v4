@@ -11,7 +11,7 @@
 }
 
 [data-theme='dark'] .theme_button {
-  background-color: var(--color-china-rose);
+  background-color: var(--color-madder);
 }
 
 [data-theme='light'] .theme_button {

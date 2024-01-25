@@ -21,8 +21,8 @@
   color: white;
 }
 
-.solid.china-rose {
-  background-color: var(--color-china-rose);
+.solid.madder {
+  background-color: var(--color-madder);
 }
 
 /* OUTLINE */
@@ -31,12 +31,12 @@
   background-color: unset;
 }
 
-.outline.china-rose .link {
-  color: var(--color-china-rose);
+.outline.madder .link {
+  color: var(--color-madder);
 }
 
-.outline.china-rose {
-  border: 2px solid var(--color-china-rose);
+.outline.madder {
+  border: 2px solid var(--color-madder);
 }
 
 /* SIZE */

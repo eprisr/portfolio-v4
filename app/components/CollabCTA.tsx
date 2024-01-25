@@ -18,13 +18,10 @@ export default function CollabCTA() {
           <Button
             href="mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
             variant="solid"
-            colorScheme="china-rose">
+            colorScheme="madder">
             Contact me
           </Button>
-          <Button
-            href="/work#process"
-            variant="outline"
-            colorScheme="china-rose">
+          <Button href="/work#process" variant="outline" colorScheme="madder">
             Learn the process
           </Button>
         </div>
