@@ -46,7 +46,9 @@ const Switch = () => {
     .matches
     ? 'dark'
     : 'light'
-  const [theme, setTheme] = useState(getFromLS('theme') || preferredTheme)
+  const [theme, setTheme] = useState(
+    document.body.dataset.theme || preferredTheme
+  )
   const inactiveTheme = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {

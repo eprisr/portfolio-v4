@@ -68,6 +68,7 @@ export default function RootLayout({
         <Script
           id="theme"
           dangerouslySetInnerHTML={{ __html: setInitialTheme }}
+          strategy="beforeInteractive"
         />
         <NavBar />
         <main>
