@@ -49,11 +49,26 @@ export default function RootLayout({
   children: ReactNode
   types: ReactNode
 }) {
+  const setInitialTheme = `
+		function getTheme() {
+			if(window.localStorage.getItem('theme')) {
+				return window.localStorage.getItem('theme');
+			}
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		document.body.dataset.theme = getTheme();
+	`
+
   return (
     <html
       lang="en"
       className={`${dm_serif_display.variable} ${dm_serif_text.variable} ${red_hat_display.variable} ${red_hat_text.variable}`}>
       <body>
+        <Script
+          id="theme"
+          dangerouslySetInnerHTML={{ __html: setInitialTheme }}
+        />
         <NavBar />
         <main>
           {children}
@@ -61,18 +76,6 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
-      <Script id="theme" strategy="beforeInteractive">
-        {`
-					function getTheme() {
-						if(window.localStorage.getItem('theme')) {
-							return window.localStorage.getItem('theme');
-						}
-						return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-					}
-
-					document.body.dataset.theme = getTheme();
-				`}
-      </Script>
     </html>
   )
 }
