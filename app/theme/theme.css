@@ -16,8 +16,8 @@
   --bg2-dark: var(--color-space-cadet);
 }
 
-:root,
-:root[data-theme='light'] {
+:root {
+  color-scheme: light;
   --text: var(--text-light);
   --text-secondary: var(--text-secondary-light);
   --text-reverse: var(--text-reverse-light);
@@ -28,6 +28,7 @@
 }
 
 :root[data-theme='dark'] {
+  color-scheme: dark;
   --text: var(--text-dark);
   --text-secondary: var(--text-secondary-dark);
   --text-reverse: var(--text-reverse-dark);

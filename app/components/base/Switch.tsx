@@ -46,15 +46,16 @@ const Switch = () => {
     .matches
     ? 'dark'
     : 'light'
-  const [theme, setTheme] = useState(
-    document.querySelector(':root')?.getAttribute('theme') || preferredTheme
-  )
+  const [theme, setTheme] = useState(global.window?.__theme || 'light')
   const inactiveTheme = theme === 'light' ? 'dark' : 'light'
 
+  const toggleTheme = () => {
+    global.window?.__setPreferredTheme(inactiveTheme)
+  }
+
   useEffect(() => {
-    document.querySelector(':root')?.setAttribute('data-theme', theme)
-    setToLS('theme', theme)
-  }, [theme])
+    global.window.__onThemeChange = setTheme
+  })
 
   return (
     <button
@@ -62,7 +63,7 @@ const Switch = () => {
       aria-label={`Switch to ${inactiveTheme} mode`}
       title={`Switch to ${inactiveTheme} mode`}
       className={`${styles.theme_button} themeBtn`}
-      onClick={() => setTheme(inactiveTheme)}>
+      onClick={toggleTheme}>
       <ButtonIcon theme={theme} />
     </button>
   )
