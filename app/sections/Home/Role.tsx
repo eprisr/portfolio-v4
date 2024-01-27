@@ -28,7 +28,7 @@ function Role() {
           <Button
             href="/about#role_and_contributions"
             variant="solid"
-            colorScheme="madder">
+            colorScheme="accent1">
             Discover my impact
           </Button>
         </div>

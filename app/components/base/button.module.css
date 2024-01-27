@@ -15,28 +15,26 @@
 
 .solid {
   border: none;
+  background-color: var(--cta);
 }
 
 .solid .link {
   color: white;
 }
 
-.solid.madder {
-  background-color: var(--color-madder);
+[data-theme='dark']  .solid .link {
+  color: var(--text-reverse);
 }
 
 /* OUTLINE */
 
 .outline {
   background-color: unset;
+  border: 2px solid var(--cta);
 }
 
-.outline.madder .link {
-  color: var(--color-madder);
-}
-
-.outline.madder {
-  border: 2px solid var(--color-madder);
+.outline .link {
+  color: var(--cta);
 }
 
 /* SIZE */

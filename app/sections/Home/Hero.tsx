@@ -17,7 +17,7 @@ function Hero() {
             I'm a technical and visual problem solver who fuses innovation and
             creativity to craft immersive digital experiences.
           </p>
-          <Button href="/about" variant="solid" colorScheme="madder">
+          <Button href="/about" variant="solid" colorScheme="accent2">
             About Me
           </Button>
         </div>

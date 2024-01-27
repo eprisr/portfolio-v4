@@ -11,11 +11,11 @@
 }
 
 [data-theme='dark'] .theme_button {
-  background-color: var(--color-madder);
+  background-color: var(--color-space-cadet);
 }
 
 [data-theme='light'] .theme_button {
-  background-color: var(--color-dun);
+  background-color: var(--color-white);
 }
 
 .theme_button:is(:hover) {

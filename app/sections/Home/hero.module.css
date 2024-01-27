@@ -52,7 +52,7 @@
   font-size: var(--rem-80px);
   font-style: italic;
   text-transform: none;
-  color: var(--accent2);
+  color: var(--accent1);
 }
 
 .pronunciation {

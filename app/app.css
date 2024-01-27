@@ -100,10 +100,13 @@ button {
   --color-white: #fff;
   --color-black: #000;
   --color-space-cadet: #202945;
-  --color-amber: #ffbf00;
   --color-magnolia: #f7f0f5;
-  --color-madder: #ab1233;
   --color-dun: #decbb7;
+  --color-cerulean: #1b799e;
+  --color-madder: #ab1233;
+  --color-sea-salt: #f8f8f8;
+  --color-jet: #333;
+  --color-gray: #555;
 
   /* Gaps */
   --gap-0: 0rem;
