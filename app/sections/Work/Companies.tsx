@@ -9,37 +9,72 @@ export default function Companies() {
         <h2>Companies I've Worked With</h2>
         <div className={styles.logos}>
           <Image
-            src="/assets/images/logos/palace-logo-black.png"
+            src="/assets/images/logos/palace-logo.png"
             alt=""
-            className={styles.palace}
+            className={`${styles.palace} ${styles.imgDark}`}
             width="530"
             height="175"
           />
           <Image
-            src="/assets/images/logos/continental-logo-black.png"
+            src="/assets/images/logos/palace-logo-black.png"
             alt=""
-            className={styles.continental}
+            className={`${styles.palace} ${styles.imgLight}`}
+            width="530"
+            height="175"
+          />
+          <Image
+            src="/assets/images/logos/continental-logo.png"
+            alt=""
+            className={`${styles.continental} ${styles.imgDark}`}
             width="925"
             height="99"
           />
           <Image
-            src="/assets/images/logos/bradley-logo-black.png"
+            src="/assets/images/logos/continental-logo-black.png"
             alt=""
-            className={styles.bradley}
+            className={`${styles.continental} ${styles.imgLight}`}
+            width="925"
+            height="99"
+          />
+          <Image
+            src="/assets/images/logos/bradley-logo.png"
+            alt=""
+            className={`${styles.bradley} ${styles.imgDark}`}
             width="1477"
             height="301"
           />
           <Image
-            src="/assets/images/logos/brooks-logo-black.png"
+            src="/assets/images/logos/bradley-logo-black.png"
             alt=""
-            className={styles.brooks}
+            className={`${styles.bradley} ${styles.imgLight}`}
+            width="1477"
+            height="301"
+          />
+          <Image
+            src="/assets/images/logos/brooks-logo.png"
+            alt=""
+            className={`${styles.brooks} ${styles.imgDark}`}
             width="628"
             height="152"
           />
           <Image
+            src="/assets/images/logos/brooks-logo-black.png"
+            alt=""
+            className={`${styles.brooks} ${styles.imgLight}`}
+            width="628"
+            height="152"
+          />
+          <Image
+            src="/assets/images/logos/weco-logo-horizontal.png"
+            alt=""
+            className={`${styles.weco} ${styles.imgDark}`}
+            width="797"
+            height="85"
+          />
+          <Image
             src="/assets/images/logos/weco-logo-horizontal-black.png"
             alt=""
-            className={styles.weco}
+            className={`${styles.weco} ${styles.imgLight}`}
             width="797"
             height="85"
           />
