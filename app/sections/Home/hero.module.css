@@ -45,6 +45,20 @@
   fill: var(--accent2);
 }
 
+.imgDark,
+[data-theme='dark'] .imgLight {
+  display: none;
+}
+
+[data-theme='dark'] .imgLight,
+[data-theme='dark'] .imgDark {
+  color-scheme: dark;
+}
+
+[data-theme='dark'] .imgDark {
+  display: unset;
+}
+
 .intro {
   font-family: var(--red-hat-display);
   font-size: var(--rem-48px);
