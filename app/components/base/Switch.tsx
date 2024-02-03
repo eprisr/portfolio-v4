@@ -1,45 +1,8 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { IoRoseOutline } from 'react-icons/io5'
-import { PiMoonStars, PiSunDim, PiTree } from 'react-icons/pi'
-import { getFromLS, setToLS } from '../../theme/storage'
+import { HiLightBulb, HiOutlineLightBulb } from 'react-icons/hi2'
 import styles from './switch.module.css'
-
-function ButtonIcon({ theme }: { theme: string }) {
-  if (theme === 'light' || theme === '') {
-    return (
-      <PiSunDim
-        aria-hidden={true}
-        className={`${styles.switch_light} ${styles.switch_icon}`}
-      />
-    )
-  }
-  if (theme === 'rose') {
-    return (
-      <IoRoseOutline
-        aria-hidden={true}
-        className={`${styles.switch_rose} ${styles.switch_icon}`}
-      />
-    )
-  }
-  if (theme === 'forest') {
-    return (
-      <PiTree
-        aria-hidden={true}
-        className={`${styles.switch_forest} ${styles.switch_icon}`}
-      />
-    )
-  }
-  if (theme === 'dark') {
-    return (
-      <PiMoonStars
-        aria-hidden={true}
-        className={`${styles.switch_dark} ${styles.switch_icon}`}
-      />
-    )
-  }
-}
 
 const Switch = () => {
   const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
@@ -64,7 +27,14 @@ const Switch = () => {
       title={`Switch to ${inactiveTheme} mode`}
       className={`${styles.theme_button} themeBtn`}
       onClick={toggleTheme}>
-      <ButtonIcon theme={theme} />
+      <div className={styles.light_container}>
+        <div className={styles.light_string}></div>
+        {theme === 'light' ? (
+          <HiLightBulb className={styles.light_bulb} />
+        ) : (
+          <HiOutlineLightBulb className={styles.light_bulb} />
+        )}
+      </div>
     </button>
   )
 }

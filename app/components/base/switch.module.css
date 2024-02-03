@@ -1,24 +1,71 @@
-.switch_icon {
-  font-size: 1.5em;
+@keyframes light-swing {
+  0% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  100% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes light-hover-pull {
+  100% {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes light-active-pull {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(15px);
+  }
 }
 
 .theme_button {
-  display: grid;
-  place-items: center;
+  appearance: none;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  background-color: unset;
+  border: unset;
 }
 
-[data-theme='dark'] .theme_button {
-  background-color: var(--color-space-cadet);
+.light_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform-origin: 25% top;
+  animation: light-swing 3.5s ease-in-out forwards infinite;
 }
 
-[data-theme='light'] .theme_button {
-  background-color: var(--color-white);
+.light_string {
+  width: 2px;
+  height: 80px;
+  margin-top: -64px;
+  background: var(--color-dark-silver);
 }
 
-.theme_button:is(:hover) {
-  background-color: var(--accent2);
-  opacity: 0.8;
+.light_bulb {
+  font-size: 1.5em;
+  transform: rotate(180deg);
+}
+
+[data-theme='dark'] .light_bulb {
+  color: var(--color-white);
+}
+
+[data-theme='light'] .light_bulb {
+  color: #ffbf00;
+}
+
+.light_container:is(:hover) {
+  animation: light-hover-pull 0.5s ease-in-out forwards;
+}
+
+.light_container:active {
+  animation: light-active-pull 0.5s ease-in-out forwards;
 }
