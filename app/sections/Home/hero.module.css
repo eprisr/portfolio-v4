@@ -45,17 +45,17 @@
   fill: var(--accent2);
 }
 
-.imgDark,
-[data-theme='dark'] .imgLight {
+.imgDark {
   display: none;
 }
 
-[data-theme='dark'] .imgLight,
-[data-theme='dark'] .imgDark {
+[data-theme='dark'] .imgLight {
   color-scheme: dark;
+  display: none;
 }
 
 [data-theme='dark'] .imgDark {
+  color-scheme: dark;
   display: unset;
 }
 
