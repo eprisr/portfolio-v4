@@ -16,6 +16,20 @@
   gap: 40px;
 }
 
+.imgDark,
+[data-theme='dark'] .imgLight {
+  display: none;
+}
+
+[data-theme='dark'] .imgLight,
+[data-theme='dark'] .imgDark {
+  color-scheme: dark;
+}
+
+[data-theme='dark'] .imgDark {
+  display: unset;
+}
+
 .palace {
   height: var(--rem-48px);
   width: auto;

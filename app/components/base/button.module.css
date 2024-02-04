@@ -15,28 +15,26 @@
 
 .solid {
   border: none;
+  background-color: var(--cta);
 }
 
 .solid .link {
   color: white;
 }
 
-.solid.china-rose {
-  background-color: var(--accent1);
+[data-theme='dark']  .solid .link {
+  color: var(--text-reverse);
 }
 
 /* OUTLINE */
 
 .outline {
   background-color: unset;
+  border: 2px solid var(--cta);
 }
 
-.outline.china-rose .link {
-  color: var(--accent1);
-}
-
-.outline.china-rose {
-  border: 2px solid var(--accent1);
+.outline .link {
+  color: var(--cta);
 }
 
 /* SIZE */

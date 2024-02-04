@@ -5,6 +5,7 @@ import Script from 'next/script'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
 import Footer from './components/Footer'
+import ThemeScript from './lib/utils'
 import {
   dm_serif_display,
   dm_serif_text,
@@ -53,23 +54,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      color-scheme="light"
       className={`${dm_serif_display.variable} ${dm_serif_text.variable} ${red_hat_display.variable} ${red_hat_text.variable}`}>
+      <head>
+        <ThemeScript />
+      </head>
       <body>
-        <Script id="theme">
-          {`
-						function getCurrentTheme() {
-							if(window.localStorage.getItem('theme')) {
-								return window.localStorage.getItem('theme');
-							}
-							return window.matchMedia('(prefers-color-scheme: dark)').matches
-								? 'dark'
-								: 'light'
-						}
-						
-						document.querySelector(':root').setAttribute('color-scheme', 'light');
-					`}
-        </Script>
         <NavBar />
         <main>
           {children}

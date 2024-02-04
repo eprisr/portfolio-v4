@@ -21,8 +21,9 @@
   width: calc(100% - 40px);
   height: 320px;
   padding: 20px;
-  background-color: var(--color-china-rose);
-  color: var(--color-white);
+  background-color: var(--bg2);
+  color: var(--text);
+  border: 1px solid var(--accent);
 }
 
 .tech_stack {
@@ -46,7 +47,6 @@
 .proj_image {
   width: 100%;
   height: 405px;
-  border: 1px solid var(--color-china-rose);
 }
 
 .proj_image img {
@@ -64,8 +64,8 @@
   text-transform: uppercase;
   text-decoration: none;
   border: none;
-  color: white;
-  background-color: var(--accent1);
+  color: var(--text-reverse);
+  background-color: var(--cta);
 }
 
 @media (min-width: 768px) {

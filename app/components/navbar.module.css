@@ -20,7 +20,7 @@
 }
 
 .nav a {
-  color: var(--color-space-cadet);
+  color: var(--text);
   text-decoration: none;
 }
 
@@ -141,7 +141,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    background: var(--color-magnolia);
+    background: var(--bg2);
     transition: 0.3s ease-in-out;
     opacity: 100%;
     z-index: 999;

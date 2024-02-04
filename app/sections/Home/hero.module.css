@@ -14,28 +14,49 @@
   margin-bottom: 80px;
 }
 
-.sosweet_bg {
+.sosweet {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   align-items: center;
 }
 
-[color-scheme='light'] .sosweet_bg {
-  background: url(/assets/images/hero-phone_bg.png) no-repeat center center;
-  background-size: contain;
-}
-
-[color-scheme='dark'] .sosweet_bg {
-  background: url(/assets/images/hero-phone_bg_dark.png) no-repeat center center;
-  background-size: contain;
-}
-
-.sosweet {
+.sosweet_mockup {
   width: 60%;
   max-width: 375px;
   height: auto;
+}
+
+.sosweet_mockup,
+.sosweet_bg {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.sosweet_bg {
+  z-index: -1;
+}
+
+.sosweet_ellipse {
+  fill: var(--bg2);
+}
+
+.sosweet_pattern {
+  fill: var(--accent2);
+}
+
+.imgDark {
+  display: none;
+}
+
+[data-theme='dark'] .imgLight {
+  color-scheme: dark;
+  display: none;
+}
+
+[data-theme='dark'] .imgDark {
+  color-scheme: dark;
+  display: unset;
 }
 
 .intro {

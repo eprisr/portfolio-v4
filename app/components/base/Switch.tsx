@@ -1,66 +1,42 @@
 'use client'
 
-import React, { memo, useEffect, useState } from 'react'
-import { getFromLS, setToLS } from '../../theme/storage'
-import { IoRoseOutline } from 'react-icons/io5'
-import { PiMoonStars, PiSunDim, PiTree } from 'react-icons/pi'
+import React, { useEffect, useState } from 'react'
+import { HiLightBulb, HiOutlineLightBulb } from 'react-icons/hi2'
 import styles from './switch.module.css'
 
-function ButtonIcon({ theme }: { theme: string }) {
-  if (theme === 'light') {
-    return (
-      <PiSunDim className={`${styles.switch_light} ${styles.switch_icon}`} />
-    )
-  }
-  if (theme === 'rose') {
-    return (
-      <IoRoseOutline
-        className={`${styles.switch_rose} ${styles.switch_icon}`}
-      />
-    )
-  }
-  if (theme === 'forest') {
-    return (
-      <PiTree className={`${styles.switch_forest} ${styles.switch_icon}`} />
-    )
-  }
-  if (theme === 'dark') {
-    return (
-      <PiMoonStars className={`${styles.switch_dark} ${styles.switch_icon}`} />
-    )
-  }
-}
+const Switch = () => {
+  const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)')
+    .matches
+    ? 'dark'
+    : 'light'
+  const [theme, setTheme] = useState(global.window?.__theme || 'light')
+  const inactiveTheme = theme === 'light' ? 'dark' : 'light'
 
-function loadTheme(root: Element | null, theme: string) {
-  root?.setAttribute('color-scheme', `${theme}`)
-  setToLS('theme', `${theme}`)
-}
-
-const Switch = memo(function Switch() {
-  const root = document.querySelector(':root')
-  const [theme, setTheme] = useState<string>(
-    root?.getAttribute('color-scheme') || ''
-  )
-
-  function toggleTheme() {
-    if (theme === 'dark') setTheme('light')
-    if (theme === 'light') setTheme('dark')
+  const toggleTheme = () => {
+    global.window?.__setPreferredTheme(inactiveTheme)
   }
 
   useEffect(() => {
-    loadTheme(root, theme)
-  }, [theme])
+    global.window.__onThemeChange = setTheme
+  })
 
   return (
-    <div className={styles.switch_wrapper}>
-      <button
-        type="button"
-        className={styles.theme_button}
-        onClick={() => toggleTheme()}>
-        <ButtonIcon theme={theme} />
-      </button>
-    </div>
+    <button
+      type="button"
+      aria-label={`Switch to ${inactiveTheme} mode`}
+      title={`Switch to ${inactiveTheme} mode`}
+      className={`${styles.theme_button} themeBtn`}
+      onClick={toggleTheme}>
+      <div className={styles.light_container}>
+        <div className={styles.light_string}></div>
+        {theme === 'light' ? (
+          <HiLightBulb className={styles.light_bulb} />
+        ) : (
+          <HiOutlineLightBulb className={styles.light_bulb} />
+        )}
+      </div>
+    </button>
   )
-})
+}
 
 export default Switch

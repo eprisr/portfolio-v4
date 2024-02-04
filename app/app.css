@@ -102,8 +102,11 @@ button {
   --color-space-cadet: #202945;
   --color-magnolia: #f7f0f5;
   --color-dun: #decbb7;
-  --color-dark-moss: #4f5d2f;
-  --color-china-rose: #b56576;
+  --color-cerulean: #1b799e;
+  --color-madder: #ab1233;
+  --color-sea-salt: #f8f8f8;
+  --color-jet: #333;
+  --color-gray: #555;
 
   /* Gaps */
   --gap-0: 0rem;

@@ -4,8 +4,8 @@
 
 .left_column {
   padding: 40px;
-  border: 1px solid var(--color-dun);
-  background-color: var(--color-white);
+  border: 1px solid var(--accent2);
+  background-color: var(--bg1);
 }
 
 .right_column {

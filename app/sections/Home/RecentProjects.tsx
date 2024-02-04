@@ -58,7 +58,7 @@ function RecentProjects() {
             </div>
           </Link>
         </div>
-        <Button href="/work" variant="solid" colorScheme="china-rose">
+        <Button href="/work" variant="solid" colorScheme="madder">
           View my work
         </Button>
       </div>

@@ -32,6 +32,10 @@
   width: 110px;
 }
 
+.tool svg path {
+  fill: var(--text);
+}
+
 .tool p {
   text-align: center;
   font-size: 12px;
