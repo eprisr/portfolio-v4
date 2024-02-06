@@ -8,10 +8,8 @@ export async function fetchProjects(
   filter: string
 ) {
   const ITEMS_PER_LOAD = limit || 3
-  noStore()
   try {
-    const projects =
-      await sql<Project>`SELECT * FROM projects WHERE type @> array[${filter}] LIMIT ${ITEMS_PER_LOAD} OFFSET ${offset}`
+    const projects = await sql<Project>`SELECT * FROM projects`
     return projects.rows
   } catch (error) {
     console.error('Database Error:', error)

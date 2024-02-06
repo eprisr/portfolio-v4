@@ -59,6 +59,24 @@ const projects = [
     },
   },
   {
+    id: 'sweet',
+    type: ['All', 'Web Dev', 'Print', 'Branding'],
+    src: 'SoSweet_Thumb.jpg',
+    slides: [],
+    video: {},
+    title: 'So Sweet: Case Study',
+    titleLink: '',
+    clickable: false,
+    date: 'Feb 2020',
+    client: 'Personal Project',
+    brief: 'Case study for a fictional bakery.',
+    projDesc: 'Coming Soon',
+    skills: {},
+  },
+]
+
+const archive = [
+  {
     id: 'gmpower',
     type: ['All', 'Motion'],
     src: 'GM-Power-305x320.png',
@@ -207,21 +225,6 @@ const projects = [
       Software: ['Indesign', 'Photoshop', 'Lightroom'],
       Equipment: ['Canon Rebel T3'],
     },
-  },
-  {
-    id: 'sweet',
-    type: ['All', 'Web Dev', 'Print', 'Branding'],
-    src: 'SoSweet_Thumb.jpg',
-    slides: [],
-    video: {},
-    title: 'So Sweet: Case Study',
-    titleLink: '',
-    clickable: false,
-    date: 'Feb 2020',
-    client: 'Personal Project',
-    brief: 'Case study for a fictional bakery.',
-    projDesc: 'Coming Soon',
-    skills: {},
   },
 ]
 

@@ -1,120 +1,61 @@
-'use client'
-
-import React, { useEffect, useState } from 'react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import React from 'react'
 import Image from 'next/image'
 import { Project } from '../../lib/definitions'
 import styles from './projects.module.css'
-import { fetchProjectsTotal } from '../../lib/data'
+import Link from 'next/link'
 
-const Projects = ({ total }: { total: number }) => {
-  console.log(total)
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const currentLimit = searchParams.get('limit') || 3
-  const currentOffset = Number(searchParams.get('offset')) || 0
-  const currentFilter = searchParams.get('filter') || 'All'
+export default async function Projects({ total }: { total: number }) {
+  const url =
+    process.env.NODE_ENV === 'production'
+      ? process.env.PROD_URL
+      : process.env.DEV_URL
 
-  const [projects, setProjects] = useState<Project[]>([])
-
-  const createPageUrl = (offsetNumber: number | string) => {
-    const params = new URLSearchParams(searchParams)
-    params.set('offset', offsetNumber.toString())
-    return `${pathname}?${params.toString()}`
-  }
-
-  function loadMore() {
-    router.push(createPageUrl(currentOffset + 3), { scroll: false })
-  }
-
-  useEffect(() => {
-    console.log('offset changed')
-    const incompleteLoad = projects.length !== currentOffset
-    const offset = incompleteLoad ? 0 : currentOffset
-    const limit = incompleteLoad ? currentOffset + 3 : offset + 3
-    if (incompleteLoad) {
-      fetch(`/api/work?limit=${limit}&offset=${offset}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setProjects([...data])
-        })
-        .catch((error) => {
-          throw new Error(error.message)
-        })
-    } else {
-      fetch(`/api/work?offset=${offset}`)
-        .then((res) => res.json())
-        .then((data) => {
-          projects.some((proj) => proj['id'] === data[0].id)
-            ? setProjects([...projects])
-            : setProjects([...projects, ...data])
-        })
-        .catch((error) => {
-          throw new Error(error.message)
-        })
-    }
-  }, [currentOffset])
-
-  useEffect(() => {
-    console.log('filter changed')
-    const limit = currentOffset + 3
-    fetch(`/api/work?limit=${limit}&offset=0&filter=${currentFilter}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects([...data])
-      })
-      .catch((error) => {
-        throw new Error(error.message)
-      })
-  }, [currentFilter])
+  const projects = await fetch(url + '/api/work')
+    .then((res) => res.json())
+    .then((data) => data as Project[])
+    .catch((error) => {
+      throw new Error(error.message)
+    })
 
   return (
     <div className={styles.projects_wrapper}>
       <div className={styles.proj_container}>
-        {projects
-          .filter((project) => project.type.includes(currentFilter))
-          .map((project, i) => (
-            <div
-              key={project.id}
-              className={`${i % 2 === 0 ? styles.reverse : ''} ${
-                styles.project
-              }`}
-              onClick={() => router.push(`/work/${project.id}`)}>
-              <div className={styles.proj_image}>
-                <Image
-                  src={`/assets/images/projects/${project.src}`}
-                  alt={project.title}
-                  width="660"
-                  height="660"
-                />
-              </div>
-              <div className={styles.info}>
-                <p className={`${styles.title} lead_para`}>{project.title}</p>
-                <p className={styles.desc}>{project.brief}</p>
-                <div className={styles.tech_stack}>
-                  {Object.keys(project.skills).map(
-                    (skill: string, index: number) =>
-                      project.skills[skill].map((s: string, i: number) => (
-                        <div
-                          key={`${skill}-${index}${i}`}
-                          className={styles.skill}>
-                          <span>{s}</span>
-                        </div>
-                      ))
-                  )}
-                </div>
+        {projects.map((project, i) => (
+          <div
+            key={project.id}
+            className={`${i % 2 === 0 ? styles.reverse : ''} ${
+              styles.project
+            }`}>
+            <div className={styles.proj_image}>
+              <Image
+                src={`/assets/images/projects/${project.src}`}
+                alt={project.title}
+                width="660"
+                height="660"
+              />
+            </div>
+            <div className={styles.info}>
+              <p className={`${styles.title} lead_para`}>{project.title}</p>
+              <p className={styles.desc}>{project.brief}</p>
+              <div className={styles.tech_stack}>
+                {Object.keys(project.skills).map(
+                  (skill: string, index: number) =>
+                    project.skills[skill].map((s: string, i: number) => (
+                      <div
+                        key={`${skill}-${index}${i}`}
+                        className={styles.skill}>
+                        <span>{s}</span>
+                      </div>
+                    ))
+                )}
               </div>
             </div>
-          ))}
+            <Link
+              href={`/work/${project.id}`}
+              className={styles.proj_link}></Link>
+          </div>
+        ))}
       </div>
-      {currentOffset + 3 < total && (
-        <button className={styles.button} onClick={loadMore}>
-          Load more
-        </button>
-      )}
     </div>
   )
 }
-
-export default Projects

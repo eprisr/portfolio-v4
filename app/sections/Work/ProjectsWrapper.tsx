@@ -9,10 +9,7 @@ export default function ProjectsWrapper({
 }) {
   return (
     <section className={styles.projects}>
-      <div className={`${styles.container} container`}>
-        <Filter />
-        {children}
-      </div>
+      <div className={`${styles.container} container`}>{children}</div>
     </section>
   )
 }
