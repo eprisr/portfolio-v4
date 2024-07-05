@@ -1,36 +1,11 @@
-"use client"
-
 import React, { SyntheticEvent, useRef } from 'react'
+import Spline from '@splinetool/react-spline'
 import Button from '../../components/base/Button'
+import PhoneMockup from '../../components/PhoneMockup'
 import styles from './hero.module.css'
 import Image from 'next/image'
 
 function Hero() {
-	let phoneRef = useRef<any>();
-	let constrainX = 120;
-	let constrainY = 450;
-
-	function transforms(x: number, y: number, el: any) {
-		let box = el.getBoundingClientRect();
-		let calcX = -(y - box.y - (box.height / 2)) / constrainY;
-		let calcY = (x - box.x - (box.width / 2)) / constrainX;
-		
-		return "perspective(100px) " + " rotateX("+ calcX +"deg) " + " rotateY("+ calcY +"deg) ";
-	}
-
-	function transformElement(el: any, xyEl: [number, number,any]) {
-		el.style.transform = transforms.apply(null, xyEl)
-	}
-
-	function movePhone(e: any) {
-		let xy: [number, number] = [e.clientX, e.clientY]
-		let position: any = xy.concat([phoneRef.current])
-		
-    window.requestAnimationFrame(function () {
-      transformElement(phoneRef.current, position)
-    })
-	}
-
   return (
     <section className={styles.hero}>
       <div className={` ${styles.container} container `}>
@@ -49,9 +24,12 @@ function Hero() {
           </Button>
         </div>
         <div className={` ${styles.right_column} column `}>
-          <div className={styles.sosweet} onMouseMove={movePhone}>
-            <Image
-							ref={phoneRef}
+          <div className={styles.sosweet}>
+            <Spline
+              scene="https://prod.spline.design/QvnN9UZyqrXUgWZ2/scene.splinecode"
+              className={`${styles.sosweet_mockup}`}
+            />
+            {/* <Image
               src="/assets/images/so_sweet_mockup.png"
               alt=""
               className={`${styles.sosweet_mockup} ${styles.imgLight}`}
@@ -59,13 +37,12 @@ function Hero() {
               height="1135"
             />
             <Image
-							ref={phoneRef}
               src="/assets/images/so_sweet_mockup_dark.png"
               alt=""
               className={`${styles.sosweet_mockup} ${styles.imgDark}`}
               width="551"
               height="1135"
-            />
+            /> */}
             <svg
               width="572"
               height="443"
