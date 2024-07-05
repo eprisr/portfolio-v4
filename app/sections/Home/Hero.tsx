@@ -27,22 +27,12 @@ function Hero() {
           <div className={styles.sosweet}>
             <Spline
               scene="https://prod.spline.design/QvnN9UZyqrXUgWZ2/scene.splinecode"
-              className={`${styles.sosweet_mockup}`}
-            />
-            {/* <Image
-              src="/assets/images/so_sweet_mockup.png"
-              alt=""
               className={`${styles.sosweet_mockup} ${styles.imgLight}`}
-              width="551"
-              height="1135"
             />
-            <Image
-              src="/assets/images/so_sweet_mockup_dark.png"
-              alt=""
+            <Spline
+              scene="https://prod.spline.design/cEkXHQu0orVinyJF/scene.splinecode"
               className={`${styles.sosweet_mockup} ${styles.imgDark}`}
-              width="551"
-              height="1135"
-            /> */}
+            />
             <svg
               width="572"
               height="443"
