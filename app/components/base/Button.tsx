@@ -17,16 +17,18 @@ function Button({
   children,
   ...props
 }: ButtonProps) {
-  return (
-    <div
-      className={` ${styles.button} ${styles[variant]} ${styles[colorScheme]} `}>
-      <Link
-        href={href}
-        type="button"
-        className={styles.link}
-        scroll={props?.scroll}>
-        {children}
-      </Link>
+	return (
+    <div className={` ${styles.button_wrapper} ${styles[variant]} `}>
+      <div className={` ${styles.button} ${styles[colorScheme]} `}>
+				<span></span>
+        <Link
+          href={href}
+          type="button"
+          className={styles.link}
+          scroll={props?.scroll}>
+          {children}
+        </Link>
+      </div>
     </div>
   )
 }
