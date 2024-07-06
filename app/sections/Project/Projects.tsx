@@ -5,10 +5,7 @@ import styles from './projects.module.css'
 import Link from 'next/link'
 
 export default async function Projects({ total }: { total: number }) {
-  const url =
-    process.env.NODE_ENV === 'production'
-      ? process.env.PROD_URL
-      : process.env.DEV_URL
+	const url = process.env.NEXT_PUBLIC_URL
 
   const projects = await fetch(url + '/api/work')
     .then((res) => res.json())
