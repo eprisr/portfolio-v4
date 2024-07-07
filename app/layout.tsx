@@ -53,7 +53,8 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+			lang="en"
+			suppressHydrationWarning={true}
       className={`${dm_serif_display.variable} ${dm_serif_text.variable} ${red_hat_display.variable} ${red_hat_text.variable}`}>
       <head>
         <ThemeScript />
