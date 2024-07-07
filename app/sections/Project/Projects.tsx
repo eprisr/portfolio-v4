@@ -30,7 +30,8 @@ export default async function Projects() {
               <div className={styles.proj_image}>
                 <Image
                   src={`/assets/images/projects/${project.src}`}
-                  alt={project.title}
+									alt={project.title}
+									priority={true}
                   width="660"
                   height="660"
                 />
