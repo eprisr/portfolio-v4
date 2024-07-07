@@ -5,13 +5,15 @@ import Link from 'next/link'
 
 export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
+	console.log('In Projects')
 
   const projects = await fetch(url + '/api/work')
     .then((res) => res.json())
     .then((data) => data as Project[])
     .catch((error) => {
       throw new Error(error.message)
-    })
+		})
+	console.log("projects", projects)
 
   return (
     <div className={styles.projects_wrapper}>

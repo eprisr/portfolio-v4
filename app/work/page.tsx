@@ -19,9 +19,7 @@ export default function Work({
     <div className="main_wrapper">
       <Intro />
       <ProjectsWrapper>
-        <Suspense fallback={<ProjectsSkeleton />}>
-          <Projects />
-        </Suspense>
+				<Projects />
       </ProjectsWrapper>
       <Companies />
       <Solutions />
