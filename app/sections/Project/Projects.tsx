@@ -1,6 +1,5 @@
 import React from 'react'
 import Image from 'next/image'
-import type { Project } from '../../lib/definitions'
 import styles from './projects.module.css'
 import Link from 'next/link'
 
