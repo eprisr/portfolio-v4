@@ -10,6 +10,7 @@ export async function GET(request: Request) {
     ? Number(searchParams.get('offset'))
     : 0
   const filter = searchParams.get('filter') || 'All'
-  const projects = await fetchProjects(limit, offset, filter).catch((error) => { console.error(error) })
+	const projects = await fetchProjects(limit, offset, filter)
+	
   return NextResponse.json(projects)
 }
