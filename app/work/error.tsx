@@ -12,7 +12,11 @@ export default function Error({
   reset: () => void
 }) {
   useEffect(() => {
-    Sentry.captureException(error)
+		Sentry.captureException({
+			message: error.message,
+			stack: error.stack,
+			digest: error.digest,
+		})
     console.error(error)
   }, [error])
 
