@@ -1,9 +1,7 @@
-import React, { SyntheticEvent, useRef } from 'react'
-import Spline from '@splinetool/react-spline'
+import React from 'react'
+import Spline from '@splinetool/react-spline/next'
 import Button from '../../components/base/Button'
-import PhoneMockup from '../../components/PhoneMockup'
 import styles from './hero.module.css'
-import Image from 'next/image'
 
 function Hero() {
   return (
