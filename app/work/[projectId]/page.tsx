@@ -1,4 +1,5 @@
 import React from 'react'
+import { notFound } from 'next/navigation'
 import Project from '../../components/Projects/Project'
 import { fetchSingleProject } from '../../lib/data'
 
@@ -8,11 +9,15 @@ export const dynamic = 'force-dynamic'
 
 export default async function page({ params }: ProjIdProps) {
   const { projectId } = params
-  const project = await fetchSingleProject(projectId)
+	const project = await fetchSingleProject(projectId)
+
+	if (!project) {
+		notFound();
+	}
 
   return (
-    <div className="main_wrapper">
-      <Project project={project} />
+		<div className="main_wrapper">
+			<Project project={project} />
     </div>
   )
 }
