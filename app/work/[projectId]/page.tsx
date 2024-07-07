@@ -1,5 +1,6 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
+import * as Sentry from "@sentry/nextjs";
 import Project from '../../components/Projects/Project'
 import { fetchSingleProject } from '../../lib/data'
 
@@ -12,6 +13,7 @@ export default async function page({ params }: ProjIdProps) {
 	const project = await fetchSingleProject(projectId)
 
 	if (!project) {
+		Sentry.captureException(`Project not found: ${ projectId }`)
 		notFound();
 	}
 

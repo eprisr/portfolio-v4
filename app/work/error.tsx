@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import * as Sentry from '@sentry/nextjs'
 import styles from './error.module.css'
 
 export default function Error({
@@ -11,7 +12,7 @@ export default function Error({
   reset: () => void
 }) {
   useEffect(() => {
-    // Optionally log the error to an error reporting service
+    Sentry.captureException(error)
     console.error(error)
   }, [error])
 
@@ -21,7 +22,6 @@ export default function Error({
 			<button
 				className={styles.button}
         onClick={
-          // Attempt to recover by trying to re-render the invoices route
           () => reset()
         }>
         Try again

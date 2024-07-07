@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from './projects.module.css'
 import Link from 'next/link'
+import * as Sentry from '@sentry/nextjs'
+import styles from './projects.module.css'
 
 export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
@@ -11,7 +12,9 @@ export default async function Projects() {
     .then((data) => data as Project[])
     .catch((error) => {
 			console.error('Error Digest:', error.digest)
-			throw new Error('An error occured in the Serve Components render')
+			Sentry.captureException(error)
+			Sentry.captureMessage('An error occured in the Server Components render')
+			throw new Error('An error occured in the Server Components render')
 		})
 
   return (
