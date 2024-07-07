@@ -23,15 +23,17 @@ function Button({
   const [relY, setRelY] = useState(0)
 
 	const expandFill = (e: MouseEvent<HTMLDivElement>) => {
-    const parentOffset = e.currentTarget.getBoundingClientRect()
-    setRelX(e.pageX - parentOffset.left)
-    setRelY(e.pageY - parentOffset.top)
+    const parentOffsetLeft = e.currentTarget.offsetLeft
+    const parentOffsetTop = e.currentTarget.offsetTop
+    setRelX(e.pageX - parentOffsetLeft)
+    setRelY(e.pageY - parentOffsetTop)
   }
 
   const contractFill = (e: MouseEvent<HTMLDivElement>) => {
-    const parentOffset = e.currentTarget.getBoundingClientRect()
-    setRelX(e.pageX - parentOffset.left)
-    setRelY(e.pageY - parentOffset.top)
+    const parentOffsetLeft = e.currentTarget.offsetLeft
+    const parentOffsetTop = e.currentTarget.offsetTop
+    setRelX(e.pageX - parentOffsetLeft)
+    setRelY(e.pageY - parentOffsetTop)
   }
 
 	return (
