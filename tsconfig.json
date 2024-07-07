@@ -1,6 +1,6 @@
 {
   "include": [
-    "src",
+    "app",
     "Global.d.ts",
     ".next/types/**/*.ts",
     ".app/types/**/*.ts"
