@@ -2,7 +2,6 @@
 
 import React from 'react'
 import ReactPlayer from 'react-player'
-import { Project } from '../../lib/definitions'
 
 export default function Video({ project }: { project: Project }) {
   const { video } = project

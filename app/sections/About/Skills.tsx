@@ -26,7 +26,7 @@ export default function Skills() {
         <div className={styles.tools}>
           {skillsIcons.map((Icon, key) => (
             <div className={styles.tool} key={key}>
-              <Icon.icon className={styles.icon} width="36px" height="auto" />
+              <Icon.icon className={styles.icon} width="100%" height="32px" />
               <p>{Icon.name}</p>
             </div>
           ))}

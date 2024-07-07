@@ -1,6 +1,5 @@
 import { sql } from '@vercel/postgres'
 import { unstable_noStore as noStore } from 'next/cache'
-import { Project } from './definitions'
 
 export async function fetchProjects(
   limit: number,

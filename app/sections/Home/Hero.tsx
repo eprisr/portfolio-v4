@@ -26,6 +26,7 @@ function Hero() {
             <Image
               src="/assets/images/so_sweet_mockup.png"
               alt=""
+							priority={true}
               className={`${styles.sosweet_mockup} ${styles.imgLight}`}
               width="551"
               height="1135"
@@ -33,6 +34,7 @@ function Hero() {
             <Image
               src="/assets/images/so_sweet_mockup_dark.png"
               alt=""
+							priority={true}
               className={`${styles.sosweet_mockup} ${styles.imgDark}`}
               width="551"
               height="1135"

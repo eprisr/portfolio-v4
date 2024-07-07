@@ -9,4 +9,7 @@ node_modules/
 .env.local
 .env.development
 .env.production
+# Sentry Config File
 .env.sentry-build-plugin
+app/api/sentry-example-api/
+app/sentry-example-page/

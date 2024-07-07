@@ -9,7 +9,8 @@ function AboutMe() {
         <div className={`${styles.left_column} column `}>
           <Image
             src="/assets/images/portrait.png"
-            alt=""
+						alt=""
+						priority={true}
             className={styles.portrait}
             width="392"
             height="525"
