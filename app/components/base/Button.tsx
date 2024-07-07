@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { MouseEvent, useState } from 'react'
 import styles from './button.module.css'
 import Link from 'next/link'
 
@@ -17,16 +19,33 @@ function Button({
   children,
   ...props
 }: ButtonProps) {
-  return (
-    <div
-      className={` ${styles.button} ${styles[variant]} ${styles[colorScheme]} `}>
-      <Link
-        href={href}
-        type="button"
-        className={styles.link}
-        scroll={props?.scroll}>
-        {children}
-      </Link>
+	const [relX, setRelX] = useState(0)
+  const [relY, setRelY] = useState(0)
+
+	const expandFill = (e: MouseEvent<HTMLDivElement>) => {
+    const parentOffset = e.currentTarget.getBoundingClientRect()
+    setRelX(e.pageX - parentOffset.left)
+    setRelY(e.pageY - parentOffset.top)
+  }
+
+  const contractFill = (e: MouseEvent<HTMLDivElement>) => {
+    const parentOffset = e.currentTarget.getBoundingClientRect()
+    setRelX(e.pageX - parentOffset.left)
+    setRelY(e.pageY - parentOffset.top)
+  }
+
+	return (
+    <div className={` ${styles.button_wrapper} ${styles[variant]} `}>
+      <div className={` ${styles.button} ${styles[colorScheme]} `} onMouseEnter={expandFill} onMouseLeave={contractFill}>
+				<span style={{ top: relY, left: relX }}></span>
+        <Link
+          href={href}
+          type="button"
+          className={styles.link}
+          scroll={props?.scroll}>
+          {children}
+        </Link>
+      </div>
     </div>
   )
 }
