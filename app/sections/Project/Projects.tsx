@@ -13,8 +13,8 @@ export default async function Projects() {
     .catch((error) => {
 			console.error('Error Digest:', error.digest)
 			Sentry.captureException(error)
-			Sentry.captureMessage('An error occured in the Server Components render')
-			throw new Error('An error occured in the Server Components render')
+			Sentry.captureMessage('An error occured in the Projects Server Components render')
+			throw new Error('An error occured in the Projects Server Components render')
 		})
 
   return (
