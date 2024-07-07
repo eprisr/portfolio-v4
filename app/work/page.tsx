@@ -5,22 +5,22 @@ import Companies from '../sections/Work/Companies'
 import ProjectsWrapper from '../sections/Work/ProjectsWrapper'
 import { ProjectsSkeleton } from '../components/skeletons'
 import Projects from '../sections/Project/Projects'
-import { fetchProjectsTotal } from '../lib/data'
+// import { fetchProjectsTotal } from '../lib/data'
 
-export default async function Work({
+export default function Work({
   searchParams,
 }: {
   searchParams?: { filter?: string }
 }) {
   const filter = searchParams?.filter || 'All'
-  const total = await fetchProjectsTotal(filter)
+  // const total = await fetchProjectsTotal(filter)
 
   return (
     <div className="main_wrapper">
       <Intro />
       <ProjectsWrapper>
         <Suspense fallback={<ProjectsSkeleton />}>
-          <Projects total={total} />
+          <Projects />
         </Suspense>
       </ProjectsWrapper>
       <Companies />

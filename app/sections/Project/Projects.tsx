@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './projects.module.css'
 import Link from 'next/link'
 
-export default async function Projects({ total }: { total: number }) {
+export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
 
   const projects = await fetch(url + '/api/work')
