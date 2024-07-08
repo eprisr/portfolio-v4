@@ -54,6 +54,16 @@
   display: unset;
 }
 
+@supports (color: hsl(from var(--bg2) hsl)) {
+	.sosweet_ellipse {
+		fill: hsl(from var(--bg2) h 100% l);
+	}
+
+	.sosweet_pattern {
+		fill: hsl(from var(--accent2) h 62% 72%);
+	}
+}
+
 .intro {
   font-family: var(--red-hat-display);
   font-size: var(--rem-48px);
