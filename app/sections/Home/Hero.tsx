@@ -1,5 +1,5 @@
 import React from 'react'
-import Spline from '@splinetool/react-spline/next'
+const Spline = React.lazy(() => import('@splinetool/react-spline/next'))
 import Button from '../../components/base/Button'
 import styles from './hero.module.css'
 
