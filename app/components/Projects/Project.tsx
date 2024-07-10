@@ -5,7 +5,6 @@ import Image from 'next/image'
 import Slider from '../../components/Projects/Slider'
 import Video from '../../components/Projects/Video'
 import DescList from '../../components/Projects/DescList'
-import { Project } from '../../lib/definitions'
 import styles from './project.module.css'
 
 export default function Project({ project }: { project: Project }) {

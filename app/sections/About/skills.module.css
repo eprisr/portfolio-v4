@@ -27,7 +27,7 @@
 
 .tool {
   display: grid;
-  grid-template-rows: 48px auto;
+  grid-template-rows: 32px auto;
   justify-items: center;
   width: 110px;
 }

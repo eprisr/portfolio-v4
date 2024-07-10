@@ -1,21 +1,21 @@
 import React from 'react'
 import Image from 'next/image'
-import { Project } from '../../lib/definitions'
-import styles from './projects.module.css'
 import Link from 'next/link'
+import * as Sentry from '@sentry/nextjs'
+import styles from './projects.module.css'
 
-export default async function Projects({ total }: { total: number }) {
-  const url =
-    process.env.NODE_ENV === 'production'
-      ? process.env.PROD_URL
-      : process.env.DEV_URL
+export default async function Projects() {
+	const url = process.env.NEXT_PUBLIC_URL
 
   const projects = await fetch(url + '/api/work')
     .then((res) => res.json())
     .then((data) => data as Project[])
     .catch((error) => {
-      throw new Error(error.message)
-    })
+			console.error('Error Digest:', error.digest)
+			Sentry.captureException(error)
+			Sentry.captureMessage('An error occured in the Projects Server Components render')
+			throw new Error(`An error occured in the Projects Server Components render ${error}`)
+		})
 
   return (
     <div className={styles.projects_wrapper}>
@@ -30,7 +30,8 @@ export default async function Projects({ total }: { total: number }) {
               <div className={styles.proj_image}>
                 <Image
                   src={`/assets/images/projects/${project.src}`}
-                  alt={project.title}
+									alt={project.title}
+									priority={true}
                   width="660"
                   height="660"
                 />

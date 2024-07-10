@@ -5,7 +5,6 @@ import { BsCaretLeft, BsCaretRight } from 'react-icons/bs'
 import Image from 'next/image'
 import Button from '../base/Button'
 import styles from './slider.module.css'
-import { Project } from '../../lib/definitions'
 
 export default function Slider({ project }: { project: Project }) {
   const { slides, title } = project

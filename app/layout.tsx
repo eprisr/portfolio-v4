@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import Script from 'next/script'
 import NavBar from './components/NavBar'
 import CollabCTA from './components/CollabCTA'
@@ -12,7 +13,6 @@ import {
   red_hat_display,
   red_hat_text,
 } from './fonts'
-import './normalize.css'
 import './app.css'
 import './theme/theme.css'
 
@@ -53,7 +53,8 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+			lang="en"
+			suppressHydrationWarning={true}
       className={`${dm_serif_display.variable} ${dm_serif_text.variable} ${red_hat_display.variable} ${red_hat_text.variable}`}>
       <head>
         <ThemeScript />
@@ -65,7 +66,8 @@ export default function RootLayout({
           <CollabCTA />
         </main>
         <Footer />
-        <Analytics />
+				<SpeedInsights />
+				<Analytics />
       </body>
     </html>
   )
