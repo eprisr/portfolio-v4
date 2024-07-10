@@ -5,6 +5,7 @@ node_modules/
 .next/
 .swc/
 *.log
+package-lock.json
 .env
 .env.local
 .env.development
