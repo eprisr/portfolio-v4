@@ -35,6 +35,16 @@ async function seedProjects(client) {
       )
     )
 
+		// const updateProjects = await Promise.all(
+		// 	projects.map(
+		// 		(project) => client.sql`
+		// 			UPDATE projects
+		// 			SET titleLink = ${project.titleLink}
+		// 			WHERE id = ${project.id}
+		// 		`
+		// 	)
+		// )
+		
     console.log(`Seeded ${insertedProjects.length} projects`)
 
     return {

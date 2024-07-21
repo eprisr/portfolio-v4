@@ -27,7 +27,7 @@ const projects = [
     slides: [],
     video: {},
     title: 'My Reads',
-    titleLink: 'https://my-reads-eprishb.herokuapp.com/',
+    titleLink: 'https://my-reads-brown.vercel.app/',
     clickable: true,
     date: 'Sep 2018',
     client: 'Personal Project',
