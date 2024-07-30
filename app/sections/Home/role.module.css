@@ -14,16 +14,15 @@
 }
 
 .lucca {
-  width: 85%;
+  width: 100%;
   max-width: 375px;
   height: auto;
 }
 
 @media screen and (min-width: 768px) {
   .left_column {
-    width: calc(50% - 72px);
+    width: 50%;
     align-items: start;
-    padding-right: 72px;
   }
 
   .right_column {
@@ -36,7 +35,15 @@
 }
 
 @media (min-width: 576px) {
+	.container {
+		align-items: center;
+	}
+
   .lucca {
     max-width: unset;
   }
+
+	.left-column {
+		margin-bottom: unset;
+	}
 }
