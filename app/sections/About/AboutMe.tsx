@@ -1,19 +1,34 @@
 import React from 'react'
-import styles from './aboutme.module.css'
 import Image from 'next/image'
+import PortraitOne from '../../../public/assets/images/portrait.png'
+import PortraitTwo from '../../../public/assets/images/portrait_2.jpg'
+import PortraitBG from '../../../public/assets/images/portrait_bg.png'
+import styles from './aboutme.module.css'
 
 function AboutMe() {
   return (
     <section className={styles.about}>
       <div className={` ${styles.container} container `}>
         <div className={`${styles.left_column} column `}>
+          <div className={styles.portraits}>
+						<Image
+							src={PortraitOne}
+							alt=""
+							className={`${styles.portrait} ${styles.portrait_one}`}
+							priority
+						/>
+						<Image
+							src={PortraitTwo}
+							alt=""
+							className={`${styles.portrait} ${styles.portrait_two}`}
+							priority
+						/>
+					</div>
           <Image
-            src="/assets/images/portrait.png"
+            src={PortraitBG}
 						alt=""
-						priority={true}
-            className={styles.portrait}
-            width="392"
-            height="525"
+            className={`${styles.portrait_bg}`}
+						priority
           />
         </div>
         <div className={` ${styles.right_column} column`}>
