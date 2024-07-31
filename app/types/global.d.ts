@@ -8,7 +8,8 @@ declare global {
 		slides: string[]
 		video: { url: string; id: string; width: string; height: string }
 		title: string
-		titlelink?: string
+		titlelink: string[]
+		githubRepo?: string
 		clickable: boolean
 		date: string
 		client: string

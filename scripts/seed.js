@@ -12,7 +12,8 @@ async function seedProjects(client) {
 				slides TEXT [],
 				video JSON,
 				title TEXT NOT NULL,
-				titleLink TEXT,
+				titleLink TEXT[] NOT NULL,
+				githubRepo TEXT,
 				clickable BOOLEAN NOT NULL,
 				date TEXT NOT NULL,
 				client TEXT NOT NULL,
@@ -28,28 +29,34 @@ async function seedProjects(client) {
     const insertedProjects = await Promise.all(
       projects.map(
         (project) => client.sql`
-					INSERT INTO projects (id, type, src, slides, video, title, titleLink, clickable, date, client, brief, projDesc, skills)
-					VALUES (${project.id}, ${project.type}, ${project.src}, ${project.slides}, ${project.video}, ${project.title}, ${project.titleLink}, ${project.clickable}, ${project.date}, ${project.client}, ${project.brief}, ${project.projDesc}, ${project.skills})
+					INSERT INTO projects (id, type, src, slides, video, title, titleLink, githubRepo, clickable, date, client, brief, projDesc, skills)
+					VALUES (${project.id}, ${project.type}, ${project.src}, ${project.slides}, ${project.video}, ${project.title}, ${project.titleLink}, ${project.githubRepo}, ${project.clickable}, ${project.date}, ${project.client}, ${project.brief}, ${project.projDesc}, ${project.skills})
 					ON CONFLICT (id) DO NOTHING;
 				`
       )
     )
 
-		// const updateProjects = await Promise.all(
-		// 	projects.map(
-		// 		(project) => client.sql`
-		// 			UPDATE projects
-		// 			SET titleLink = ${project.titleLink}
-		// 			WHERE id = ${project.id}
-		// 		`
-		// 	)
-		// )
+		// const updateProjects = await client.sql`
+		// 		ALTER TABLE projects ALTER COLUMN titleLink DROP DEFAULT;
+		// 		ALTER TABLE projects ALTER COLUMN titleLink TYPE text[] array[titleLink];
+		// 		ALTER TABLE projects ALTER COLUMN titleLink SET DEFAULT ''; 
+		// 	`
+			// projects.map(
+			// 	(project) => client.sql`
+			// 		UPDATE projects
+			// 		SET titleLink = ${project.titleLink}
+			// 		WHERE id = ${project.id}
+			// 	`
+			// )
+			
+			// const deleteTable = await client.sql`DROP TABLE projects`
 		
     console.log(`Seeded ${insertedProjects.length} projects`)
 
     return {
       createTable,
-      projects: insertedProjects,
+			projects: insertedProjects,
+			// deleteTable,
     }
   } catch (error) {
     console.error('Error seeding projects:', error)
