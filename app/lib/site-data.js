@@ -7,8 +7,8 @@ const projects = [
     video: {},
     title: 'Neighborhood Map',
     titleLink: [
-      'https://neighborhood-map-neon.vercel.app/',
       'https://neighborhood-map-eprishb.herokuapp.com/',
+      'https://neighborhood-map-neon.vercel.app/',
     ],
     githubRepo: 'https://github.com/eprisr/neighborhood-map',
     clickable: true,
