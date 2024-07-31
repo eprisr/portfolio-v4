@@ -6,6 +6,8 @@
 
 .left_column {
   width: 100%;
+
+	display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -14,18 +16,44 @@
   width: 100%;
 }
 
+.portraits,
+.portrait_bg {
+	grid-area: 1 / 1 / 2 / 2;
+}
+
+.portraits {
+	display: grid;
+	height: 65%;
+	gap: 10px;
+	grid-template-columns: repeat(2, calc(50% - 20px));
+	justify-content: center;
+}
+
 .portrait {
-  width: 85%;
+  width: 100%;
   max-width: 375px;
   height: auto;
+	border-radius: 10px;
+}
+
+.portrait_one {
+	align-self: start;
+}
+
+.portrait_two {
+	align-self: end;
+}
+
+.portrait_bg {
+	width: 100%;
+	height: auto;
+	z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    gap: unset;
-  }
-
-  .left_column,
+  .left_column {
+		width: calc(50% - 40px);
+	}
   .right_column {
     width: 50%;
   }

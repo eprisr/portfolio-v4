@@ -24,23 +24,47 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+	overflow: hidden;
+	border-radius: 10px;
+	
+	background-color: var(--color-dun);
+	color: var(--color-jet);
+	text-align: center;
+}
+
+.faded_image {
+	position: relative;
+	display: inline-block;
+	color: var(--color-dun);
+}
+
+.faded_image:after {
+	content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+	border-radius: 10px;
+  border-collapse: separate;
+	box-shadow: inset 0 -60px 40px -16px;
 }
 
 .project img {
-  width: 100%;
+	width: 80%;
   max-width: 380px;
   height: auto;
-  border: 1px solid #eeeeee;
+	margin-bottom: -20px;
 }
 
 .proj_desc {
-  width: 65%;
-  max-width: 290px;
-  background-color: var(--color-space-cadet);
-  color: var(--color-white);
-  text-align: center;
-  padding: 32px 24px;
-  margin-top: -45px;
+  padding: 32px 0px;
+	border-radius: 10px;
+
+	.lead_para {
+		font-weight: 700;
+	}
 
   .lead_para,
   .language {

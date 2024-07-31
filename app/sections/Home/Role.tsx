@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../../components/base/Button'
 import styles from './role.module.css'
 import Image from 'next/image'
+import LuccaMockup from '../../../public/assets/images/Lucca_Mockup(2).png'
 
 function Role() {
   return (
@@ -9,11 +10,9 @@ function Role() {
       <div className={` ${styles.container} container `}>
         <div className={` ${styles.left_column} column `}>
           <Image
-            src="/assets/images/lucca_mockup.png"
+            src={LuccaMockup}
             alt=""
             className={styles.lucca}
-            width="541"
-            height="489"
           />
         </div>
         <div className={` ${styles.right_column} column `}>

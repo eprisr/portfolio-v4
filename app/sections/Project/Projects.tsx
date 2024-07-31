@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as Sentry from '@sentry/nextjs'
 import styles from './projects.module.css'
+import { GithubIcon } from '../../assets/icons'
+import { MdDoubleArrow, MdOpenInNew, MdOpenInNewOff } from 'react-icons/md'
 
 export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
@@ -16,44 +18,88 @@ export default async function Projects() {
 			Sentry.captureMessage('An error occured in the Projects Server Components render')
 			throw new Error(`An error occured in the Projects Server Components render ${error}`)
 		})
+	
+	console.log(projects[0].titlelink)
 
   return (
     <div className={styles.projects_wrapper}>
       <div className={styles.proj_container}>
         {projects.map((project, i) => (
-          <Link href={`/work/${project.id}`} className={styles.proj_link}>
-            <div
-              key={project.id}
-              className={`${i % 2 === 0 ? styles.reverse : ''} ${
-                styles.project
-              }`}>
-              <div className={styles.proj_image}>
+          <div
+            key={project.id}
+            className={`${i % 2 === 0 ? styles.reverse : ''} ${
+              styles.project
+            }`}>
+            <div className={styles.proj_image}>
+              <span className={styles.faded_image}>
                 <Image
                   src={`/assets/images/projects/${project.src}`}
-									alt={project.title}
-									priority={true}
+                  alt={project.title}
+                  priority={true}
                   width="660"
                   height="660"
                 />
-              </div>
-              <div className={styles.info}>
-                <p className={`${styles.title} lead_para`}>{project.title}</p>
-                <p className={styles.desc}>{project.brief}</p>
-                <div className={styles.tech_stack}>
-                  {Object.keys(project.skills).map(
-                    (skill: string, index: number) =>
-                      project.skills[skill].map((s: string, i: number) => (
-                        <div
-                          key={`${skill}-${index}${i}`}
-                          className={styles.skill}>
-                          <span>{s}</span>
-                        </div>
-                      ))
+              </span>
+            </div>
+            <div className={styles.info}>
+              <div className={`${styles.title}`}>
+                <p className="lead_para">{project.title}</p>
+                <div>
+                  {/* <Link
+                    href={`/work/${project.id}`}
+                    className={styles.proj_link}>
+                    Details
+                  </Link> */}
+                  {project?.githubRepo && (
+                    <div>
+                      <p>Github Repo</p>
+                      <Link
+                        href={`${project.githubRepo}`}
+                        className={styles.proj_link}>
+                        <MdOpenInNew />
+                      </Link>
+                    </div>
                   )}
                 </div>
               </div>
+              <p className={styles.desc}>{project.brief}</p>
+              <div className={styles.tech_stack}>
+                {Object.keys(project.skills).map(
+                  (skill: string, index: number) =>
+                    project.skills[skill].map((s: string, i: number) => (
+                      <div
+                        key={`${skill}-${index}${i}`}
+                        className={styles.skill}>
+                        <span>{s}</span>
+                      </div>
+                    ))
+                )}
+              </div>
+							<div className={`${styles.open_proj}`} key={i}>
+								{ project.titlelink.map((link, i) => (
+										project.titlelink.length === 1 ? (
+											<Link href={`${link}`} className={`${styles.proj_link}`}>
+												Visit Project Website
+												<MdDoubleArrow />
+											</Link>
+										) : (
+											project.titlelink.length > 1 && (
+												<>
+													{ i === 0 && (
+														<p>Visit Project Website</p>
+													)}	
+													<Link href={link} className={`${styles.proj_link} ${styles.multi_link}`}>
+														V{i + 1}
+														<MdDoubleArrow />
+													</Link>
+												</>
+											)
+										)
+									)
+              	)}
+							</div>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

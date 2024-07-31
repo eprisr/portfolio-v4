@@ -28,3 +28,17 @@
 [data-theme='dark'] .button {
   color: var(--text-reverse);
 }
+
+.errorImgDark {
+  display: none;
+}
+
+[data-theme='dark'] .errorImg {
+  color-scheme: dark;
+  display: none;
+}
+
+[data-theme='dark'] .errorImgDark {
+  color-scheme: dark;
+  display: unset;
+}

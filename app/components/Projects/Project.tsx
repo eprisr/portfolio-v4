@@ -36,14 +36,14 @@ export default function Project({ project }: { project: Project }) {
         <h5 className="sub1">{client}</h5>
         <h2 className="display3">
           {title}
-          {titlelink && (
+          {/* {titlelink && (
             <Link
               href={titlelink}
               target="_blank"
               className={styles.open_in_new}>
               <MdOutlineOpenInNew />
             </Link>
-          )}
+          )} */}
         </h2>
         <div className={styles.media}>{renderMedia()}</div>
         <p>{projdesc}</p>
