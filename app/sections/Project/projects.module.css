@@ -147,12 +147,17 @@
 	align-items: center;
 	flex-grow: 1;
 	align-content: flex-end;
+	gap: 15px;
 	
 	& a {
 		display: inherit;
 		align-items: center;
 		gap: 15px;
 	}
+}
+
+.open_proj .multi_link {
+	gap: 3px;
 }
 
 @media (min-width: 768px) {
