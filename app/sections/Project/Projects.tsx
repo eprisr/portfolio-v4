@@ -45,11 +45,11 @@ export default async function Projects() {
               <div className={`${styles.title}`}>
                 <p className="lead_para">{project.title}</p>
                 <div>
-                  <Link
+                  {/* <Link
                     href={`/work/${project.id}`}
                     className={styles.proj_link}>
                     Details
-                  </Link>
+                  </Link> */}
                   {project?.githubRepo && (
                     <div>
                       <p>Github Repo</p>
@@ -75,28 +75,29 @@ export default async function Projects() {
                     ))
                 )}
               </div>
-              {project.titlelink.map((link, i) =>
-                project.titlelink.length === 1 ? (
-                  <div className={`${styles.open_proj}`} key={i}>
-                    <Link href={`${link}`} className={`${styles.proj_link}`}>
-                      Visit Project Website
-                      <MdDoubleArrow />
-                    </Link>
-                  </div>
-                ) : (
-                  project.titlelink.length > 1 && (
-										<div className={`${styles.open_proj}`} key={i}>
-											{i === 0 && (
-												<p>Visit Project Website</p>
-											)}	
-											<Link href={link} className={`${styles.proj_link}`}>
-												V{i + 1}
-                        <MdDoubleArrow />
-                      </Link>
-                    </div>
-                  )
-                )
-              )}
+							<div className={`${styles.open_proj}`} key={i}>
+								{ project.titlelink.map((link, i) => (
+										project.titlelink.length === 1 ? (
+											<Link href={`${link}`} className={`${styles.proj_link}`}>
+												Visit Project Website
+												<MdDoubleArrow />
+											</Link>
+										) : (
+											project.titlelink.length > 1 && (
+												<>
+													{ i === 0 && (
+														<p>Visit Project Website</p>
+													)}	
+													<Link href={link} className={`${styles.proj_link} ${styles.multi_link}`}>
+														V{i + 1}
+														<MdDoubleArrow />
+													</Link>
+												</>
+											)
+										)
+									)
+              	)}
+							</div>
             </div>
           </div>
         ))}
