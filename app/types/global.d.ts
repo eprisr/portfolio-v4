@@ -9,7 +9,7 @@ declare global {
 		video: { url: string; id: string; width: string; height: string }
 		title: string
 		titlelink: string[]
-		githubRepo?: string
+		githubrepo?: string
 		clickable: boolean
 		date: string
 		client: string

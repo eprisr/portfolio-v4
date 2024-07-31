@@ -13,54 +13,56 @@ function RecentProjects() {
           <h2 className="display3">Latest Projects</h2>
         </div>
         <div className={styles.project_list}>
-          <Link href="/work/maps">
+          <Link
+            href="https://neighborhood-map-neon.vercel.app/"
+            target="_blank">
             <div className={styles.project}>
               <div className={styles.proj_desc}>
                 <p className={`${styles.lead_para} lead_para`}>
                   Smoothie Locator
                 </p>
                 <p className={styles.language}>React.js</p>
-							</div>
-							<span className={styles.faded_image}>
-								<Image
-									src="/assets/images/smoothie_map_3x.png"
-									alt=""
-									width="1140"
-									height="1140"
-								/>
-							</span>
+              </div>
+              <span className={styles.faded_image}>
+                <Image
+                  src="/assets/images/smoothie_map_3x.png"
+                  alt=""
+                  width="1140"
+                  height="1140"
+                />
+              </span>
             </div>
           </Link>
-          <Link href="/work/mem">
+          <Link href="https://eprisr.github.io/Project-Memory_Game/" target='_blank'>
             <div className={styles.project}>
               <div className={styles.proj_desc}>
                 <p className={`${styles.lead_para} lead_para`}>Memory Game</p>
                 <p className={styles.language}>Vanilla JS</p>
-							</div>
-							<span className={styles.faded_image}>
-								<Image
-									src="/assets/images/memory_game_3x.png"
-									alt=""
-									width="1140"
-									height="1140"
-								/>
-							</span>
-						</div>
+              </div>
+              <span className={styles.faded_image}>
+                <Image
+                  src="/assets/images/memory_game_3x.png"
+                  alt=""
+                  width="1140"
+                  height="1140"
+                />
+              </span>
+            </div>
           </Link>
-          <Link href="/work/reads">
+          <Link href="https://my-reads-brown.vercel.app/" target="_blank">
             <div className={styles.project}>
               <div className={styles.proj_desc}>
                 <p className={`${styles.lead_para} lead_para`}>My Reads</p>
                 <p className={styles.language}>React.js</p>
-							</div>
-							<span className={styles.faded_image}>
-								<Image
-									src="/assets/images/my_reads_3x.png"
-									alt=""
-									width="1140"
-									height="1140"
-								/>
-							</span>
+              </div>
+              <span className={styles.faded_image}>
+                <Image
+                  src="/assets/images/my_reads_3x.png"
+                  alt=""
+                  width="1140"
+                  height="1140"
+                />
+              </span>
             </div>
           </Link>
         </div>
