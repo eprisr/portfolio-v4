@@ -69,7 +69,7 @@ export default function NavBar() {
 						))}
 						{/* TODO: Update download link */}
             <NavText
-              href="https://www.linkedin.com/in/eprishb/details/featured/?profileId=ACoAAAqb5MsBLG3tCIUFyAWzmBDwS92HdVIj1y0"
+              href="/Epris_Richardson_Resume.pdf"
               target="_blank">
               Resum&eacute;
             </NavText>
