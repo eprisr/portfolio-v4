@@ -21,7 +21,6 @@ export default function NavBar() {
 	const [menuOpen, setMenuOpen] = useState<boolean>(false)
 	const [navColor, setNavColor] = useState(false)
 	const pathname = usePathname()
-	console.log(pathname)
 
 	const changeNavbarColor = () => {
     if (window.scrollY >= 80) {

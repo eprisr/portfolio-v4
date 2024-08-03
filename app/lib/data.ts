@@ -6,9 +6,9 @@ export async function fetchProjects(
   offset: number,
   filter: string
 ) {
-  const ITEMS_PER_LOAD = limit || 3
+  const count = limit || null
   try {
-    const projects = await sql<Project>`SELECT * FROM projects`
+    const projects = await sql<Project>`SELECT * FROM projects LIMIT ${count}`
     return projects.rows
   } catch (error) {
     console.error('Database Error:', error)
