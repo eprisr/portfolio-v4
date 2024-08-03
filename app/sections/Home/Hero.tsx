@@ -6,7 +6,7 @@ import styles from './hero.module.css'
 function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={` ${styles.container} container `}>
+      <div className={` container ${styles.container} `}>
         <div className={` ${styles.left_column} column `}>
           <h1 className={styles.intro}>
             <span className={styles.greeting}>Hello,</span> <br />
