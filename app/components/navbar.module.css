@@ -3,7 +3,6 @@
   align-self: stretch;
   justify-content: center;
 
-  background-color: var(--bg2);
 	transition: 0.8s all ease;
 
   padding-top: var(--p-32);
@@ -22,7 +21,11 @@
 	z-index: 10;
 }
 
-.nav.solid {
+.nav.bg2 {
+	background-color: var(--bg2);
+}
+
+.nav.white {
 	background-color: var(--bg1);
 }
 

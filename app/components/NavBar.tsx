@@ -8,6 +8,7 @@ import { CgClose, CgMenu } from 'react-icons/cg'
 import NavText from './base/Typography/NavText'
 // import Switch from './base/Switch'
 import styles from './navbar.module.css'
+import { usePathname } from 'next/navigation'
 
 const Switch = dynamic(
   //@ts-ignore
@@ -19,6 +20,8 @@ export default function NavBar() {
   const navItems = ['About', 'Work', 'Contact']
 	const [menuOpen, setMenuOpen] = useState<boolean>(false)
 	const [navColor, setNavColor] = useState(false)
+	const pathname = usePathname()
+	console.log(pathname)
 
 	const changeNavbarColor = () => {
     if (window.scrollY >= 80) {
@@ -34,8 +37,7 @@ export default function NavBar() {
 	
 
 	return (
-		// TODO: Transparent or white on pages that aren't home
-		<nav className={`${styles.nav} ${navColor && styles.solid}`}>
+		<nav className={`${styles.nav} ${pathname === '/' && styles.bg2} ${navColor && styles.white}`}>
       <div className={`${styles.container} container`} id="container">
         <Link className={styles.logoName} href="/">
           <svg
@@ -67,7 +69,6 @@ export default function NavBar() {
                 {item}
               </NavText>
 						))}
-						{/* TODO: Update download link */}
             <NavText
               href="/Epris_Richardson_Resume.pdf"
               target="_blank">
