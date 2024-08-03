@@ -33,7 +33,8 @@ export default function NavBar() {
 	}, [])
 	
 
-  return (
+	return (
+		// TODO: Transparent or white on pages that aren't home
 		<nav className={`${styles.nav} ${navColor && styles.solid}`}>
       <div className={`${styles.container} container`} id="container">
         <Link className={styles.logoName} href="/">
@@ -65,7 +66,8 @@ export default function NavBar() {
               <NavText key={item} href={`/${item}`}>
                 {item}
               </NavText>
-            ))}
+						))}
+						{/* TODO: Update download link */}
             <NavText
               href="https://www.linkedin.com/in/eprishb/details/featured/?profileId=ACoAAAqb5MsBLG3tCIUFyAWzmBDwS92HdVIj1y0"
               target="_blank">

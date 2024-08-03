@@ -26,7 +26,8 @@ export default function Skills() {
           <li>AWS Code Commit</li>
           <li>SEO</li>
           <li>Git</li>
-        </ul>
+				</ul>
+				{/* TODO: Stagger animation. Possible layout group animation. Have each one open with list of relevant projects? */}
         <div className={styles.tools}>
           {skillsIcons.map((Icon, key) => (
             <div className={styles.tool} key={key}>

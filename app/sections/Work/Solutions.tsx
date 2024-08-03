@@ -15,7 +15,8 @@ export default function Solutions() {
             well-maintained, functional site or application.
           </p>
         </div>
-        <div>
+				<div>
+					{/* TODO: Layout Group animation on hover? */}
           <ul className={styles.process}>
             <li className={styles.step}>
               <p className="sub1">01. DRIVING VISION INTO ACTION</p>

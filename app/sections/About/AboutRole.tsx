@@ -25,7 +25,8 @@ export default function AboutRole() {
             customers. With expertise in responsive design and mobile
             optimization, I ensure clients' websites are accessible and engaging
             across all devices, enhancing their reach and impact.
-          </p>
+					</p>
+					{/* TODO: Countup number animation */}
           <div className={styles.stats}>
             <div className={styles.stat}>
               <p className={styles.stat_num}>11</p>

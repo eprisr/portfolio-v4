@@ -14,7 +14,9 @@ function RecentProjects() {
         <div className={styles.heading}>
           <h5 className="sub1">Turn visions into online reality</h5>
           <h2 className="display3">Latest Projects</h2>
-        </div>
+				</div>
+				{/* TODO: Pull first three projects in database */}
+				{/* Stagger animation */}
         <div className={styles.project_list}>
           <Link
             href="https://neighborhood-map-neon.vercel.app/"
