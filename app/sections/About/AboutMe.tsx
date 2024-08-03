@@ -1,35 +1,57 @@
-import React from 'react'
+'use client'
+
+import React, { useEffect } from 'react'
 import Image from 'next/image'
+import { easeInOut, motion, useAnimate } from 'framer-motion'
 import PortraitOne from '../../../public/assets/images/portrait.png'
 import PortraitTwo from '../../../public/assets/images/portrait_2.jpg'
 import PortraitBG from '../../../public/assets/images/portrait_bg.png'
 import styles from './aboutme.module.css'
 
 function AboutMe() {
+	// useEffect(() => {
+	// 	animate(
+	// 		'img',
+	// 		{
+	// 			
+	// 		},
+	// 		{
+	// 			
+	// 		}
+	// 	)
+	// })
+	
   return (
     <section className={styles.about}>
       <div className={` ${styles.container} container `}>
-				<div className={`${styles.left_column} column `}>
-					{/* TODO: "Floating" Images */}
+        <div className={`${styles.left_column} column `}>
           <div className={styles.portraits}>
-						<Image
-							src={PortraitOne}
-							alt=""
-							className={`${styles.portrait} ${styles.portrait_one}`}
-							priority
-						/>
-						<Image
-							src={PortraitTwo}
-							alt=""
-							className={`${styles.portrait} ${styles.portrait_two}`}
-							priority
-						/>
-					</div>
+            <motion.div
+              animate={{ y: [-5, 5, -5] }}
+              transition={{
+                duration: 5,
+                ease: easeInOut,
+                repeat: Infinity,
+              }}
+              className={`${styles.portrait} ${styles.portrait_one} `}>
+              <Image src={PortraitOne} alt="" priority />
+            </motion.div>
+            <motion.div
+              animate={{ y: [5, -5, 5] }}
+              transition={{
+                duration: 5,
+                ease: easeInOut,
+                repeat: Infinity,
+              }}
+              className={`${styles.portrait} ${styles.portrait_two}`}>
+              <Image src={PortraitTwo} alt="" priority />
+            </motion.div>
+          </div>
           <Image
             src={PortraitBG}
-						alt=""
+            alt=""
             className={`${styles.portrait_bg}`}
-						priority
+            priority
           />
         </div>
         <div className={` ${styles.right_column} column`}>
