@@ -9,7 +9,8 @@ function AboutMe() {
   return (
     <section className={styles.about}>
       <div className={` ${styles.container} container `}>
-        <div className={`${styles.left_column} column `}>
+				<div className={`${styles.left_column} column `}>
+					{/* TODO: "Floating" Images */}
           <div className={styles.portraits}>
 						<Image
 							src={PortraitOne}

@@ -1,20 +1,15 @@
 .navItem {
-  position: relative;
-  height: fit-content;
-  margin: 10px;
   letter-spacing: 0.04em;
-  line-height: var(--rem-32px);
-  text-transform: uppercase;
+	list-style: none;;
 }
 
 .navText {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--p-base);
-  text-align: left;
-  font-size: var(--rem-16px);
   color: var(--text);
   text-decoration: none;
+	padding: var(--p-base);
+}
+
+.navText:hover {
+	color: var(--text-secondary);
+	font-weight: 500;
 }

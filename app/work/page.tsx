@@ -15,7 +15,8 @@ export default function Work({
   const filter = searchParams?.filter || 'All'
   // const total = await fetchProjectsTotal(filter)
 
-  return (
+	return (
+		// TODO: Stagger Card Animation
     <div className="main_wrapper">
       <Intro />
 			<ProjectsWrapper>

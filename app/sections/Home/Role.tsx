@@ -1,19 +1,20 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
+import Image from 'next/image'
 import Button from '../../components/base/Button'
 import styles from './role.module.css'
-import Image from 'next/image'
 import LuccaMockup from '../../../public/assets/images/Lucca_Mockup(2).png'
+import Container from '../../components/base/Container'
 
 function Role() {
+	const scrollRef = useRef(null)
+
   return (
-    <section className={styles.role}>
-      <div className={` ${styles.container} container `}>
+    <section ref={scrollRef} className={styles.role}>
+      <Container scrollRef={scrollRef} classes='role'>
         <div className={` ${styles.left_column} column `}>
-          <Image
-            src={LuccaMockup}
-            alt=""
-            className={styles.lucca}
-          />
+          <Image src={LuccaMockup} alt="" className={styles.lucca} />
         </div>
         <div className={` ${styles.right_column} column `}>
           <h5 className="sub1">Defining my role</h5>
@@ -31,7 +32,7 @@ function Role() {
             Discover my impact
           </Button>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

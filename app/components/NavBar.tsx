@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
@@ -17,10 +17,25 @@ const Switch = dynamic(
 
 export default function NavBar() {
   const navItems = ['About', 'Work', 'Contact']
-  const [menuOpen, setMenuOpen] = useState<boolean>(false)
+	const [menuOpen, setMenuOpen] = useState<boolean>(false)
+	const [navColor, setNavColor] = useState(false)
 
-  return (
-    <nav className={styles.nav}>
+	const changeNavbarColor = () => {
+    if (window.scrollY >= 80) {
+      setNavColor(true)
+    } else {
+      setNavColor(false)
+    }
+	}
+	
+	useEffect(() => {
+		window.addEventListener('scroll', changeNavbarColor)
+	}, [])
+	
+
+	return (
+		// TODO: Transparent or white on pages that aren't home
+		<nav className={`${styles.nav} ${navColor && styles.solid}`}>
       <div className={`${styles.container} container`} id="container">
         <Link className={styles.logoName} href="/">
           <svg
@@ -51,7 +66,8 @@ export default function NavBar() {
               <NavText key={item} href={`/${item}`}>
                 {item}
               </NavText>
-            ))}
+						))}
+						{/* TODO: Update download link */}
             <NavText
               href="https://www.linkedin.com/in/eprishb/details/featured/?profileId=ACoAAAqb5MsBLG3tCIUFyAWzmBDwS92HdVIj1y0"
               target="_blank">

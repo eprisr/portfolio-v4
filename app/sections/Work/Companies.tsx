@@ -6,7 +6,8 @@ export default function Companies() {
   return (
     <section className={styles.companies}>
       <div className={`${styles.container} container`}>
-        <h2>Companies I've Worked With</h2>
+				<h2>Companies I've Worked With</h2>
+				{/* TODO: Link out to each individual website */}
         <div className={styles.logos}>
           <Image
             src="/assets/images/logos/palace-logo.png"

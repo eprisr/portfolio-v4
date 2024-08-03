@@ -2,11 +2,6 @@
 	margin-top: 100px;
 }
 
-.container {
-  flex-direction: column;
-  align-items: center;
-}
-
 .display3 {
   text-align: center;
   max-width: 20ch;

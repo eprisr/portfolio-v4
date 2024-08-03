@@ -19,8 +19,6 @@ export default async function Projects() {
 			throw new Error(`An error occured in the Projects Server Components render ${error}`)
 		})
 	
-	console.log(projects[0].titlelink)
-
   return (
     <div className={styles.projects_wrapper}>
       <div className={styles.proj_container}>
@@ -45,24 +43,20 @@ export default async function Projects() {
               <div className={`${styles.title}`}>
                 <p className="lead_para">{project.title}</p>
                 <div>
-                  {/* <Link
-                    href={`/work/${project.id}`}
-                    className={styles.proj_link}>
-                    Details
-                  </Link> */}
-                  {project?.githubRepo && (
+                  {project?.githubrepo && (
                     <div>
                       <p>Github Repo</p>
                       <Link
-                        href={`${project.githubRepo}`}
-                        className={styles.proj_link}>
+                        href={`${project.githubrepo}`}
+                        className={styles.proj_link}
+                        target="_blank">
                         <MdOpenInNew />
                       </Link>
                     </div>
                   )}
                 </div>
               </div>
-              <p className={styles.desc}>{project.brief}</p>
+              <p className={styles.brief}>{project.brief}</p>
               <div className={styles.tech_stack}>
                 {Object.keys(project.skills).map(
                   (skill: string, index: number) =>
@@ -75,29 +69,28 @@ export default async function Projects() {
                     ))
                 )}
               </div>
-							<div className={`${styles.open_proj}`} key={i}>
-								{ project.titlelink.map((link, i) => (
-										project.titlelink.length === 1 ? (
-											<Link href={`${link}`} className={`${styles.proj_link}`}>
-												Visit Project Website
-												<MdDoubleArrow />
-											</Link>
-										) : (
-											project.titlelink.length > 1 && (
-												<>
-													{ i === 0 && (
-														<p>Visit Project Website</p>
-													)}	
-													<Link href={link} className={`${styles.proj_link} ${styles.multi_link}`}>
-														V{i + 1}
-														<MdDoubleArrow />
-													</Link>
-												</>
-											)
-										)
-									)
-              	)}
-							</div>
+              <div className={`${styles.open_proj}`} key={i}>
+                {project.titlelink.map((link, i) =>
+                  project.titlelink.length === 1 ? (
+                    <Link href={`${link}`} className={`${styles.proj_link}`}>
+                      Visit Project Website
+                      <MdDoubleArrow />
+                    </Link>
+                  ) : (
+                    project.titlelink.length > 1 && (
+                      <>
+                        {i === 0 && <p>Visit Project Website</p>}
+                        <Link
+                          href={link}
+                          className={`${styles.proj_link} ${styles.multi_link}`}>
+                          V{i + 1}
+                          <MdDoubleArrow />
+                        </Link>
+                      </>
+                    )
+                  )
+                )}
+              </div>
             </div>
           </div>
         ))}

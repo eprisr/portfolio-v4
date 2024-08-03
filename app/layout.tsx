@@ -45,6 +45,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+// TODO: Add dashboard to add projects instead of seeding as needed
 export default function RootLayout({
   children,
 }: {

@@ -1,11 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import Button from './base/Button'
 import styles from './collabcta.module.css'
+import Container from './base/Container'
 
 export default function CollabCTA() {
+	const scrollRef = useRef(null)
+
   return (
-    <section className={styles.collab_cta}>
-      <div className={` ${styles.container} container `}>
+    <section ref={scrollRef} className={styles.collab_cta}>
+      <Container scrollRef={scrollRef} classes={'collab-cta'}>
         <h3 className={`${styles.display3} display3`}>
           Lets Collaborate, Create &amp; Cultivate
         </h3>
@@ -25,7 +30,7 @@ export default function CollabCTA() {
             Learn the process
           </Button>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

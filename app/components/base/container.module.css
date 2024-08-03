@@ -1,0 +1,31 @@
+.role {
+  flex-wrap: wrap;
+}
+
+.projects {
+  flex-direction: column;
+  align-items: center;
+  row-gap: 60px;
+}
+
+.about-role {
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: -1;
+}
+
+.about-origin {
+  align-items: center;
+  justify-content: center;
+}
+
+.about-skills {
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.collab-cta {
+  flex-direction: column;
+  align-items: center;
+}

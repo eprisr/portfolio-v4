@@ -1,11 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import styles from './origin.module.css'
 import Image from 'next/image'
+import Container from '../../components/base/Container'
 
 export default function Origin() {
+	const scrollRef = useRef(null)
+
   return (
-    <section className={styles.role}>
-      <div className={`${styles.container} container`}>
+    <section ref={scrollRef} className={styles.role}>
+      <Container scrollRef={scrollRef} classes={'about-origin'}>
         <div className={`${styles.left_column} column`}>
           <h5 className="sub1">How I got started</h5>
           <h2>My Origin Story</h2>
@@ -39,7 +44,7 @@ export default function Origin() {
             height="810"
           />
         </div>
-      </div>
+      </Container>
     </section>
   )
 }
