@@ -21,7 +21,7 @@
 	position: absolute;
 }
 
-.container {
+.hero > .container {
 	display: grid;
 	grid-template-columns: 100%;
   /* flex-wrap: wrap; */
