@@ -1,12 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import styles from './skills.module.css'
 import { skillsIcons } from '../../assets/icons/index'
+import Container from '../../components/base/Container'
 
 export default function Skills() {
-  console.log(skillsIcons[0])
+	const scrollRef = useRef(null)
+
   return (
-    <section className={styles.skills}>
-      <div className={`${styles.container} container`}>
+    <section ref={scrollRef} className={styles.skills}>
+      <Container scrollRef={scrollRef} classes={'about-skills'}>
         <div>
           <h5 className="sub1">Capabilities, Skills,& Tools</h5>
           <h2>Weaving Innovation with Pixels of Precision</h2>
@@ -31,7 +35,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

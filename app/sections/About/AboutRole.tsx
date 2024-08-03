@@ -1,10 +1,15 @@
-import React from 'react'
+'use client'
+
+import React, { useRef } from 'react'
 import styles from './aboutrole.module.css'
+import Container from '../../components/base/Container'
 
 export default function AboutRole() {
+	const scrollRef = useRef(null)
+
   return (
-    <section id="role_and_contributions" className={styles.role}>
-      <div className={`${styles.container} container `}>
+    <section ref={scrollRef} id="role_and_contributions" className={styles.role}>
+      <Container scrollRef={scrollRef} classes={'about-role'}>
         <div className={styles.contributions}>
           <h5 className="sub1">What I do</h5>
           <h2>My Role & Contributions</h2>
@@ -37,7 +42,7 @@ export default function AboutRole() {
           </div>
         </div>
         <div className={styles.chevron_bg}></div>
-      </div>
+      </Container>
     </section>
   )
 }
