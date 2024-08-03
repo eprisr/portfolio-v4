@@ -1,13 +1,59 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { stagger, useAnimate, useInView } from 'framer-motion'
 import Button from '../../components/base/Button'
 import styles from './recentprojects.module.css'
 import Container from '../../components/base/Container'
 
+const staggerProjects = stagger(0.2, { startDelay: .08 })
+
+function useStaggerAnimation() {
+	const [scope, animate] = useAnimate()
+	const isInView = useInView(scope)
+
+	useEffect(() => {
+		animate(
+      scope.current,
+      { clipPath: 'inset(10% 50% 90% 50% round 10px)' },
+      {
+        type: 'spring',
+        bounce: 0,
+        duration: 0.5,
+      }
+    )
+
+    animate(
+      'a',
+      { opacity: 0, scale: 0.3, filter: 'blur(20px)' },
+      {
+        duration: 0.2,
+        delay: 0,
+      }
+    )
+
+		if(isInView) {
+			animate(scope.current,
+				{ clipPath: 'inset(0% 0% 0% 0% round 10px)' },
+			)
+
+			animate('a',
+				{ opacity: 1, scale: 1, filter: 'blur(0px)' },
+				{
+					delay: staggerProjects,
+				}
+			)
+		}
+	}, [isInView])
+
+	return scope;
+}
+
 function RecentProjects({ projects }: { projects: Project[] }) {
+	const scope = useStaggerAnimation()
+
   return (
     <section className={styles.projects}>
       <Container classes="projects">
@@ -15,8 +61,7 @@ function RecentProjects({ projects }: { projects: Project[] }) {
           <h5 className="sub1">Turn visions into online reality</h5>
           <h2 className="display3">Latest Projects</h2>
         </div>
-        {/* TODO: Stagger animation */}
-        <div className={styles.project_list}>
+        <div ref={scope} className={styles.project_list}>
           {projects.map((proj) => (
             <Link key={proj.id} href={proj.titlelink.at(-1)!} target="_blank">
               <div className={styles.project}>
