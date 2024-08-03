@@ -1,12 +1,46 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { stagger, useAnimate, useInView } from 'framer-motion'
 import styles from './skills.module.css'
 import { skillsIcons } from '../../assets/icons/index'
 import Container from '../../components/base/Container'
 
+const staggerSkills = stagger(0.07, { startDelay: .08 })
+
+function useStaggerAnimation() {
+  const [scope, animate] = useAnimate()
+  const isInView = useInView(scope)
+
+  useEffect(() => {
+    animate(
+      'div',
+      { opacity: 0, y: 100 },
+      {
+				y: { stiffness: 1000 },
+        duration: 2,
+				delay: 0,
+      }
+    )
+
+    if (isInView) {
+      animate(
+        'div',
+        { opacity: 1, y: 0 },
+				{
+					y: { stiffness: 1000, velocity: -100 },
+          delay: staggerSkills,
+        }
+      )
+    }
+  }, [isInView])
+
+  return scope
+}
+
 export default function Skills() {
 	const scrollRef = useRef(null)
+	const scope = useStaggerAnimation()
 
   return (
     <section ref={scrollRef} className={styles.skills}>
@@ -26,9 +60,8 @@ export default function Skills() {
           <li>AWS Code Commit</li>
           <li>SEO</li>
           <li>Git</li>
-				</ul>
-				{/* TODO: Stagger animation. Possible layout group animation. Have each one open with list of relevant projects? */}
-        <div className={styles.tools}>
+        </ul>
+        <div ref={scope} className={styles.tools}>
           {skillsIcons.map((Icon, key) => (
             <div className={styles.tool} key={key}>
               <Icon.icon className={styles.icon} width="100%" height="32px" />
