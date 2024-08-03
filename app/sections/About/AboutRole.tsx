@@ -1,14 +1,37 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { animate, motion, useAnimate, useInView, useMotionValue, useTransform } from 'framer-motion'
 import styles from './aboutrole.module.css'
 import Container from '../../components/base/Container'
+
+function Counter({ className, from, to }: { className: string, from: number, to: number }) {
+	const ref = useRef(null)
+	const isInView = useInView(ref)
+	const count = useMotionValue(from)
+	const rounded = useTransform(count, Math.round)
+
+	useEffect(() => {
+		if (isInView) {
+			const animation = animate(count, to, {
+				duration: 2
+			})
+	
+			return animation.stop
+		}
+	})
+	
+	return <motion.p ref={ref} className={`${styles[className]}`}>{rounded}</motion.p>
+}
 
 export default function AboutRole() {
 	const scrollRef = useRef(null)
 
   return (
-    <section ref={scrollRef} id="role_and_contributions" className={styles.role}>
+    <section
+      ref={scrollRef}
+      id="role_and_contributions"
+      className={styles.role}>
       <Container scrollRef={scrollRef} classes={'about-role'}>
         <div className={styles.contributions}>
           <h5 className="sub1">What I do</h5>
@@ -25,19 +48,18 @@ export default function AboutRole() {
             customers. With expertise in responsive design and mobile
             optimization, I ensure clients' websites are accessible and engaging
             across all devices, enhancing their reach and impact.
-					</p>
-					{/* TODO: Countup number animation */}
+          </p>
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <p className={styles.stat_num}>11</p>
+              <Counter className={'stat_num'} from={0} to={11} />
               <p className={styles.stat_desc}>Years Total Experience</p>
             </div>
             <div className={styles.stat}>
-              <p className={styles.stat_num}>1</p>
+              <Counter className={'stat_num'} from={0} to={1} />
               <p className={styles.stat_desc}>Co-Founded Business</p>
             </div>
             <div className={styles.stat}>
-              <p className={styles.stat_num}>5</p>
+              <Counter className={'stat_num'} from={0} to={5} />
               <p className={styles.stat_desc}>Companies Worked For</p>
             </div>
           </div>

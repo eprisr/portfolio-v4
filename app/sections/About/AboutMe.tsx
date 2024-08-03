@@ -9,18 +9,6 @@ import PortraitBG from '../../../public/assets/images/portrait_bg.png'
 import styles from './aboutme.module.css'
 
 function AboutMe() {
-	// useEffect(() => {
-	// 	animate(
-	// 		'img',
-	// 		{
-	// 			
-	// 		},
-	// 		{
-	// 			
-	// 		}
-	// 	)
-	// })
-	
   return (
     <section className={styles.about}>
       <div className={` ${styles.container} container `}>
