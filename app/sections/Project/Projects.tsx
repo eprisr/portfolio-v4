@@ -1,10 +1,7 @@
 import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import * as Sentry from '@sentry/nextjs'
 import styles from './projects.module.css'
-import { GithubIcon } from '../../assets/icons'
-import { MdDoubleArrow, MdOpenInNew, MdOpenInNewOff } from 'react-icons/md'
+import Project from '../../components/Projects/Project'
 
 export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
@@ -23,76 +20,7 @@ export default async function Projects() {
     <div className={styles.projects_wrapper}>
       <div className={styles.proj_container}>
         {projects.map((project, i) => (
-          <div
-            key={project.id}
-            className={`${i % 2 === 0 ? styles.reverse : ''} ${
-              styles.project
-            }`}>
-            <div className={styles.proj_image}>
-              <span className={styles.faded_image}>
-                <Image
-                  src={`/assets/images/projects/${project.src}`}
-                  alt={project.title}
-                  priority={true}
-                  width="660"
-                  height="660"
-                />
-              </span>
-            </div>
-            <div className={styles.info}>
-              <div className={`${styles.title}`}>
-                <p className="lead_para">{project.title}</p>
-                <div>
-                  {project?.githubrepo && (
-                    <div>
-                      <p>Github Repo</p>
-                      <Link
-                        href={`${project.githubrepo}`}
-                        className={styles.proj_link}
-                        target="_blank">
-                        <MdOpenInNew />
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              </div>
-              <p className={styles.brief}>{project.brief}</p>
-              <div className={styles.tech_stack}>
-                {Object.keys(project.skills).map(
-                  (skill: string, index: number) =>
-                    project.skills[skill].map((s: string, i: number) => (
-                      <div
-                        key={`${skill}-${index}${i}`}
-                        className={styles.skill}>
-                        <span>{s}</span>
-                      </div>
-                    ))
-                )}
-              </div>
-              <div className={`${styles.open_proj}`} key={i}>
-                {project.titlelink.map((link, i) =>
-                  project.titlelink.length === 1 ? (
-                    <Link href={`${link}`} className={`${styles.proj_link}`}>
-                      Visit Project Website
-                      <MdDoubleArrow />
-                    </Link>
-                  ) : (
-                    project.titlelink.length > 1 && (
-                      <>
-                        {i === 0 && <p>Visit Project Website</p>}
-                        <Link
-                          href={link}
-                          className={`${styles.proj_link} ${styles.multi_link}`}>
-                          V{i + 1}
-                          <MdDoubleArrow />
-                        </Link>
-                      </>
-                    )
-                  )
-                )}
-              </div>
-            </div>
-          </div>
+          <Project project={project} i={i} />
         ))}
       </div>
     </div>

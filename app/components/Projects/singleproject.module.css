@@ -1,0 +1,19 @@
+.container {
+  flex-direction: column;
+}
+
+.open_in_new {
+  font-size: var(--rem-32px);
+  color: var(--text);
+  margin-left: var(--rem-16px);
+}
+
+.media {
+  margin: 40px 0;
+  max-width: 725px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}

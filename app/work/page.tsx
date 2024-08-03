@@ -16,7 +16,6 @@ export default function Work({
   // const total = await fetchProjectsTotal(filter)
 
 	return (
-		// TODO: Stagger Card Animation
     <div className="main_wrapper">
       <Intro />
 			<ProjectsWrapper>
