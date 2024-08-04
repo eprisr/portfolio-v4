@@ -1,15 +1,15 @@
 import React, { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import './app.css';
+import '@/app/ui/app.css';
 import {
   dm_serif_display,
   dm_serif_text,
   red_hat_display,
   red_hat_text,
-} from './fonts';
+} from '@/app/ui/fonts';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import ThemeScript from './lib/utils';
 import './theme/theme.css';
 import CollabCTA from './ui/components/CollabCTA';
