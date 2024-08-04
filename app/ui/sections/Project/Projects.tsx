@@ -1,13 +1,12 @@
 import React from 'react'
 import * as Sentry from '@sentry/nextjs'
-import Hero from './ui/sections/Home/Hero'
-import Role from './ui/sections/Home/Role'
-import RecentProjects from './ui/sections/Home/RecentProjects'
+import styles from './projects.module.css'
+import Project from '../../components/projects/Project'
 
-export default async function Page() {
+export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
 
-	const projects = await fetch(url + '/api/work?limit=3')
+	const projects = await fetch(url + '/api/work')
 		.then((res) => res.json())
 		.then((data) => data as Project[])
 		.catch((error) => {
@@ -22,10 +21,12 @@ export default async function Page() {
 		})
 
 	return (
-		<div className="main_wrapper">
-			<Hero />
-			<Role />
-			<RecentProjects projects={projects} />
+		<div className={styles.projects_wrapper}>
+			<div className={styles.proj_container}>
+				{projects.map((project, i) => (
+					<Project project={project} i={i} />
+				))}
+			</div>
 		</div>
 	)
 }
