@@ -1,15 +1,15 @@
-import React from 'react'
-import styles from './navtext.module.css'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import styles from './navtext.module.css';
 
 type NavTextProps = {
-  href: string
-  target?: string
-  rel?: string
-  locale?: false
-  download?: boolean
-  children?: any
-}
+  href: string;
+  target?: string;
+  rel?: string;
+  locale?: false;
+  download?: boolean;
+  children?: any;
+};
 
 export default function NavText({
   href,
@@ -22,7 +22,7 @@ export default function NavText({
   const path =
     href?.toLocaleLowerCase() === '/contact'
       ? "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
-      : `${href?.toLocaleLowerCase()}`
+      : `${href?.toLocaleLowerCase()}`;
 
   return (
     <li className={styles.navItem}>
@@ -32,9 +32,10 @@ export default function NavText({
         target={target}
         rel={rel}
         locale={locale}
-        download={download}>
+        download={download}
+      >
         {children}
       </Link>
     </li>
-  )
+  );
 }

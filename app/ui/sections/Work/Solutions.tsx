@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './solutions.module.css'
+import React from 'react';
+import styles from './solutions.module.css';
 
 export default function Solutions() {
   return (
@@ -15,8 +15,8 @@ export default function Solutions() {
             well-maintained, functional site or application.
           </p>
         </div>
-				<div>
-					{/* TODO: Layout Group animation on hover? */}
+        <div>
+          {/* TODO: Layout Group animation on hover? */}
           <ul className={styles.process}>
             <li className={styles.step}>
               <p className="sub1">01. DRIVING VISION INTO ACTION</p>
@@ -103,5 +103,5 @@ export default function Solutions() {
         </div>
       </div>
     </section>
-  )
+  );
 }

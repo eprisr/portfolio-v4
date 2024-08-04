@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './companies.module.css'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from './companies.module.css';
 
 export default function Companies() {
   return (
@@ -93,5 +93,5 @@ export default function Companies() {
         </div>
       </div>
     </section>
-  )
+  );
 }

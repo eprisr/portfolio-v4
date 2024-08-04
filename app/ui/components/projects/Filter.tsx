@@ -1,26 +1,26 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
-import styles from './filter.module.css'
+import React, { useEffect, useState } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import styles from './filter.module.css';
 
 export default function Filter() {
-  const filters = ['All', 'Web Dev', 'Print', 'Branding', 'Motion']
+  const filters = ['All', 'Web Dev', 'Print', 'Branding', 'Motion'];
   // const [activeFilter, setActiveFilter] = useState<string>('All')
 
-  const router = useRouter()
-  const pathname = usePathname()
-  const searchParams = useSearchParams()
-  const currentFilter = searchParams.get('filter') || 'All'
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentFilter = searchParams.get('filter') || 'All';
 
   const createPageUrl = (filter: string) => {
-    const params = new URLSearchParams(searchParams)
-    params.set('filter', filter.toString())
-    return `${pathname}?${params.toString()}`
-  }
+    const params = new URLSearchParams(searchParams);
+    params.set('filter', filter.toString());
+    return `${pathname}?${params.toString()}`;
+  };
 
   function updateFilter(filter: string) {
-    router.push(createPageUrl(filter), { scroll: false })
+    router.push(createPageUrl(filter), { scroll: false });
   }
 
   return (
@@ -30,7 +30,8 @@ export default function Filter() {
           <span
             key={i}
             className={`${currentFilter === filter ? styles.active : ''}`}
-            onClick={() => updateFilter(filter)}>
+            onClick={() => updateFilter(filter)}
+          >
             {filter}
           </span>
         ))}
@@ -40,12 +41,13 @@ export default function Filter() {
           name="filter"
           id="filter"
           className={styles.filter}
-          onChange={(e) => updateFilter(e.target.value)}>
+          onChange={(e) => updateFilter(e.target.value)}
+        >
           {filters.map((filter, i) => (
             <option key={i}>{filter}</option>
           ))}
         </select>
       </div>
     </div>
-  )
+  );
 }

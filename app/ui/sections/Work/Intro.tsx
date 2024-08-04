@@ -1,5 +1,5 @@
-import React from 'react'
-import styles from './intro.module.css'
+import React from 'react';
+import styles from './intro.module.css';
 
 export default function Intro() {
   return (
@@ -23,5 +23,5 @@ export default function Intro() {
         </p>
       </div>
     </section>
-  )
+  );
 }

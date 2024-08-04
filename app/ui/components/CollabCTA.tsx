@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import React, { useRef } from 'react'
-import Button from './base/Button'
-import styles from './collabcta.module.css'
-import Container from './base/Container'
+import React, { useRef } from 'react';
+import Button from './base/Button';
+import Container from './base/Container';
+import styles from './collabcta.module.css';
 
 export default function CollabCTA() {
-	const scrollRef = useRef(null)
+  const scrollRef = useRef(null);
 
   return (
     <section ref={scrollRef} className={styles.collab_cta}>
@@ -23,7 +23,8 @@ export default function CollabCTA() {
           <Button
             href="mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
             variant="solid"
-            colorScheme="madder">
+            colorScheme="madder"
+          >
             Contact me
           </Button>
           <Button href="/work#process" variant="outline" colorScheme="madder">
@@ -32,5 +33,5 @@ export default function CollabCTA() {
         </div>
       </Container>
     </section>
-  )
+  );
 }

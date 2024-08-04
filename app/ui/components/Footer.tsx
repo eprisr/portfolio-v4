@@ -1,7 +1,7 @@
-import React from 'react'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import styles from './footer.module.css'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import styles from './footer.module.css';
 
 export default function Footer() {
   return (
@@ -21,5 +21,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

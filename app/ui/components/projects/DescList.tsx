@@ -1,8 +1,8 @@
-import React from 'react'
-import styles from './desclist.module.css'
+import React from 'react';
+import styles from './desclist.module.css';
 
 export default function DescList({ project }: { project: Project }) {
-  const { skills } = project
+  const { skills } = project;
 
   return (
     <dl className={styles.desc_list}>
@@ -13,5 +13,5 @@ export default function DescList({ project }: { project: Project }) {
         </div>
       ))}
     </dl>
-  )
+  );
 }

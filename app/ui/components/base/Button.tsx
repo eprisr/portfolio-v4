@@ -1,16 +1,16 @@
-"use client"
+'use client';
 
-import React, { MouseEvent, useState } from 'react'
-import styles from './button.module.css'
-import Link from 'next/link'
+import React, { MouseEvent, useState } from 'react';
+import Link from 'next/link';
+import styles from './button.module.css';
 
 type ButtonProps = {
-  href: string
-  colorScheme: string
-  variant: 'solid' | 'outline'
-  scroll?: boolean
-  children: string | JSX.Element | React.ReactNode
-}
+  href: string;
+  colorScheme: string;
+  variant: 'solid' | 'outline';
+  scroll?: boolean;
+  children: string | JSX.Element | React.ReactNode;
+};
 
 function Button({
   href,
@@ -19,37 +19,42 @@ function Button({
   children,
   ...props
 }: ButtonProps) {
-	const [relX, setRelX] = useState(0)
-  const [relY, setRelY] = useState(0)
+  const [relX, setRelX] = useState(0);
+  const [relY, setRelY] = useState(0);
 
-	const expandFill = (e: MouseEvent<HTMLDivElement>) => {
-    const parentOffsetLeft = e.currentTarget.offsetLeft
-    const parentOffsetTop = e.currentTarget.offsetTop
-    setRelX(e.pageX - parentOffsetLeft)
-    setRelY(e.pageY - parentOffsetTop)
-  }
+  const expandFill = (e: MouseEvent<HTMLDivElement>) => {
+    const parentOffsetLeft = e.currentTarget.offsetLeft;
+    const parentOffsetTop = e.currentTarget.offsetTop;
+    setRelX(e.pageX - parentOffsetLeft);
+    setRelY(e.pageY - parentOffsetTop);
+  };
 
   const contractFill = (e: MouseEvent<HTMLDivElement>) => {
-    const parentOffsetLeft = e.currentTarget.offsetLeft
-    const parentOffsetTop = e.currentTarget.offsetTop
-    setRelX(e.pageX - parentOffsetLeft)
-    setRelY(e.pageY - parentOffsetTop)
-  }
+    const parentOffsetLeft = e.currentTarget.offsetLeft;
+    const parentOffsetTop = e.currentTarget.offsetTop;
+    setRelX(e.pageX - parentOffsetLeft);
+    setRelY(e.pageY - parentOffsetTop);
+  };
 
-	return (
+  return (
     <div className={` ${styles.button_wrapper} ${styles[variant]} `}>
-      <div className={` ${styles.button} ${styles[colorScheme]} `} onMouseEnter={expandFill} onMouseLeave={contractFill}>
-				<span style={{ top: relY, left: relX }}></span>
+      <div
+        className={` ${styles.button} ${styles[colorScheme]} `}
+        onMouseEnter={expandFill}
+        onMouseLeave={contractFill}
+      >
+        <span style={{ top: relY, left: relX }}></span>
         <Link
           href={href}
           type="button"
           className={styles.link}
-          scroll={props?.scroll}>
+          scroll={props?.scroll}
+        >
           {children}
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
-export default Button
+export default Button;

@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
-import React from 'react'
-import ReactPlayer from 'react-player'
+import React from 'react';
+import ReactPlayer from 'react-player';
 
 export default function Video({ project }: { project: Project }) {
-  const { video } = project
+  const { video } = project;
 
   return (
     <ReactPlayer
@@ -13,5 +13,5 @@ export default function Video({ project }: { project: Project }) {
       height="auto"
       style={{ aspectRatio: '16/9' }}
     />
-  )
+  );
 }
