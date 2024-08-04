@@ -3,8 +3,10 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { BsCaretLeft, BsCaretRight } from 'react-icons/bs';
+import { Project } from '@/app/lib/definitions';
 import Button from '@/app/ui/components/base/Button';
 import styles from './slider.module.css';
+
 
 export default function Slider({ project }: { project: Project }) {
   const { slides, title } = project;

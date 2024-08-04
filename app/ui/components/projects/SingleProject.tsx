@@ -2,12 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdOutlineOpenInNew } from 'react-icons/md';
+import { Project as ProjectType }  from '@/app/lib/definitions'
 import DescList from './DescList';
 import Slider from './Slider';
 import Video from './Video';
 import styles from './project.module.css';
 
-export default function Project({ project }: { project: Project }) {
+export default function Project({ project }: { project: ProjectType }) {
   const { src, slides, video, title, titlelink, client, projdesc } = project;
 
   function renderMedia() {

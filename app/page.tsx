@@ -1,4 +1,5 @@
 import React from 'react';
+import { Project } from '@/app/lib/definitions';
 import * as Sentry from '@sentry/nextjs';
 import Hero from './ui/sections/Home/Hero';
 import RecentProjects from './ui/sections/Home/RecentProjects';

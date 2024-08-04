@@ -4,9 +4,11 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { stagger, useAnimate, useInView } from 'framer-motion';
+import { Project } from '@/app/lib/definitions';
 import Button from '@/app/ui/components/base/Button';
 import Container from '@/app/ui/components/base/Container';
 import styles from './recentprojects.module.css';
+
 
 const staggerProjects = stagger(0.2, { startDelay: 0.08 });
 

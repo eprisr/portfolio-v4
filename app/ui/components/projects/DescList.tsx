@@ -1,4 +1,5 @@
 import React from 'react';
+import { Project } from '@/app/lib/definitions';
 import styles from './desclist.module.css';
 
 export default function DescList({ project }: { project: Project }) {

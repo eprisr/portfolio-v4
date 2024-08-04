@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Variants, motion } from 'framer-motion';
 import { MdDoubleArrow, MdOpenInNew } from 'react-icons/md';
+import { Project as ProjectType }  from '@/app/lib/definitions'
 import styles from './project.module.css';
 
 const variants: Variants = {
@@ -19,7 +20,7 @@ const variants: Variants = {
   },
 };
 
-function Project({ project, i }: { project: Project; i: number }) {
+function Project({ project, i }: { project: ProjectType; i: number }) {
   const motionMargin = i === 0 ? '0px 0px 100% 0px' : '0px';
 
   return (

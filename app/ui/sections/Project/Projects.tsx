@@ -1,5 +1,6 @@
 import React from 'react';
-import Project from '@/app/ui/components/projects/Project';
+import { Project } from '@/app/lib/definitions';
+import { default as WorkProject } from '@/app/ui/components/projects/Project';
 import * as Sentry from '@sentry/nextjs';
 import styles from './projects.module.css';
 
@@ -24,7 +25,7 @@ export default async function Projects() {
     <div className={styles.projects_wrapper}>
       <div className={styles.proj_container}>
         {projects.map((project, i) => (
-          <Project project={project} i={i} />
+          <WorkProject project={project} i={i} />
         ))}
       </div>
     </div>
