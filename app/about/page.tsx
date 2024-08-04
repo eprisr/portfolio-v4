@@ -1,8 +1,8 @@
 import React from 'react'
-import AboutMe from '../ui/sections/About/AboutMe'
-import AboutRole from '../ui/sections/About/AboutRole'
-import Skills from '../ui/sections/About/Skills'
-import Origin from '../ui/sections/About/Origin'
+import AboutMe from '@/app/ui/sections/About/AboutMe'
+import AboutRole from '@/app/ui/sections/About/AboutRole'
+import Skills from '@/app/ui/sections/About/Skills'
+import Origin from '@/app/ui/sections/About/Origin'
 
 export default function About() {
 	return (

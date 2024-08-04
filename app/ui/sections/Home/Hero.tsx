@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../../components/base/Button'
-import FeaturedImage from '../../components/hero/FeaturedImage'
+import Button from '@/app/ui/components/base/Button'
+import FeaturedImage from '@/app/ui/components/hero/FeaturedImage'
 import styles from './hero.module.css'
 
 function Hero() {

@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react'
-import Intro from '../ui/sections/Work/Intro'
-import Solutions from '../ui/sections/Work/Solutions'
-import Companies from '../ui/sections/Work/Companies'
-import ProjectsWrapper from '../ui/sections/Work/ProjectsWrapper'
-import { ProjectsSkeleton } from '../components/skeletons'
-import Projects from '../ui/sections/Project/Projects'
-// import { fetchProjectsTotal } from '../lib/data'
+import Intro from '@/app/ui/sections/Work/Intro'
+import Solutions from '@/app/ui/sections/Work/Solutions'
+import Companies from '@/app/ui/sections/Work/Companies'
+import ProjectsWrapper from '@/app/ui/sections/Work/ProjectsWrapper'
+import { ProjectsSkeleton } from '@/app/ui/components/skeletons'
+import Projects from '@/app/ui/sections/Project/Projects'
+// import { fetchProjectsTotal } from '@/app/lib/data'
 
 export default function Work({
 	searchParams,

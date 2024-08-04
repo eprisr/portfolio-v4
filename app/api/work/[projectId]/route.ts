@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { projectDescs } from '../../../ui/sections/Work/projectDescs'
+import { projectDescs } from '@/app/ui/sections/Work/projectDescs'
 
 export async function GET(
 	request: Request,

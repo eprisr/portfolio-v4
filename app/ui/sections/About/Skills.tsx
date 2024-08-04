@@ -3,8 +3,8 @@
 import React, { useEffect, useRef } from 'react'
 import { stagger, useAnimate, useInView } from 'framer-motion'
 import styles from './skills.module.css'
-import { skillsIcons } from '../../../assets/icons/index'
-import Container from '../../components/base/Container'
+import { skillsIcons } from '@/app/assets/icons/index'
+import Container from '@/app/ui/components/base/Container'
 
 const staggerSkills = stagger(0.07, { startDelay: 0.08 })
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import * as Sentry from '@sentry/nextjs'
 import styles from './projects.module.css'
-import Project from '../../components/projects/Project'
+import Project from '@/app/ui/components/projects/Project'
 
 export default async function Projects() {
 	const url = process.env.NEXT_PUBLIC_URL
