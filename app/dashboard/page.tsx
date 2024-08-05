@@ -1,11 +1,34 @@
 import React from 'react';
+import LatestInvoices from '@/app/ui/components/dashboard/LatestInvoices';
+import { fetchCardData, fetchLatestInvoices } from '../lib/data';
+import { Card } from '../ui/components/dashboard/Cards';
+import styles from './dashboard.module.css';
 
-function Page() {
+export default async function Dashboard() {
+  const latestInvoices = await fetchLatestInvoices();
+  const {
+    totalPaidInvoices,
+    totalPendingInvoices,
+    numberOfInvoices,
+    numberOfCustomers,
+  } = await fetchCardData();
+
   return (
-    <section>
-      <div className="container">DASHBOARD</div>
-    </section>
+    <div>
+      <h1 className={styles.dashboardTitle}>DASHBOARD</h1>
+      <div className={styles.cardGroup}>
+        <Card title="Collected" value={totalPaidInvoices} type="collected" />
+        <Card title="Pending" value={totalPendingInvoices} type="pending" />
+        <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+        <Card
+          title="Total Customers"
+          value={numberOfCustomers}
+          type="customers"
+        />
+      </div>
+      <div className={styles.menu}>
+        <LatestInvoices latestInvoices={latestInvoices} />
+      </div>
+    </div>
   );
 }
-
-export default Page;

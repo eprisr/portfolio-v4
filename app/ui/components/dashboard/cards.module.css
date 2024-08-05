@@ -1,0 +1,41 @@
+.cardWrapper {
+  border-radius: 0.75rem;
+  background-color: rgb(249 250 251);
+  padding: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  color: var(--text-reverse);
+}
+
+.iconWrapper {
+  display: flex;
+  padding: 1rem;
+}
+
+.icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: rgb(55 65 81);
+}
+
+.iconTitle {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: inherit;
+}
+
+.value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 0.75rem;
+  background-color: rgb(255 255 255);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}

@@ -1,0 +1,121 @@
+.wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  color: var(--text-reverse);
+}
+
+.title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.list {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.75rem;
+  background-color: rgb(249 250 251);
+  padding: 1rem;
+}
+
+.invoice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.invoice.borderTop {
+  border-top-width: 1px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+}
+
+.photo {
+  margin-right: 1rem;
+  border-radius: 9999px;
+}
+
+.customer {
+  min-width: 0px;
+}
+
+.customerName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.customerEmail {
+  display: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(107 114 128);
+}
+
+.amount {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+
+.updated {
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+.refreshIcon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: rgb(107 114 128);
+}
+
+.lastUpdated {
+  margin-left: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: rgb(107 114 128);
+}
+
+@media (min-width: 640px) {
+  .customerEmail {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    grid-column: span 4 / span 4;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .customerName {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .amount {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
