@@ -10,7 +10,7 @@ import {
 } from '@/app/ui/fonts';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ThemeScript from './lib/utils';
+import ThemeScript from './lib/themeUtils';
 import './theme/theme.css';
 import CollabCTA from './ui/components/CollabCTA';
 import Footer from './ui/components/Footer';
