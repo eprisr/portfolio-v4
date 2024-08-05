@@ -1,7 +1,7 @@
 import React from 'react';
+import { fetchCardData, fetchLatestInvoices } from '@/app/lib/data';
+import { Card } from '@/app/ui/components/dashboard/Cards';
 import LatestInvoices from '@/app/ui/components/dashboard/LatestInvoices';
-import { fetchCardData, fetchLatestInvoices } from '../lib/data';
-import { Card } from '../ui/components/dashboard/Cards';
 import styles from './dashboard.module.css';
 
 export default async function Dashboard() {
