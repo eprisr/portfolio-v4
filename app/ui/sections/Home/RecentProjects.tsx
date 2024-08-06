@@ -9,7 +9,6 @@ import Button from '@/app/ui/components/base/Button';
 import Container from '@/app/ui/components/base/Container';
 import styles from './recentprojects.module.css';
 
-
 const staggerProjects = stagger(0.2, { startDelay: 0.08 });
 
 function useStaggerAnimation() {
