@@ -70,9 +70,6 @@ export async function fetchLatestInvoices() {
 
 export async function fetchCardData() {
   try {
-    console.log('Fetching card data...');
-    await new Promise((resolve) => setTimeout(resolve, 3000));
-
     const invoiceCountPromise = sql`SELECT COUNT(*) FROM invoices`;
     const customerCountPromise = sql`SELECT COUNT(*) FROM customers`;
     const invoiceStatusPromise = sql`SELECT
@@ -90,8 +87,6 @@ export async function fetchCardData() {
     const numberOfCustomers = Number(data[1].rows[0].count ?? '0');
     const totalPaidInvoices = formatCurrency(data[2].rows[0].paid ?? '0');
     const totalPendingInvoices = formatCurrency(data[2].rows[0].pending ?? '0');
-
-    console.log('Data fetch completed after 3 seconds.');
 
     return {
       numberOfCustomers,
