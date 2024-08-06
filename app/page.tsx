@@ -8,21 +8,18 @@ import Role from './ui/sections/Home/Role';
 async function fetchProjects() {
   const url = process.env.NEXT_PUBLIC_URL;
 
-  const projects = await fetch(url + '/api/work?limit=3')
-    .then((res) => res.json())
-    .then((data) => data as Project[])
-    .catch((error) => {
-      console.error('Error Digest:', error.digest);
-      Sentry.captureException(error);
-      Sentry.captureMessage(
-        'An error occured in the Projects Server Components render',
-      );
-      throw new Error(
-        `An error occured in the Projects Server Components render ${error}`,
-      );
-    });
+  const res = await fetch(url + '/api/work?limit=3');
 
-  return projects;
+  if (!res.ok) {
+    Sentry.captureMessage(
+      'An error occured in the Projects Server Components render',
+    );
+    throw new Error(
+      `An error occured in the Projects Server Components render`,
+    );
+  }
+
+  return res.json();
 }
 
 export default async function Page() {
