@@ -32,7 +32,7 @@ export default function NavText({
       path = `${href}`;
       break;
     default:
-      `${href.toLocaleLowerCase()}`;
+      path = `${href.toLocaleLowerCase()}`;
   }
 
   return (
