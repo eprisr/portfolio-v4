@@ -70,7 +70,7 @@ export default function NavBar() {
                 {item}
               </NavText>
             ))}
-            <NavText href="/Epris_Richardson_Resume.pdf" target="_blank">
+            <NavText href="./Epris_Richardson_Resume.pdf" target="_blank">
               Resum&eacute;
             </NavText>
             <NavText href="https://github.com/eprisr" target="_blank">
