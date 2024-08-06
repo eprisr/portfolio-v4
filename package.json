@@ -33,6 +33,7 @@
     "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.5",
     "@sentry/nextjs": "^8.15.0",
     "@types/node": "^20.10.6",
     "@types/react": "^18.2.42",
@@ -45,7 +46,7 @@
     "dotenv": "^16.3.1",
     "framer-motion": "^11.3.20",
     "mini-css-extract-plugin": "^2.7.6",
-    "next": "^14.0.4",
+    "next": "^14.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.12.0",

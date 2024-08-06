@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
 import '@/app/ui/app.css';
 import {
   dm_serif_display,
@@ -8,6 +7,7 @@ import {
   red_hat_display,
   red_hat_text,
 } from '@/app/ui/fonts';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import ThemeScript from './lib/themeUtils';
@@ -69,8 +69,9 @@ export default function RootLayout({
         </main>
         <Footer />
         <SpeedInsights />
-        <Analytics />
+        {/* <Analytics /> */}
       </body>
+      <GoogleAnalytics gaId="G-STNG2RXT2F" />
     </html>
   );
 }
