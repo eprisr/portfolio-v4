@@ -30,9 +30,7 @@ export default async function Page() {
     <div className="main_wrapper">
       <Hero />
       <Role />
-      <Suspense>
-        <RecentProjects projects={projects} />
-      </Suspense>
+      {projects ? <RecentProjects projects={projects} /> : <p>Loading ...</p>}
     </div>
   );
 }
