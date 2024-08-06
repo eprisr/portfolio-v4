@@ -1,18 +1,18 @@
-.shimmer {
+.shimmer:before {
+  content: '';
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  --transform-translate-x: -100%;
-  animation: animateShimmer 2s infinite;
+  inset: 0px;
+  transform: translateX(-100%);
+  animation: animateShimmer 2s ease infinite;
   background-image: linear-gradient(
     to right,
     transparent,
-    white 60%,
+    rgb(0 0 0 / 0),
+    transparent,
+    #fff 60%,
+    rgb(0 0 0 / 0),
     transparent
   );
-  background-color: transparent;
 }
 
 .cardSkeleton {
@@ -65,6 +65,60 @@
 .cardTextOne {
   border-radius: 0.375rem;
   width: 5rem;
+  background-color: #e5e7eb;
+}
+
+.revenueChartSkeleton {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.revenueChart1 {
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  width: 9rem;
+  height: 2rem;
+  background-color: #f3f4f6;
+}
+
+.revenueChart2 {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: #f3f4f6;
+}
+
+.revenueChart3 {
+  display: grid;
+  padding: 1rem;
+  margin-top: 0;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.5rem;
+  align-items: flex-end;
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  height: 410px;
+}
+
+.revenueChart4 {
+  display: flex;
+  padding-bottom: 0.5rem;
+  padding-top: 1.5rem;
+  align-items: center;
+}
+
+.revenueChart5 {
+  border-radius: 9999px;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #e5e7eb;
+}
+
+.revenueChart6 {
+  margin-left: 0.5rem;
+  border-radius: 0.375rem;
+  width: 5rem;
+  height: 1rem;
   background-color: #e5e7eb;
 }
 
@@ -197,6 +251,22 @@
   border-style: none;
 }
 
+.tableRowSkeleton:first-child > td:first-child {
+  border-top-left-radius: 0.5rem;
+}
+
+.tableRowSkeleton:first-child > td:last-child {
+  border-top-right-radius: 0.5rem;
+}
+
+.tableRowSkeleton:last-child > td:first-child {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.tableRowSkeleton:last-child > td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+
 .tableRowOne {
   overflow: hidden;
   position: relative;
@@ -263,9 +333,179 @@
   width: 38px;
 }
 
+.invoiceMobileSkeleton {
+  margin-bottom: 0.5rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  background-color: rgb(255 255 255 / 1);
+  padding: 1rem;
+}
+
+.invoiceMobile > .invoiceMobile5 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  border-color: rgb(243 244 246 / 1);
+  padding-bottom: 2rem;
+}
+
+.invoiceMobile > div > .invoiceMobile3 {
+  display: flex;
+  align-items: center;
+}
+
+.invoiceMobile > div > div > .invoiceMobile1 {
+  margin-right: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 9999px;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoiceMobile > div > div > .invoiceMobile2 {
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.25rem;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoiceMobile > div > .invoiceMobile4 {
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.25rem;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoiceMobile > .invoiceMobile6 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.invoiceMobile > div > div > .invoiceMobile8 {
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.25rem;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoiceMobile > div > div > .invoiceMobile9 {
+  margin-top: 0.5rem;
+  height: 1.5rem;
+  width: 6rem;
+  border-radius: 0.25rem;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoiceMobile > div > .invoiceMobile10 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.invoiceMobile > div > div > .invoiceMobile11 {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.25rem;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoiceMobile > div > div > .invoiceMobile12 {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 0.25rem;
+  background-color: rgb(243 244 246 / 1);
+}
+
+.invoicesTableSkeleton {
+  display: flow-root;
+  margin-top: 1.5rem;
+}
+
+.invoicesTable1 {
+  display: inline-block;
+  min-width: 100%;
+  vertical-align: middle;
+}
+
+.invoicesTable2 {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f9fafb;
+}
+
+.invoicesTableSkeleton table {
+  display: none;
+  min-width: 100%;
+  color: #111827;
+}
+
+.invoicesTableSkeleton thead {
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  text-align: left;
+}
+
+.invoicesTableSkeleton .th1 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.invoicesTableSkeleton .th2 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  font-weight: 500;
+}
+
+.invoicesTableSkeleton .th3 {
+  position: relative;
+  padding-top: 0.5rem;
+  padding-left: 0.75rem;
+  padding-bottom: 1rem;
+  padding-right: 1.5rem;
+}
+
+.invoicesTableSkeleton span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.invoicesTableSkeleton tbody {
+  background-color: #ffffff;
+}
+
 @media (min-width: 640px) {
   .dashboardOne {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .invoicesTableSkeleton .th1 {
+    padding-left: 1.5rem;
+  }
+
+  .invoicesTableSkeleton .th3 {
+    padding-right: 1.5rem;
+  }
+
+  .revenueChart3 {
+    grid-template-columns: (13, minmax(0, 1fr));
   }
 }
 
@@ -276,6 +516,26 @@
 
   .dashboardTwo {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .invoicesTable2 {
+    padding-top: 0;
+  }
+
+  .invoicesTable3 {
+    display: none;
+  }
+
+  .invoicesTableSkeleton table {
+    display: table;
+  }
+
+  .revenueChartSkeleton {
+    grid-column: span 4 / span 4;
+  }
+
+  .revenueChart3 {
+    gap: 1rem;
   }
 }
 
@@ -291,6 +551,6 @@
 
 @keyframes animateShimmer {
   100% {
-    transform: 'translateX(100%)';
+    transform: translateX(100%);
   }
 }

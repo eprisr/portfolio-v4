@@ -18,11 +18,26 @@ export function CardSkeleton() {
 export function CardsSkeleton() {
   return (
     <>
-      {/* <CardSkeleton />
       <CardSkeleton />
       <CardSkeleton />
-      <CardSkeleton /> */}
+      <CardSkeleton />
+      <CardSkeleton />
     </>
+  );
+}
+
+export function RevenueChartSkeleton() {
+  return (
+    <div className={`${styles.shimmer} ${styles.revenueChartSkeleton} `}>
+      <div className={styles.revenueChart1} />
+      <div className={styles.revenueChart2}>
+        <div className={styles.revenueChart3} />
+        <div className={styles.revenueChart4}>
+          <div className={styles.revenueChart5} />
+          <div className={styles.revenueChart6} />
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -47,11 +62,11 @@ export function LatestInvoicesSkeleton() {
       <div className={styles.latestInvoiceOne} />
       <div className={styles.latestInvoiceTwo}>
         <div className={styles.latestInvoiceThree}>
-          {/* <InvoiceSkeleton />
           <InvoiceSkeleton />
           <InvoiceSkeleton />
           <InvoiceSkeleton />
-          <InvoiceSkeleton /> */}
+          <InvoiceSkeleton />
+          <InvoiceSkeleton />
         </div>
         <div className={styles.latestInvoiceFour}>
           <div className={styles.latestInvoiceFive} />
@@ -67,14 +82,14 @@ export default function DashboardSkeleton() {
     <>
       <div className={`${styles.shimmer} ${styles.dashboardSkeleton}`} />
       <div className={styles.dashboardOne}>
-        {/* <CardSkeleton />
         <CardSkeleton />
         <CardSkeleton />
-        <CardSkeleton /> */}
+        <CardSkeleton />
+        <CardSkeleton />
       </div>
       <div className={styles.dashboardTwo}>
-        {/* <RevenueChartSkeleton />
-        <LatestInvoicesSkeleton /> */}
+        <RevenueChartSkeleton />
+        <LatestInvoicesSkeleton />
       </div>
     </>
   );
@@ -82,9 +97,7 @@ export default function DashboardSkeleton() {
 
 export function TableRowSkeleton() {
   return (
-    <tr
-      className={`${styles.tableRowSkeleton} [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg`}
-    >
+    <tr className={styles.tableRowSkeleton}>
       {/* Customer Name and Image */}
       <td className={styles.tableRowOne}>
         <div className={styles.tableRowTwo}>
@@ -121,22 +134,22 @@ export function TableRowSkeleton() {
 
 export function InvoicesMobileSkeleton() {
   return (
-    <div className="mb-2 w-full rounded-md bg-white p-4">
-      <div className="flex items-center justify-between border-b border-gray-100 pb-8">
-        <div className="flex items-center">
-          <div className="mr-2 h-8 w-8 rounded-full bg-gray-100"></div>
-          <div className="h-6 w-16 rounded bg-gray-100"></div>
+    <div className={styles.invoiceMobileSkeleton}>
+      <div className={styles.invoiceMobile5}>
+        <div className={styles.invoiceMobile3}>
+          <div className={styles.invoiceMobile1}></div>
+          <div className={styles.invoiceMobile2}></div>
         </div>
-        <div className="h-6 w-16 rounded bg-gray-100"></div>
+        <div className={styles.invoiceMobile4}></div>
       </div>
-      <div className="flex w-full items-center justify-between pt-4">
+      <div className={styles.invoiceMobile6}>
         <div>
-          <div className="h-6 w-16 rounded bg-gray-100"></div>
-          <div className="mt-2 h-6 w-24 rounded bg-gray-100"></div>
+          <div className={styles.invoiceMobile8}></div>
+          <div className={styles.invoiceMobile9}></div>
         </div>
-        <div className="flex justify-end gap-2">
-          <div className="h-10 w-10 rounded bg-gray-100"></div>
-          <div className="h-10 w-10 rounded bg-gray-100"></div>
+        <div className={styles.invoiceMobile10}>
+          <div className={styles.invoiceMobile11}></div>
+          <div className={styles.invoiceMobile12}></div>
         </div>
       </div>
     </div>
@@ -145,50 +158,47 @@ export function InvoicesMobileSkeleton() {
 
 export function InvoicesTableSkeleton() {
   return (
-    <div className="mt-6 flow-root">
-      <div className="inline-block min-w-full align-middle">
-        <div className="rounded-lg bg-gray-50 p-2 md:pt-0">
-          <div className="md:hidden">
-            {/* <InvoicesMobileSkeleton />
+    <div className={styles.invoicesTableSkeleton}>
+      <div className={styles.invoicesTable1}>
+        <div className={styles.invoicesTable2}>
+          <div className={styles.invoicesTable3}>
             <InvoicesMobileSkeleton />
             <InvoicesMobileSkeleton />
             <InvoicesMobileSkeleton />
             <InvoicesMobileSkeleton />
-            <InvoicesMobileSkeleton /> */}
+            <InvoicesMobileSkeleton />
+            <InvoicesMobileSkeleton />
           </div>
-          <table className="hidden min-w-full text-gray-900 md:table">
-            <thead className="rounded-lg text-left text-sm font-normal">
+          <table>
+            <thead>
               <tr>
-                <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
+                <th scope="col" className={styles.th1}>
                   Customer
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
+                <th scope="col" className={styles.th2}>
                   Email
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
+                <th scope="col" className={styles.th2}>
                   Amount
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
+                <th scope="col" className={styles.th2}>
                   Date
                 </th>
-                <th scope="col" className="px-3 py-5 font-medium">
+                <th scope="col" className={styles.th2}>
                   Status
                 </th>
-                <th
-                  scope="col"
-                  className="relative pb-4 pl-3 pr-6 pt-2 sm:pr-6"
-                >
-                  <span className="sr-only">Edit</span>
+                <th scope="col" className={styles.th3}>
+                  <span>Edit</span>
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white">
-              {/* <TableRowSkeleton />
+            <tbody>
               <TableRowSkeleton />
               <TableRowSkeleton />
               <TableRowSkeleton />
               <TableRowSkeleton />
-              <TableRowSkeleton /> */}
+              <TableRowSkeleton />
+              <TableRowSkeleton />
             </tbody>
           </table>
         </div>
