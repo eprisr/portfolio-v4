@@ -1,6 +1,11 @@
 import React, { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
+import ThemeScript from '@/app/lib/themeUtils';
+import '@/app/theme/theme.css';
 import '@/app/ui/app.css';
+import CollabCTA from '@/app/ui/components/CollabCTA';
+import Footer from '@/app/ui/components/Footer';
+import NavBar from '@/app/ui/components/NavBar';
 import {
   dm_serif_display,
   dm_serif_text,
@@ -10,11 +15,6 @@ import {
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import ThemeScript from './lib/themeUtils';
-import './theme/theme.css';
-import CollabCTA from './ui/components/CollabCTA';
-import Footer from './ui/components/Footer';
-import NavBar from './ui/components/NavBar';
 
 export const metadata: Metadata = {
   title: 'Epris Richardson',
@@ -62,12 +62,7 @@ export default function RootLayout({
         <ThemeScript />
       </head>
       <body>
-        <NavBar />
-        <main>
-          {children}
-          <CollabCTA />
-        </main>
-        <Footer />
+        {children}
         <SpeedInsights />
         {/* <Analytics /> */}
       </body>
