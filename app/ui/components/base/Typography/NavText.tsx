@@ -19,10 +19,21 @@ export default function NavText({
   download,
   children,
 }: NavTextProps) {
-  const path =
-    href?.toLocaleLowerCase() === '/contact'
-      ? "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
-      : `${href?.toLocaleLowerCase()}`;
+  let path = '#';
+  // href?.toLocaleLowerCase() === '/contact'
+  //   ? "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
+  //   : `${href?.toLocaleLowerCase()}`;
+
+  switch (href.toLocaleLowerCase()) {
+    case '/contact':
+      path = "mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!";
+      break;
+    case '/epris_richardson_resume.pdf':
+      path = `${href}`;
+      break;
+    default:
+      `${href.toLocaleLowerCase()}`;
+  }
 
   return (
     <li className={styles.navItem}>
