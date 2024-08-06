@@ -9,6 +9,7 @@ async function fetchProjects() {
   const url = process.env.NEXT_PUBLIC_URL;
 
   const res = await fetch(url + '/api/work?limit=3');
+  const projects = await res.json();
 
   if (!res.ok) {
     Sentry.captureMessage(
@@ -19,7 +20,7 @@ async function fetchProjects() {
     );
   }
 
-  return res.json();
+  return projects;
 }
 
 export default async function Page() {
