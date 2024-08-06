@@ -74,6 +74,7 @@ export default function NavBar() {
               href={`Epris_Richardson_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
+              download
             >
               Resum&eacute;
             </NavText>
