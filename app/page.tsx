@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Project } from '@/app/lib/definitions';
 import * as Sentry from '@sentry/nextjs';
 import Hero from './ui/sections/Home/Hero';
@@ -26,7 +26,9 @@ export default async function Page() {
     <div className="main_wrapper">
       <Hero />
       <Role />
-      <RecentProjects projects={projects} />
+      <Suspense>
+        <RecentProjects projects={projects} />
+      </Suspense>
     </div>
   );
 }
