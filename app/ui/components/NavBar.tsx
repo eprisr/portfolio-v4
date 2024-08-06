@@ -71,7 +71,7 @@ export default function NavBar() {
               </NavText>
             ))}
             <NavText
-              href="./Epris_Richardson_Resume.pdf"
+              href={`Epris_Richardson_Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
             >
