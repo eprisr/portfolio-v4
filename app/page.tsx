@@ -5,26 +5,22 @@ import Hero from './ui/sections/Home/Hero';
 import RecentProjects from './ui/sections/Home/RecentProjects';
 import Role from './ui/sections/Home/Role';
 
-async function fetchProjects() {
+export default async function Page() {
   const url = process.env.NEXT_PUBLIC_URL;
 
-  const res = await fetch(url + '/api/work?limit=3');
-  const projects = await res.json();
-
-  if (!res.ok) {
-    Sentry.captureMessage(
-      'An error occured in the Projects Server Components render',
-    );
-    throw new Error(
-      `An error occured in the Projects Server Components render`,
-    );
-  }
-
-  return projects;
-}
-
-export default async function Page() {
-  const projects = await fetchProjects();
+  const projects = await fetch(url + '/api/work')
+    .then((res) => res.json())
+    .then((data) => data as Project[])
+    .catch((error) => {
+      console.error('Error Digest:', error.digest);
+      Sentry.captureException(error);
+      Sentry.captureMessage(
+        'An error occured in the App Server Components render',
+      );
+      throw new Error(
+        `An error occured in the App Server Components render ${error}`,
+      );
+    });
 
   return (
     <div className="main_wrapper">
