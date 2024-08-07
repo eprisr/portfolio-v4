@@ -1,11 +1,11 @@
 import React from 'react';
 
-function page() {
+function Login() {
   return (
     <section>
-      <div className="container">page</div>
+      <div className="container">Login</div>
     </section>
   );
 }
 
-export default page;
+export default Login;

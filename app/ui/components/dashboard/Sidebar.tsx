@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { PiPowerFill } from 'react-icons/pi';
 import NavLinks from '@/app/ui/components/dashboard/NavLinks';
-import styles from './sidenav.module.css';
+import styles from './sidebar.module.css';
 
-export default function SideNav() {
+export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <div className={styles.navlinks}>
