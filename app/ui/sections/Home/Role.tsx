@@ -2,7 +2,7 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import Button from '@/app/ui/components/base/Button';
+import { Button, LinkButton } from '@/app/ui/components/base/Button';
 import Container from '@/app/ui/components/base/Container';
 import LuccaMockup from '@/public/assets/images/Lucca_Mockup(2).png';
 import styles from './role.module.css';
@@ -25,12 +25,10 @@ function Role() {
             online experiences, I help businesses stand out, foster customer
             loyalty, and accelerate digital growth.
           </p>
-          <Button
-            href="/about#role_and_contributions"
-            variant="solid"
-            colorScheme="accent1"
-          >
-            Discover my impact
+          <Button variant="solid" colorScheme="accent1">
+            <LinkButton href="/about#role_and_contributions">
+              Discover my impact
+            </LinkButton>
           </Button>
         </div>
       </Container>

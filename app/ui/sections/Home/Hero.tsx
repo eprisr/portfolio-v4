@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@/app/ui/components/base/Button';
+import { Button, LinkButton } from '@/app/ui/components/base/Button';
 import FeaturedImage from '@/app/ui/components/hero/FeaturedImage';
 import styles from './hero.module.css';
 
@@ -17,8 +17,8 @@ function Hero() {
             I'm a technical and visual problem solver who fuses innovation and
             creativity to craft immersive digital experiences.
           </p>
-          <Button href="/about" variant="solid" colorScheme="accent2">
-            About Me
+          <Button variant="solid" colorScheme="accent2">
+            <LinkButton href="/about">About Me</LinkButton>
           </Button>
         </div>
         <FeaturedImage />

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { stagger, useAnimate, useInView } from 'framer-motion';
 import { Project } from '@/app/lib/definitions';
-import Button from '@/app/ui/components/base/Button';
+import { Button, LinkButton } from '@/app/ui/components/base/Button';
 import Container from '@/app/ui/components/base/Container';
 import styles from './recentprojects.module.css';
 
@@ -87,8 +87,8 @@ function RecentProjects({ projects }: { projects: Project[] }) {
             </Link>
           ))}
         </div>
-        <Button href="/work" variant="solid" colorScheme="madder">
-          View my work
+        <Button variant="solid" colorScheme="madder">
+          <LinkButton href="/work">View my work</LinkButton>
         </Button>
       </Container>
     </section>

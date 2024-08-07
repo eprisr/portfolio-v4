@@ -4,21 +4,29 @@ import React, { MouseEvent, useState } from 'react';
 import Link from 'next/link';
 import styles from './button.module.css';
 
-type ButtonProps = {
-  href: string;
+interface CustomButtonProps {
   colorScheme: string;
   variant: 'solid' | 'outline';
+  children: string | JSX.Element | React.ReactNode;
+}
+
+interface FormButtonProps
+  extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
+  children: string | JSX.Element | React.ReactNode;
+}
+interface LinkButtonProps
+  extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'children'> {
+  href: string;
   scroll?: boolean;
   children: string | JSX.Element | React.ReactNode;
-};
+}
 
-function Button({
-  href,
+const Button = ({
   colorScheme,
   variant,
   children,
   ...props
-}: ButtonProps) {
+}: CustomButtonProps) => {
   const [relX, setRelX] = useState(0);
   const [relY, setRelY] = useState(0);
 
@@ -44,17 +52,36 @@ function Button({
         onMouseLeave={contractFill}
       >
         <span style={{ top: relY, left: relX }}></span>
-        <Link
-          href={href}
-          type="button"
-          className={styles.link}
-          scroll={props?.scroll}
-        >
-          {children}
-        </Link>
+        {children}
       </div>
     </div>
   );
-}
+};
 
-export default Button;
+const LinkButton = ({ href, children, ...props }: LinkButtonProps) => {
+  return (
+    <Link
+      href={href}
+      type="button"
+      className={styles.link}
+      scroll={props?.scroll}
+    >
+      {children}
+    </Link>
+  );
+};
+
+const FormButton = ({ type, children, ...props }: FormButtonProps) => {
+  return (
+    <button
+      type={type}
+      className={`${styles.link}
+ ${styles.formLink}`}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+
+export { Button, LinkButton, FormButton };

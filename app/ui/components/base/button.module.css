@@ -1,21 +1,25 @@
 .button_wrapper {
-	width: fit-content;
-	margin-top: 32px;
-	border-radius: 3px;
+  width: fit-content;
+  margin-top: 32px;
+  border-radius: 3px;
+}
+
+.formLink {
+  background-color: transparent;
 }
 
 .button {
-	overflow: hidden;
-	position: relative;
+  overflow: hidden;
+  position: relative;
 }
 
 .button .link {
-	position: relative;
+  position: relative;
   display: block;
   overflow: hidden;
-	width: fit-content;
-	padding: 16px 40px;
-	border-radius: 3px;
+  width: fit-content;
+  padding: 16px 40px;
+  border-radius: 3px;
 
   font-weight: var(--fw-600);
   text-transform: uppercase;
@@ -33,7 +37,7 @@
   color: white;
 }
 
-[data-theme='dark']  .solid .link {
+[data-theme='dark'] .solid .link {
   color: var(--text-reverse);
 }
 
@@ -48,17 +52,18 @@
   color: var(--cta);
 }
 
-
 /* POSITION AWARE FILL */
 
 .button_wrapper span {
-	position: absolute;
+  position: absolute;
   display: block;
   width: 0;
   height: 0;
   border-radius: 50%;
   background-color: var(--text-secondary);
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  transition:
+    width 0.4s ease-in-out,
+    height 0.4s ease-in-out;
   transform: translate(-50%, -50%);
   /* z-index: -1; */
 }
@@ -73,10 +78,10 @@
 }
 
 .button_wrapper:hover {
-	border-color: var(--text-secondary);
+  border-color: var(--text-secondary);
 }
 
 .button_wrapper:active {
   background-color: var(--cta);
-	border: none;
+  border: none;
 }

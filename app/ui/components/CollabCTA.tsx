@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import Button from './base/Button';
+import { Button, LinkButton } from '@/app/ui/components/base/Button';
 import Container from './base/Container';
 import styles from './collabcta.module.css';
 
@@ -20,15 +20,13 @@ export default function CollabCTA() {
           life.
         </p>
         <div className={styles.ctas}>
-          <Button
-            href="mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!"
-            variant="solid"
-            colorScheme="madder"
-          >
-            Contact me
+          <Button variant="solid" colorScheme="madder">
+            <LinkButton href="mailto:eharrisburnett@gmail.com?subject=Let's Collaborate!">
+              Contact me
+            </LinkButton>
           </Button>
-          <Button href="/work#process" variant="outline" colorScheme="madder">
-            Learn the process
+          <Button variant="outline" colorScheme="madder">
+            <LinkButton href="/work#process">Learn the process</LinkButton>
           </Button>
         </div>
       </Container>
