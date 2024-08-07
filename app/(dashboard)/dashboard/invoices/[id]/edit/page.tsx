@@ -1,4 +1,5 @@
 import React from 'react';
+import { notFound } from 'next/navigation';
 import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data';
 import Form from '@/app/ui/components/invoices/EditForm';
 
@@ -8,6 +9,10 @@ export default async function Page({ params }: { params: { id: string } }) {
     fetchInvoiceById(id),
     fetchCustomers(),
   ]);
+
+  if (!invoice) {
+    notFound();
+  }
 
   return (
     <div>
