@@ -1,5 +1,7 @@
+import React from 'react';
 import Image from 'next/image';
 import { TbPencil, TbTrash } from 'react-icons/tb';
+import { deleteInvoice } from '@/app/lib/actions';
 import { fetchFilteredInvoices } from '@/app/lib/data';
 import { formatCurrency, formatDateToLocal } from '@/app/lib/utils';
 import { Button, FormButton, LinkButton } from '../base/Button';
@@ -13,6 +15,7 @@ export default async function InvoicesTable({
   currentPage: number;
 }) {
   const invoices = await fetchFilteredInvoices(query, currentPage);
+  const deleteInvoiceWithId = await deleteInvoice;
 
   return (
     <div className="mt-6 flow-root">
@@ -55,11 +58,13 @@ export default async function InvoicesTable({
                         <TbPencil />
                       </LinkButton>
                     </Button>
-                    <Button colorScheme="madder" variant="solid">
-                      <FormButton type="button">
-                        Delete <TbTrash />
-                      </FormButton>
-                    </Button>
+                    <form>
+                      <Button colorScheme="madder" variant="solid">
+                        <FormButton type="submit">
+                          Delete <TbTrash />
+                        </FormButton>
+                      </Button>
+                    </form>
                   </div>
                 </div>
               </div>
@@ -127,11 +132,14 @@ export default async function InvoicesTable({
                           <TbPencil />
                         </LinkButton>
                       </Button>
-                      <Button colorScheme="madder" variant="solid">
-                        <FormButton type="button">
-                          Delete <TbTrash />
-                        </FormButton>
-                      </Button>
+                      <form action={deleteInvoice.bind(null, invoice.id)}>
+                        {/* <input type="hidden" name="json" value={JSON.stringify({invoiceId: invoice.id})} /> */}
+                        <Button colorScheme="madder" variant="solid">
+                          <FormButton type="button">
+                            Delete <TbTrash />
+                          </FormButton>
+                        </Button>
+                      </form>
                     </div>
                   </td>
                 </tr>
