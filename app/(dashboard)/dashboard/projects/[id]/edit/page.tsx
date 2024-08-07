@@ -1,22 +1,14 @@
 import React from 'react';
-import {
-  fetchCustomers,
-  fetchInvoiceById,
-  fetchProjects,
-} from '@/app/lib/data';
-import Form from '@/app/ui/components/invoices/EditForm';
+import { fetchProjects, fetchSingleProject } from '@/app/lib/data';
+import Form from '@/app/ui/components/dash-projects/EditForm';
 
 export default async function Page({ params }: { params: { id: string } }) {
   const id = params.id;
-  const [projects, invoice, customers] = await Promise.all([
-    fetchProjects(0, 0, 'All'),
-    fetchInvoiceById(id),
-    fetchCustomers(),
-  ]);
+  const [project, projects] = await Promise.all([fetchSingleProject(id), fetchProjects(0, 0, 'All')]);
 
   return (
     <div>
-      <Form invoice={invoice} customers={customers} />
+      <Form project={project} projects={projects} />
     </div>
   );
 }

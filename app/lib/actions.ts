@@ -54,30 +54,24 @@ export async function createProject(formData: FormData) {
 
 const UpdateProject = ProjectFormSchema.omit({ id: true, date: true });
 
-// export async function updateProject(id: string, formData: FormData) {
-//   const { customerId, amount, status } = UpdateProject.parse({
-//     customerId: formData.get('customerId'),
-//     amount: formData.get('amount'),
-//     status: formData.get('status'),
-//   });
+export async function updateProject(id: string, formData: FormData) {
+  const rawformData = Object.fromEntries(formData.entries());
 
-//   const amountInCents = amount * 100;
+  // try {
+  //   await sql`
+  //     UPDATE projects
+  //     SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
+  //     WHERE id = ${id}
+  //   `;
+  // } catch (error) {
+  //   Sentry.captureException(error);
+  //   Sentry.captureMessage('Database Error: Failed to Update Project');
+  //   throw new Error(`Database Error: Failed to Update Project ${error}`);
+  // }
 
-//   try {
-//     await sql`
-//       UPDATE projects
-//       SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
-//       WHERE id = ${id}
-//     `;
-//   } catch (error) {
-//     Sentry.captureException(error);
-//     Sentry.captureMessage('Database Error: Failed to Update Project');
-//     throw new Error(`Database Error: Failed to Update Project ${error}`);
-//   }
-
-//   revalidatePath('/dashboard/projects');
-//   redirect('/dashboard/projects');
-// }
+  // revalidatePath('/dashboard/projects');
+  // redirect('/dashboard/projects');
+}
 
 export async function deleteProject(id: string) {
   try {
