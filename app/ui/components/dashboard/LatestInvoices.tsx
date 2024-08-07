@@ -1,14 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { TbRefresh } from 'react-icons/tb';
-import { LatestInvoice } from '@/app/lib/definitions';
+import { fetchLatestInvoices } from '@/app/lib/data';
 import styles from './latestinvoices.module.css';
 
-export default async function LatestInvoices({
-  latestInvoices,
-}: {
-  latestInvoices: LatestInvoice[];
-}) {
+export default async function LatestInvoices() {
+  const latestInvoices = await fetchLatestInvoices();
+
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Latest Invoices</h2>
