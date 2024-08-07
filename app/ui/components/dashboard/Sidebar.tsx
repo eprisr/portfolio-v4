@@ -6,7 +6,7 @@ import styles from './sidebar.module.css';
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <div className={styles.navlinks}>
+      <div className={styles.navLinks}>
         <NavLinks />
         <div className={styles.empty}></div>
         <form>

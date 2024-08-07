@@ -1,44 +1,14 @@
 .navLink {
   display: flex;
-  height: 48px;
-  flex-grow: 1;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border-radius: 6px;
-  background-color: rgb(249 250 251);
-  color: var(--text-reverse);
-  padding: 12px;
-  font-size: 14px;
-  line-height: 1.25rem;
-  font-weight: 500;
+  gap: 0.75rem;
   text-decoration: none;
+  color: var(--text);
+  background-color: aqua;
+  padding: 10px 16px 10px 24px;
+  border-radius: 12px;
 }
 
-.navLink.active,
-.navLink:hover {
-  background-color: rgb(224 242 254);
-  color: rgb(37 99 235);
-}
-
-.linkIcon {
-  width: 1.5rem;
-}
-
-.linkName {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .navLink {
-    flex: none;
-    justify-content: start;
-    padding: 8px;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .linkName {
-    display: block;
-  }
+.navLink p {
+  margin: 0px;
 }
