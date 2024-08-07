@@ -53,7 +53,7 @@ export default async function InvoicesTable({
                   <div className="flex justify-end gap-2">
                     <Button colorScheme="madder" variant="outline">
                       <LinkButton
-                        href={`/dashboard/projects/${invoice.id}/edit`}
+                        href={`/dashboard/invoices/${invoice.id}/edit`}
                       >
                         <TbPencil />
                       </LinkButton>
@@ -127,7 +127,7 @@ export default async function InvoicesTable({
                     <div className="flex justify-end gap-3">
                       <Button colorScheme="madder" variant="outline">
                         <LinkButton
-                          href={`/dashboard/projects/${invoice.id}/edit`}
+                          href={`/dashboard/invoices/${invoice.id}/edit`}
                         >
                           <TbPencil />
                         </LinkButton>
