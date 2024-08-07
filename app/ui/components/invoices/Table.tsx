@@ -3,7 +3,7 @@ import { TbPencil, TbTrash } from 'react-icons/tb';
 import { fetchFilteredInvoices } from '@/app/lib/data';
 import { formatCurrency, formatDateToLocal } from '@/app/lib/utils';
 import { Button, FormButton, LinkButton } from '../base/Button';
-import styles from './table.module.css'
+import styles from './table.module.css';
 
 export default async function InvoicesTable({
   query,
@@ -49,7 +49,9 @@ export default async function InvoicesTable({
                   </div>
                   <div className="flex justify-end gap-2">
                     <Button colorScheme="madder" variant="outline">
-                      <LinkButton href="/dashboard/projects">
+                      <LinkButton
+                        href={`/dashboard/projects/${invoice.id}/edit`}
+                      >
                         <TbPencil />
                       </LinkButton>
                     </Button>
@@ -119,7 +121,9 @@ export default async function InvoicesTable({
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <Button colorScheme="madder" variant="outline">
-                        <LinkButton href="/dashboard/projects">
+                        <LinkButton
+                          href={`/dashboard/projects/${invoice.id}/edit`}
+                        >
                           <TbPencil />
                         </LinkButton>
                       </Button>
