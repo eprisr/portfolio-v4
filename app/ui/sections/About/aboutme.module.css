@@ -7,7 +7,7 @@
 .left_column {
   width: 100%;
 
-	display: grid;
+  display: grid;
   justify-content: center;
   align-items: center;
 }
@@ -18,47 +18,47 @@
 
 .portraits,
 .portrait_bg {
-	grid-area: 1 / 1 / 2 / 2;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .portraits {
-	display: grid;
-	height: 65%;
-	gap: 10px;
-	grid-template-columns: repeat(2, calc(50% - 20px));
-	justify-content: center;
+  display: grid;
+  height: 65%;
+  gap: 10px;
+  grid-template-columns: repeat(2, calc(50% - 20px));
+  justify-content: center;
 }
 
 .portrait {
   width: 100%;
   max-width: 375px;
   height: auto;
-	
-	& img {
-		width: 100%;
-		height: auto;
-		border-radius: 10px;
-	}
+}
+
+.portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .portrait_one {
-	align-self: start;
+  align-self: start;
 }
 
 .portrait_two {
-	align-self: end;
+  align-self: end;
 }
 
 .portrait_bg {
-	width: 100%;
-	height: auto;
-	z-index: -1;
+  width: 100%;
+  height: auto;
+  z-index: -1;
 }
 
 @media screen and (min-width: 768px) {
   .left_column {
-		width: calc(50% - 40px);
-	}
+    width: calc(50% - 40px);
+  }
   .right_column {
     width: 50%;
   }

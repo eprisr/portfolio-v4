@@ -1,6 +1,6 @@
 .right_column {
-	order: 0;
-	margin-bottom: 80px;
+  order: 0;
+  margin-bottom: 80px;
 }
 
 .sosweet {
@@ -13,12 +13,11 @@
   width: 100%;
   max-width: 750px;
   height: auto;
-	z-index: 3;
-
-	& img {
-		width: 100%;
-		height: auto;
-	}
+  z-index: 3;
+}
+.sosweet_mockup img {
+  width: 100%;
+  height: auto;
 }
 
 .sosweet_mockup,
@@ -27,14 +26,14 @@
 }
 
 .sosweet_bg {
-	width: 95%;
-	height: 95%;
+  width: 95%;
+  height: 95%;
   z-index: 1;
 }
 
 .sosweet_ellipse,
 .sosweet_pattern {
-	fill: var(--accent2);
+  fill: var(--accent2);
 }
 
 .imgDark {
@@ -43,7 +42,7 @@
 
 .imgLight,
 .imgDark {
-	z-index: 2;
+  z-index: 2;
 }
 
 [data-theme='dark'] .imgLight {
@@ -63,6 +62,6 @@
 
   .right_column {
     order: 1;
-		margin-bottom: unset;
+    margin-bottom: unset;
   }
 }
