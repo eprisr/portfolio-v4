@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdOutlineOpenInNew } from 'react-icons/md';
-import { Project as ProjectType }  from '@/app/lib/definitions'
+import { Project as ProjectType } from '@/app/lib/definitions';
 import DescList from './DescList';
 import Slider from './Slider';
 import Video from './Video';
@@ -13,7 +13,7 @@ export default function Project({ project }: { project: ProjectType }) {
 
   function renderMedia() {
     let media;
-    if (src && slides.length === 0 && Object.keys(video).length === 0) {
+    if (src && slides?.length === 0 && Object.keys({ video }).length === 0) {
       media = (
         <Image
           src={`/assets/images/projects/${src}`}
@@ -23,9 +23,9 @@ export default function Project({ project }: { project: ProjectType }) {
           height="500"
         />
       );
-    } else if (slides.length !== 0) {
+    } else if (slides?.length !== 0) {
       media = <Slider project={project} />;
-    } else if (Object.keys(video).length !== 0) {
+    } else if (Object.keys({ video }).length !== 0) {
       media = <Video project={project} />;
     }
     return media;

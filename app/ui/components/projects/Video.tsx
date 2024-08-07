@@ -9,7 +9,7 @@ export default function Video({ project }: { project: Project }) {
 
   return (
     <ReactPlayer
-      url={video.url}
+      url={video?.url}
       width="100%"
       height="auto"
       style={{ aspectRatio: '16/9' }}
