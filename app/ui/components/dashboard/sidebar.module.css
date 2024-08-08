@@ -48,11 +48,13 @@
 .logoName {
   margin: 0;
   text-decoration: none;
+  height: 32px;
 }
 
 .logoName svg {
   height: 32px;
   width: auto;
+  display: none;
 }
 
 .menu {
