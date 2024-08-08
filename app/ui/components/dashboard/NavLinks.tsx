@@ -20,16 +20,20 @@ export default function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <>
+    <div className={styles.navLinks}>
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
-          <Link key={link.name} href={link.href} className={`${styles.navLink} ${pathname === link.href && styles.active}`}>
+          <Link
+            key={link.name}
+            href={link.href}
+            className={`${styles.navLink} ${pathname === link.href && styles.active}`}
+          >
             <LinkIcon className={styles.linkIcon} />
             <p className={styles.linkName}>{link.name}</p>
           </Link>
         );
       })}
-    </>
+    </div>
   );
 }

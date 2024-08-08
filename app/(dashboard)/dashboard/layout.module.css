@@ -1,31 +1,19 @@
 .sidebarWrapper {
   display: flex;
-  height: calc(100vh - 130px);
-  flex-direction: column;
+  /* height: calc(100vh - 130px);
+  flex-direction: column; */
 }
 
-.sidebarContainer {
-  width: 100%;
-  flex: none;
+.sidebarNav {
+  width: 0;
 }
 
-.siderbarChildren {
-  flex-grow: 1;
-  padding: 24px;
+.sidebarContent {
 }
 
-@media (min-width: 768px) {
-  .sidebarWrapper {
-    flex-direction: row;
-    overflow: hidden;
-  }
-
-  .sidebarContainer {
-    width: 256px;
-  }
-
-  .siderbarChildren {
-    overflow-y: auto;
-    padding: 48px;
+@media (min-width: 900px) {
+  .sidebarNav {
+    flex-shrink: 0;
+    width: 260px;
   }
 }

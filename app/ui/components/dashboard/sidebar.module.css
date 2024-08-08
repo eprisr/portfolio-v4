@@ -1,11 +1,85 @@
 .sidebar {
-  background-color: var(--bg2);
-  height: 100vh;
-  padding: 1rem;
+  width: 260px;
+  box-sizing: border-box;
+  z-index: 1099;
+  overflow-x: hidden;
+  box-shadow: none;
+  flex: 0 0 auto;
+  border-right: none;
+  white-space: nowrap;
+  background: rgb(255, 255, 255);
+  transition: width 425ms cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-.navLinks {
+.sidebar .container {
+  width: 260px;
+  z-index: 1099;
+  overflow-x: hidden;
+  box-shadow: none;
+  border-right: none;
+  background: rgb(255, 255, 255);
+  transition: width 425ms cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+.container {
+  background-color: rgb(255, 255, 255);
+  color: rgb(54, 65, 82);
+  box-shadow: none;
+  background-image: none;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  height: 100%;
+  z-index: 1200;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1 0 auto;
+  outline: 0px;
+  border-right: 1px solid rgb(227, 232, 239);
+}
+
+.titleBar {
+  display: flex;
+  padding: 16px;
+}
+
+.logoName {
+  margin: 0;
+  text-decoration: none;
+}
+
+.logoName svg {
+  height: 32px;
+  width: auto;
+}
+
+.menu {
+  /* main styling */
+  height: calc(-88px + 100vh);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+
+  /* scrolling */
+  position: relative;
+  height: 100%;
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+}
+
+.menu form {
+  margin-bottom: 16px;
+}
+
+.button {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
 }
