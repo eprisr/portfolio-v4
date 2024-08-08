@@ -41,6 +41,19 @@
   color: var(--text);
 }
 
+ul.navLinks {
+  padding-inline-start: 0px;
+}
+
+.navLinks li {
+  list-style: none;
+}
+
+.navLinks li span {
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
 .linkIcon {
   display: inline-flex;
   align-items: center;
