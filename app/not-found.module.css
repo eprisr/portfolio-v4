@@ -1,0 +1,32 @@
+.main {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bgaccent);
+}
+
+.errorImg {
+  height: 50%;
+  width: auto;
+}
+
+.a {
+  width: fit-content;
+  padding: 16px 40px;
+  border-radius: 3px;
+  margin-top: 32px;
+
+  background-color: var(--cta);
+
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: white;
+}
+
+[data-theme='dark'] .a {
+  color: var(--text-reverse);
+}
