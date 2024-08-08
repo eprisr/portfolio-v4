@@ -1,4 +1,9 @@
-/* .dashboardTitle {
+.dashboard *,
+.dashboard * > * {
+  color: var(--text-reverse);
+}
+
+.dashboardTitle {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -41,4 +46,4 @@
   .menu {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
-} */
+}

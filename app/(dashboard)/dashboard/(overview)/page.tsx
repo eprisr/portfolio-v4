@@ -6,9 +6,9 @@ import styles from './dashboard.module.css';
 
 export default async function Dashboard() {
   return (
-    <div>
+    <div className={styles.dashboard}>
       <h1 className={styles.dashboardTitle}>DASHBOARD</h1>
-      {/* <div className={styles.cardGroup}>
+      <div className={styles.cardGroup}>
         <Suspense fallback={<CardsSkeleton />}>
           <CardWrapper />
         </Suspense>
@@ -17,7 +17,7 @@ export default async function Dashboard() {
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
         </Suspense>
-      </div> */}
+      </div>
     </div>
   );
 }
