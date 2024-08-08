@@ -7,17 +7,13 @@ import styles from './dashboard.module.css';
 export default async function Dashboard() {
   return (
     <div className={styles.dashboard}>
-      <h1 className={styles.dashboardTitle}>DASHBOARD</h1>
+      <h1 className={styles.dashboardTitle}>Dashboard</h1>
       <div className={styles.cardGroup}>
         <Suspense fallback={<CardsSkeleton />}>
           <CardWrapper />
         </Suspense>
       </div>
-      <div className={styles.menu}>
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
-        </Suspense>
-      </div>
+      <div className={styles.menu}></div>
     </div>
   );
 }

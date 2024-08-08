@@ -1,12 +1,13 @@
 .dashboard *,
 .dashboard * > * {
-  color: var(--text-reverse);
+  color: var(--text);
 }
 
 .dashboardTitle {
   margin-bottom: 1rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+  font-family: var(--red-hat-display);
 }
 
 .cardGroup {

@@ -29,13 +29,13 @@
   font-weight: 400;
   line-height: 1.4375em;
   font-family: Roboto, sans-serif;
-  color: rgb(54, 65, 82);
+  color: var(--text);
   box-sizing: border-box;
   cursor: text;
   display: inline-flex;
   align-items: center;
   position: relative;
-  background: rgb(248, 250, 252);
+  background: var(--bg2);
   border-radius: 8px;
   margin-left: 16px;
   padding-left: 16px;
@@ -48,7 +48,7 @@
   max-height: 2em;
   align-items: center;
   white-space: nowrap;
-  color: rgba(0, 0, 0, 0.54);
+  color: var(--text-secondary);
   margin-right: 8px;
 }
 
@@ -102,13 +102,13 @@
   line-height: 1;
   overflow: hidden;
   user-select: none;
-  background: rgb(237, 231, 246);
+  background: var(--bg1);
   cursor: pointer;
   border-radius: 8px;
   width: 34px;
   height: 34px;
   font-size: 1.2rem;
-  color: var(--accent);
+  color: var(--text-secondary);
 }
 
 .search fieldset {
@@ -151,13 +151,12 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  border: 1px solid rgb(227, 242, 253);
-  color: rgb(33, 150, 243);
+  border: 1px solid var(--accent2);
   height: 48px;
   align-items: center;
   border-radius: 27px;
   transition: 0.2s ease-in-out;
-  background-color: rgb(227, 242, 253);
+  background-color: var(--accent2);
 }
 
 .profile .imageWrapper {

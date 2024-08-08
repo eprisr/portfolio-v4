@@ -18,7 +18,7 @@
   box-sizing: border-box;
   text-align: left;
   padding-right: 16px;
-  color: rgb(54, 65, 82);
+  color: var(--text-secondary);
   padding-top: 10px;
   padding-bottom: 10px;
   z-index: 1201;
@@ -37,7 +37,7 @@
 
 .navLink.active,
 .navLink:hover {
-  background-color: var(--bg2);
+  background-color: var(--accent2);
   color: var(--text);
 }
 

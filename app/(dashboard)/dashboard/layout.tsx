@@ -5,14 +5,14 @@ import styles from './layout.module.css';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={styles.sidebarWrapper}>
-      <div className={styles.sidebarHeader}>
+    <div className={styles.wrapper}>
+      <div className={styles.header}>
         <Navbar />
       </div>
-      <nav className={styles.sidebarNav}>
+      <nav className={styles.nav}>
         <Sidebar />
       </nav>
-      <div className={styles.sidebarContent}>{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

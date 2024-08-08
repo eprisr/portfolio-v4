@@ -1,6 +1,6 @@
 .cardWrapper {
   border-radius: 0.75rem;
-  background-color: rgb(249 250 251);
+  background-color: hsla(from var(--bg1) h s l / 40%);
   padding: 0.5rem;
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   color: var(--text);
@@ -30,7 +30,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   border-radius: 0.75rem;
-  background-color: rgb(255 255 255);
+  background-color: hsla(from var(--bg1) h s l / 40%);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 2rem;
