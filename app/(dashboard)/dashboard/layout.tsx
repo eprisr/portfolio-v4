@@ -6,11 +6,13 @@ import styles from './layout.module.css';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className={styles.sidebarWrapper}>
-      <Navbar />
+      <div className={styles.sidebarHeader}>
+        <Navbar />
+      </div>
       <nav className={styles.sidebarNav}>
         <Sidebar />
       </nav>
-      {children}
+      <div className={styles.sidebarContent}>{children}</div>
     </div>
   );
 }

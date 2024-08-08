@@ -1,0 +1,205 @@
+.headerContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 16px;
+}
+
+.title {
+  width: 228px;
+  display: flex;
+}
+
+.title svg {
+  height: 32px;
+  width: auto;
+}
+
+.searchMobile {
+  display: block;
+}
+
+.search {
+  display: none;
+}
+
+.searchContainer {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4375em;
+  font-family: Roboto, sans-serif;
+  color: rgb(54, 65, 82);
+  box-sizing: border-box;
+  cursor: text;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  background: rgb(248, 250, 252);
+  border-radius: 8px;
+  margin-left: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.searchIcon {
+  display: flex;
+  height: 0.01em;
+  max-height: 2em;
+  align-items: center;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 0.54);
+  margin-right: 8px;
+}
+
+.searchIcon svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.search input {
+  font-style: inherit;
+  font-variant: inherit;
+  font-stretch: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-optical-sizing: inherit;
+  font-size-adjust: inherit;
+  font-kerning: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  letter-spacing: inherit;
+  border: 0px;
+  box-sizing: content-box;
+  height: 1.4375em;
+  margin: 0px;
+  -webkit-tap-highlight-color: transparent;
+  display: block;
+  min-width: 0px;
+  width: 100%;
+  animation-name: mui-auto-fill-cancel;
+  animation-duration: 10ms;
+  color: rgb(18, 25, 38);
+  font-weight: 500;
+  background: transparent;
+  padding: 15.5px 14px 15.5px 4px;
+  border-radius: 8px;
+}
+
+.searchSettings {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: Roboto, sans-serif;
+  line-height: 1;
+  overflow: hidden;
+  user-select: none;
+  background: rgb(237, 231, 246);
+  cursor: pointer;
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+.search fieldset {
+  text-align: left;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
+  min-width: 0%;
+  margin: 0px;
+  padding: 0px 8px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  border-color: rgb(189, 189, 189);
+  border-radius: 8px;
+}
+
+.empty {
+  flex-grow: 1;
+}
+
+.profile {
+  position: relative;
+  margin: 0px 0px 0px 16px;
+  appearance: none;
+  max-width: 100%;
+  font-family: Roboto, sans-serif;
+  font-size: 0.8125rem;
+  display: inline-flex;
+  justify-content: center;
+  white-space: nowrap;
+  outline: 0px;
+  text-decoration: none;
+  padding: 0px;
+  vertical-align: middle;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  border: 1px solid rgb(227, 242, 253);
+  color: rgb(33, 150, 243);
+  height: 48px;
+  align-items: center;
+  border-radius: 27px;
+  transition: 0.2s ease-in-out;
+  background-color: rgb(227, 242, 253);
+}
+
+.profile .imageWrapper {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0px 8px 8px;
+  overflow: hidden;
+}
+
+.profile img {
+  width: 100%;
+  height: auto;
+}
+
+.profile svg {
+  height: 24px;
+  width: 24px;
+  margin: 0px 12px;
+}
+
+@media (min-width: 600px) {
+  .headerContainer {
+    min-height: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 900px) {
+  .searchMobile {
+    display: none;
+  }
+
+  .search {
+    display: block;
+  }
+
+  .searchContainer {
+    width: 250px;
+  }
+}
