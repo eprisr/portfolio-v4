@@ -8,15 +8,17 @@ import styles from './projects.module.css';
 function page() {
   return (
     <section className={styles.projects}>
-      <div>
-        <h1>PROJECTS</h1>
-      </div>
-      <div className="container">
-        <Button colorScheme="madder" variant="outline">
-          <LinkButton href="/dashboard/projects/create">
-            Create Project <TbPlus />
-          </LinkButton>
-        </Button>
+      <div className={styles.titleBar}>
+        <div>
+          <h1>Projects</h1>
+        </div>
+        <div className={styles.buttonContainer}>
+          <Button colorScheme="madder" variant="outline">
+            <LinkButton href="/dashboard/projects/create">
+              Create Project <TbPlus />
+            </LinkButton>
+          </Button>
+        </div>
       </div>
       <Suspense fallback={<InvoicesTableSkeleton />}>
         <Table query={''} currentPage={1} />

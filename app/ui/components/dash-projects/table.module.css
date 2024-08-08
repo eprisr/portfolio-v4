@@ -1,3 +1,52 @@
 .mobileTable {
   display: none;
 }
+
+.tableContainer {
+  height: calc(100% - 52px);
+  overflow-y: scroll;
+}
+
+.tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableContainer thead {
+  height: 44px;
+  background-color: var(--accent2);
+}
+
+.tableContainer tbody td {
+  padding: 12px;
+  border-bottom: 1px solid var(--accent);
+}
+
+.tableContainer tbody tr:hover {
+  background-color: hsla(from var(--accent) h s l / 12%);
+}
+
+.tableContainer thead th:nth-of-type(2) {
+  width: 50%;
+}
+
+.tableContainer thead th:nth-of-type(3) {
+  width: 100px;
+}
+
+.tableContainer .projTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.projTitle img {
+  height: 100px;
+  width: auto;
+}
+
+.projEdit > div {
+  display: flex;
+  gap: 12px;
+}

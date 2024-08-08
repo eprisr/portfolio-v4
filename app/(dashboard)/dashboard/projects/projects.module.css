@@ -1,3 +1,31 @@
 .projects {
+  width: calc(100% - 64px);
+  flex-direction: column;
+  margin-top: 15px;
+  height: calc(100% - 176px);
+  justify-content: flex-start;
+}
+
+.titleBar {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  position: sticky;
+}
+
+.titleBar .buttonContainer > div {
+  margin-top: 0px;
+}
+
+.projects > * a[type='button'],
+.projects > * button[type='button'] {
+  padding: 8px;
+  font-size: 12px;
+}
+
+.projects > * button[type='button'] {
+  display: flex;
+  gap: 8px;
 }
