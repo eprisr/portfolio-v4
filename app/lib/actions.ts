@@ -5,30 +5,7 @@ import { redirect } from 'next/navigation';
 import { z } from 'zod';
 import * as Sentry from '@sentry/nextjs';
 import { sql } from '@vercel/postgres';
-
-const ProjectFormSchema = z.object({
-  id: z.string(),
-  type: z.array(z.string()),
-  src: z.string(),
-  slides: z.array(z.string()).optional(),
-  video: z
-    .object({
-      url: z.string(),
-      id: z.string(),
-      width: z.string(),
-      height: z.string(),
-    })
-    .optional(),
-  title: z.string(),
-  titlelink: z.array(z.string()),
-  githubrepo: z.string().optional(),
-  clickable: z.boolean(),
-  date: z.string(),
-  client: z.string().optional(),
-  brief: z.string(),
-  projdesc: z.string(),
-  skills: z.record(z.string(), z.array(z.string())),
-});
+import { ProjectSchemaType } from '../ui/components/dash-projects/EditForm';
 
 export async function createProject(formData: FormData) {
   const rawformData = Object.fromEntries(formData.entries());
@@ -52,25 +29,38 @@ export async function createProject(formData: FormData) {
   // redirect('/dashboard/projects');
 }
 
-const UpdateProject = ProjectFormSchema.omit({ id: true, date: true });
+// TODO: Fix TitleLink Type Expectation and Try to Filter out Fields that Weren't Updated.
+export async function updateProject(id: string, formData: ProjectSchemaType) {
+  const {
+    type,
+    src,
+    slides,
+    video,
+    title,
+    titlelink,
+    githubrepo,
+    clickable,
+    date,
+    client,
+    brief,
+    projdesc,
+    skills,
+  } = formData;
 
-export async function updateProject(id: string, formData: FormData) {
-  const rawformData = Object.fromEntries(formData.entries());
+  try {
+    await sql`
+      UPDATE projects
+      SET titleLink = ${titlelink}
+      WHERE id = ${id}
+    `;
+  } catch (error) {
+    Sentry.captureException(error);
+    Sentry.captureMessage('Database Error: Failed to Update Project');
+    throw new Error(`Database Error: Failed to Update Project ${error}`);
+  }
 
-  // try {
-  //   await sql`
-  //     UPDATE projects
-  //     SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
-  //     WHERE id = ${id}
-  //   `;
-  // } catch (error) {
-  //   Sentry.captureException(error);
-  //   Sentry.captureMessage('Database Error: Failed to Update Project');
-  //   throw new Error(`Database Error: Failed to Update Project ${error}`);
-  // }
-
-  // revalidatePath('/dashboard/projects');
-  // redirect('/dashboard/projects');
+  revalidatePath('/dashboard/projects');
+  redirect('/dashboard/projects');
 }
 
 export async function deleteProject(id: string) {
