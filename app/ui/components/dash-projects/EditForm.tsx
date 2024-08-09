@@ -12,20 +12,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const ProjectFormSchema = z.object({
   id: z.string(),
-  type: z.array(z.string()),
   src: z.string(),
-  slides: z.array(z.string()),
-  video: z.object({
-    url: z.string(),
-    id: z.string(),
-    width: z.string(),
-    height: z.string(),
-  }),
   title: z.string(),
   titlelink: z.array(z.string()),
   githubrepo: z.string(),
   clickable: z.boolean(),
-  date: z.string(),
   client: z.string(),
   brief: z.string(),
   projdesc: z.string(),
@@ -77,41 +68,6 @@ export default function EditProjectForm({ project }: { project: ProjectForm }) {
         {errors.titlelink?.message && <p>{errors.titlelink?.message}</p>}
       </div>
       <div>
-        {/* NOTE: Fix Sending as 'on' */}
-        <fieldset>
-          Type
-          <label htmlFor="all">All</label>
-          <input
-            id="all"
-            type="checkbox"
-            placeholder="All"
-            {...register('type', { value: ['All'] })}
-          />
-          <label htmlFor="webdev">Web Dev</label>
-          <input
-            id="webdev"
-            type="checkbox"
-            placeholder="Web Dev"
-            {...register('type', { value: ['Web Dev'] })}
-          />
-          <label htmlFor="print">Print</label>
-          <input
-            id="print"
-            type="checkbox"
-            placeholder="Print"
-            {...register('type', { value: ['Print'] })}
-          />
-          <label htmlFor="branding">Branding</label>
-          <input
-            id="branding"
-            type="checkbox"
-            placeholder="Branding"
-            {...register('type', { value: ['Branding'] })}
-          />
-        </fieldset>
-        {errors.type?.message && <p>{errors.type?.message}</p>}
-      </div>
-      <div>
         <label htmlFor="imagesrc">Image Source</label>
         <input
           id="imagesrc"
@@ -130,16 +86,6 @@ export default function EditProjectForm({ project }: { project: ProjectForm }) {
           {...register('githubrepo')}
         />
         {errors.githubrepo?.message && <p>{errors.githubrepo?.message}</p>}
-      </div>
-      <div>
-        <label htmlFor="date">Date</label>
-        <input
-          id="date"
-          type="datetime"
-          placeholder="Date"
-          {...register('date')}
-        />
-        {errors.date?.message && <p>{errors.date?.message}</p>}
       </div>
       <div>
         <label htmlFor="client">Client</label>
@@ -198,41 +144,6 @@ export default function EditProjectForm({ project }: { project: ProjectForm }) {
         {errors.skills?.software?.message && (
           <p>{errors.skills?.software?.message}</p>
         )}
-      </div>
-      <div>
-        <label htmlFor="videourl">Video Url</label>
-        <input
-          id="videourl"
-          type="text"
-          placeholder="Video URL"
-          {...register('video.url')}
-        />
-        <label htmlFor="videoid">Video ID</label>
-        <input type="text" placeholder="Video ID" {...register('video.id')} />
-        <input
-          id="videoid"
-          type="text"
-          placeholder="Video Width"
-          {...register('video.width')}
-        />
-        <label htmlFor="videoheight">Video Height</label>
-        <input
-          id=""
-          type="text"
-          placeholder="Video Height"
-          {...register('video.height')}
-        />
-        {errors.video?.message && <p>{errors.video?.message}</p>}
-      </div>
-      <div>
-        <label htmlFor="slides">Slides</label>
-        <textarea
-          id="slides"
-          {...register('slides', {
-            setValueAs: (v) => v.split(/\s*,\s*(?:,\s*)*/),
-          })}
-        />
-        {errors.slides?.message && <p>{errors.slides?.message}</p>}
       </div>
       <div>
         <label htmlFor="clickable">Clickable</label>

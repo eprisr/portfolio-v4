@@ -53,6 +53,7 @@ function useStaggerAnimation() {
 
 function RecentProjects({ projects }: { projects: Project[] }) {
   const scope = useStaggerAnimation();
+  console.log(projects);
 
   return (
     <section className={styles.projects}>
@@ -70,7 +71,7 @@ function RecentProjects({ projects }: { projects: Project[] }) {
                     {proj.title}
                   </p>
                   <p className={styles.language}>
-                    {proj.skills.Frontend.includes('React')
+                    {proj.skills?.Frontend.includes('React')
                       ? 'React.JS'
                       : 'Vanilla JS'}
                   </p>

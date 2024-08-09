@@ -32,15 +32,11 @@ export async function createProject(formData: FormData) {
 // TODO: Fix TitleLink Type Expectation and Try to Filter out Fields that Weren't Updated.
 export async function updateProject(id: string, formData: ProjectSchemaType) {
   const {
-    type,
     src,
-    slides,
-    video,
     title,
     titlelink,
     githubrepo,
     clickable,
-    date,
     client,
     brief,
     projdesc,
@@ -50,7 +46,7 @@ export async function updateProject(id: string, formData: ProjectSchemaType) {
   try {
     await sql`
       UPDATE projects
-      SET id = ${id}, src = ${src}, title = ${title}, githubrepo = ${githubrepo}, clickable = ${clickable}, date = ${date}, client = ${client}, brief = ${brief}, projdesc = ${projdesc}
+      SET id = ${id}, src = ${src}, title = ${title}, githubrepo = ${githubrepo}, clickable = ${clickable}, client = ${client}, brief = ${brief}, projdesc = ${projdesc}
       WHERE id = ${id}
     `;
   } catch (error) {

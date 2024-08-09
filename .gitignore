@@ -4,6 +4,8 @@ dist/*
 node_modules/
 .next/
 .swc/
+scripts/
+app/lib/site-data
 *.log
 .env
 .env.local

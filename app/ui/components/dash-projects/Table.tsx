@@ -34,14 +34,12 @@ export default async function ProjectsTable({
                   />
                   <p>{project.title}</p>
                 </div>
-                <p className="text-sm text-gray-500">{project.type}</p>
               </div>
               {/* <ProjectStatus status={project.status} /> */}
             </div>
             <div className="flex w-full items-center justify-between pt-4">
               <div>
                 <p className="text-xl font-medium">{project.titlelink}</p>
-                <p>{formatDateToLocal(project.date)}</p>
               </div>
               <div className="flex justify-end gap-2">
                 <Button colorScheme="madder" variant="outline">
