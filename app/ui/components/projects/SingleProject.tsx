@@ -9,25 +9,19 @@ import Video from './Video';
 import styles from './project.module.css';
 
 export default function Project({ project }: { project: ProjectType }) {
-  const { src, slides, video, title, titlelink, client, projdesc } = project;
+  const { src, title, titlelink, client, projdesc } = project;
 
   function renderMedia() {
-    let media;
-    if (src && slides?.length === 0 && Object.keys({ video }).length === 0) {
-      media = (
-        <Image
-          src={`/assets/images/projects/${src}`}
-          alt={title}
-          className={styles.image}
-          width="500"
-          height="500"
-        />
-      );
-    } else if (slides?.length !== 0) {
-      media = <Slider project={project} />;
-    } else if (Object.keys({ video }).length !== 0) {
-      media = <Video project={project} />;
-    }
+    const media = (
+      <Image
+        src={`/assets/images/projects/${src}`}
+        alt={title}
+        className={styles.image}
+        width="500"
+        height="500"
+      />
+    );
+
     return media;
   }
 

@@ -7,7 +7,8 @@ import { Project } from '@/app/lib/definitions';
 import styles from './slider.module.css';
 
 export default function Slider({ project }: { project: Project }) {
-  const { slides, title } = project;
+  const { title } = project;
+  const slides: any = [];
   const [active, setActive] = useState<number>(0);
   const length = slides?.length || 1;
 
@@ -39,7 +40,7 @@ export default function Slider({ project }: { project: Project }) {
         className={`${styles.arrow} ${styles.arrow_right}`}
       />
       <span className={styles.indicators}>
-        {slides?.map((_, i) => {
+        {slides?.map((_: any, i: number) => {
           return (
             <button
               key={i}
