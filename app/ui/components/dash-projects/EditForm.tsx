@@ -12,26 +12,24 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const ProjectFormSchema = z.object({
   id: z.string(),
-  type: z.array(z.string()).optional(),
-  src: z.string().optional(),
-  slides: z.array(z.string()).optional(),
-  video: z
-    .object({
-      url: z.string(),
-      id: z.string(),
-      width: z.string(),
-      height: z.string(),
-    })
-    .optional(),
-  title: z.string().optional(),
+  type: z.array(z.string()),
+  src: z.string(),
+  slides: z.array(z.string()),
+  video: z.object({
+    url: z.string(),
+    id: z.string(),
+    width: z.string(),
+    height: z.string(),
+  }),
+  title: z.string(),
   titlelink: z.array(z.string()),
-  githubrepo: z.string().optional(),
-  clickable: z.boolean().optional(),
-  date: z.string().optional(),
-  client: z.string().optional(),
-  brief: z.string().optional(),
-  projdesc: z.string().optional(),
-  skills: z.record(z.string(), z.array(z.string())).optional(),
+  githubrepo: z.string(),
+  clickable: z.boolean(),
+  date: z.string(),
+  client: z.string(),
+  brief: z.string(),
+  projdesc: z.string(),
+  skills: z.record(z.string(), z.array(z.string())),
 });
 
 export type ProjectSchemaType = z.infer<typeof ProjectFormSchema>;

@@ -50,7 +50,7 @@ export async function updateProject(id: string, formData: ProjectSchemaType) {
   try {
     await sql`
       UPDATE projects
-      SET titleLink = ${titlelink}
+      SET id = ${id}, src = ${src}, title = ${title}, githubrepo = ${githubrepo}, clickable = ${clickable}, date = ${date}, client = ${client}, brief = ${brief}, projdesc = ${projdesc}
       WHERE id = ${id}
     `;
   } catch (error) {
@@ -59,8 +59,8 @@ export async function updateProject(id: string, formData: ProjectSchemaType) {
     throw new Error(`Database Error: Failed to Update Project ${error}`);
   }
 
-  revalidatePath('/dashboard/projects');
-  redirect('/dashboard/projects');
+  // revalidatePath('/dashboard/projects');
+  // redirect('/dashboard/projects');
 }
 
 export async function deleteProject(id: string) {
