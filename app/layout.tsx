@@ -11,7 +11,6 @@ import {
 } from '@/app/ui/fonts';
 import '@/app/ui/normalize.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
@@ -43,7 +42,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// TODO: Add dashboard to add projects instead of seeding as needed
 export default function RootLayout({
   children,
 }: {
@@ -62,7 +60,6 @@ export default function RootLayout({
       <body>
         {children}
         <SpeedInsights />
-        {/* <Analytics /> */}
       </body>
       <GoogleAnalytics gaId="G-STNG2RXT2F" />
     </html>
