@@ -1,10 +1,7 @@
 const projects = [
   {
     id: 'maps',
-    type: ['All', 'Web Dev'],
     src: 'neighborhood-maps.png',
-    slides: [],
-    video: {},
     title: 'Neighborhood Map',
     titleLink: [
       'https://neighborhood-map-eprishb.herokuapp.com/',
@@ -12,7 +9,6 @@ const projects = [
     ],
     githubRepo: 'https://github.com/eprisr/neighborhood-map',
     clickable: true,
-    date: 'Nov 2018',
     client: 'Personal Project',
     brief:
       'Discover refreshment around every corner: Find a smoothie joint near you!',
@@ -26,15 +22,11 @@ const projects = [
   },
   {
     id: 'reads',
-    type: ['All', 'Web Dev'],
     src: 'my-reads.png',
-    slides: [],
-    video: {},
     title: 'My Reads',
     titleLink: ['https://my-reads-brown.vercel.app/'],
     githubRepo: 'https://github.com/eprisr/MyReads',
     clickable: true,
-    date: 'Sep 2018',
     client: 'Personal Project',
     brief:
       'Your personalized digital bookshelf for empowering your reading journey.',
@@ -47,15 +39,11 @@ const projects = [
   },
   {
     id: 'mem',
-    type: ['All', 'Web Dev'],
     src: 'memory-game.png',
-    slides: [],
-    video: {},
     title: 'Memory Game',
     titleLink: ['https://eprisr.github.io/Project-Memory_Game/'],
     githubRepo: 'https://github.com/eprisr/Project-Memory_Game',
     clickable: true,
-    date: 'Aug 2018',
     client: 'Personal Project',
     brief: 'Flip. Remember. Match.',
     projDesc:
@@ -66,15 +54,11 @@ const projects = [
   },
   {
     id: 'sweet',
-    type: ['All', 'Web Dev', 'Print', 'Branding'],
     src: 'SoSweet_Mockup.png',
-    slides: [],
-    video: {},
     title: 'So Sweet: Case Study',
     titleLink: [],
     githubRepo: '',
     clickable: false,
-    date: 'Feb 2020',
     client: 'Personal Project',
     brief: 'Case study for a fictional bakery.',
     projDesc: 'Coming Soon',

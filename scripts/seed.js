@@ -3,38 +3,34 @@ const { projects, customers, invoices } = require('../app/lib/site-data.js');
 
 async function seedProjects(client) {
   try {
-    // const createTable = await client.sql`
-    // 	CREATE TABLE IF NOT EXISTS projects (
-    // 		id TEXT NOT NULL UNIQUE,
-    // 		type TEXT[] NOT NULL,
-    // 		src TEXT,
-    // 		slides TEXT [],
-    // 		video JSON,
-    // 		title TEXT NOT NULL,
-    // 		titleLink TEXT[] NOT NULL,
-    // 		githubRepo TEXT,
-    // 		clickable BOOLEAN NOT NULL,
-    // 		date TEXT NOT NULL,
-    // 		client TEXT NOT NULL,
-    // 		brief TEXT NOT NULL,
-    // 		projDesc TEXT NOT NULL,
-    // 		skills JSON NOT NULL
-    // 	);
-    // `
+    const createTable = await client.sql`
+    	CREATE TABLE IF NOT EXISTS projects (
+    		id TEXT NOT NULL UNIQUE,
+    		src TEXT,
+    		title TEXT NOT NULL,
+    		titleLink TEXT[] NOT NULL,
+    		githubRepo TEXT,
+    		clickable BOOLEAN NOT NULL,
+    		client TEXT NOT NULL,
+    		brief TEXT NOT NULL,
+    		projDesc TEXT NOT NULL,
+    		skills JSON NOT NULL
+    	);
+    `;
 
-    // console.log(`Created "projects" table`)
+    console.log(`Created "projects" table`);
 
-    // const insertProjects = await Promise.all(
-    //   projects.map(
-    //     (project) => client.sql`
-    // 			INSERT INTO projects (id, type, src, slides, video, title, titleLink, githubRepo, clickable, date, client, brief, projDesc, skills)
-    // 			VALUES (${project.id}, ${project.type}, ${project.src}, ${project.slides}, ${project.video}, ${project.title}, ${project.titleLink}, ${project.githubRepo}, ${project.clickable}, ${project.date}, ${project.client}, ${project.brief}, ${project.projDesc}, ${project.skills})
-    // 			ON CONFLICT (id) DO NOTHING;
-    // 		`
-    //   )
-    // )
+    const insertProjects = await Promise.all(
+      projects.map(
+        (project) => client.sql`
+    			INSERT INTO projects (id, src, title, titleLink, githubRepo, clickable,client, brief, projDesc, skills)
+    			VALUES (${project.id}, ${project.src}, ${project.title}, ${project.titleLink}, ${project.githubRepo}, ${project.clickable}, ${project.client}, ${project.brief}, ${project.projDesc}, ${project.skills})
+    			ON CONFLICT (id) DO NOTHING;
+    		`,
+      ),
+    );
 
-    // console.log(`Seeded ${insertProjects.length} projects`)
+    console.log(`Seeded ${insertProjects.length} projects`);
 
     // const updateColumnType = await client.sql`
     // 	ALTER TABLE projects ALTER COLUMN titleLink DROP DEFAULT;
@@ -42,22 +38,22 @@ async function seedProjects(client) {
     // 	ALTER TABLE projects ALTER COLUMN titleLink SET DEFAULT '';
     // `
 
-    const updateProjects = await Promise.all(
-      projects.map(
-        (project) => client.sql`
-					UPDATE projects
-					SET titleLink = ${project.titleLink}
-					WHERE id = ${project.id}
-				`,
-      ),
-    );
+    // const updateProjects = await Promise.all(
+    //   projects.map(
+    //     (project) => client.sql`
+    // 			UPDATE projects
+    // 			SET titleLink = ${project.titleLink} skills = ${project.skills}
+    // 			WHERE id = ${project.id}
+    // 		`,
+    //   ),
+    // );
 
-    // const deleteTable = await client.sql`DROP TABLE projects`
+    // const deleteTable = await client.sql`DROP TABLE projects`;
 
     return {
-      // createTable,
-      // projects: insertProjects,
-      updateProjects,
+      createTable,
+      projects: insertProjects,
+      // updateProjects,
       // deleteTable,
     };
   } catch (error) {
@@ -125,9 +121,9 @@ async function seedCustomers(client) {
 async function main() {
   const client = await db.connect();
 
-  // await seedProjects(client);
+  await seedProjects(client);
   // await seedInvoices(client);
-  await seedCustomers(client);
+  // await seedCustomers(client);
 
   await client.end();
 }
